@@ -20,7 +20,7 @@
   height: 40px;
 }
 
-a.nuxt-link-active {
+a.link.nuxt-link-active {
   color: $secondary;
   text-decoration: underline;
 }
