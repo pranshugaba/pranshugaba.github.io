@@ -3,7 +3,8 @@ export default {
   target: "static",
   router: {
     base: "/nuxt-website/",
-    trailingSlash: false
+    middleware: 'trailingSlashRedirect',
+    trailingSlash: false,
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -44,7 +45,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["@nuxt/content", "@nuxtjs/redirect-module", "@nuxtjs/sitemap"],
+  modules: ["@nuxt/content", "@nuxtjs/sitemap"],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
@@ -68,17 +69,6 @@ export default {
       description: "Pranshu Gaba's website"
     }
   },
-  //TODO: Test REGEX
-  redirect: [
-    {
-      from: "(?!^/$|^/[?].*$)(.*/[?](.*)$|.*/$)",
-      to: (from, req) => {
-        const base = req._parsedUrl.pathname.replace(/\/$/, "");
-        const search = req._parsedUrl.search;
-        return base + (search != null ? search : "");
-      }
-    }
-  ],
   sitemap: {
     path: "/sitemap.xml",
     hostname: "https://pranshugaba.com/nuxt-website",
