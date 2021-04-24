@@ -15,3 +15,11 @@
     </ul>
   </main>
 </template>
+
+<script>
+export default {
+  head: {
+    title: 'Posts'
+  }
+}
+</script>

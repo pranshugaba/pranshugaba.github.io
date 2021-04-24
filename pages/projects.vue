@@ -9,3 +9,11 @@
     <p>Maths wiki</p>
   </main>
 </template>
+
+<script>
+export default {
+  head: {
+    title: 'Projects'
+  }
+}
+</script>

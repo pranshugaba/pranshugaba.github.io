@@ -8,6 +8,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: "Pranshu Gaba",
+    titleTemplate: "%s | Pranshu Gaba",
     htmlAttrs: {
       lang: "en"
     },

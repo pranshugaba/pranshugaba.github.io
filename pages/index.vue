@@ -13,3 +13,11 @@
     </p>
   </main>
 </template>
+
+<script>
+export default {
+  head: {
+    title: 'Home',
+  }
+}
+</script>

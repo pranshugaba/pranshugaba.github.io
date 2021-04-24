@@ -12,7 +12,15 @@
     </p>
     <p>I am currently reading The Hobbit, or There and Back again.</p>
     <h3>
-      <Link href="/contact">Contact Me</Link>
+      <nuxt-link to="/contact">Contact Me</nuxt-link>
     </h3>
   </main>
 </template>
+
+<script>
+export default {
+  head: {
+    title: 'About'
+  }
+}
+</script>

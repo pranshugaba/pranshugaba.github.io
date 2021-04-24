@@ -10,3 +10,11 @@
     </p>
   </div>
 </template>
+
+<script>
+export default {
+  head: {
+    title: 'Licence'
+  }
+}
+</script>

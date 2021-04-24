@@ -1,3 +1,23 @@
+<template>
+  <article>
+    <h1>{{ puzzle.title }}</h1>
+    <p class="description">{{ puzzle.summary }}</p>
+    <p>{{ formatDate(puzzle.updatedAt) }}</p>
+
+    <nav>
+      <h4>Table of Contents</h4>
+      <ul>
+        <li v-for="link of puzzle.toc" :key="link.id">
+          <NuxtLink :to="`#${link.id}`">{{ link.text }}</NuxtLink>
+        </li>
+      </ul>
+    </nav>
+    <nuxt-content :document="puzzle" />
+    <author :author="puzzle.author" />
+    <prev-next :prev="prev" :next="next" />
+  </article>
+</template>
+
 <script>
 import Author from "~/components/Author";
 export default {
@@ -19,27 +39,13 @@ export default {
       return new Date(date).toLocaleDateString("en", options);
     },
   },
+  head() {
+    return {
+      title: this.puzzle.title,
+    };
+  },
 };
 </script>
-
-<template>
-  <article>
-    <h1>{{ puzzle.title }}</h1>
-    <p class="description">{{ puzzle.summary }}</p>
-    <p>Post last updated: {{ formatDate(puzzle.updatedAt) }}</p>
-
-    <nav>
-      <ul>
-        <li v-for="link of puzzle.toc" :key="link.id">
-          <NuxtLink :to="`#${link.id}`">{{ link.text }}</NuxtLink>
-        </li>
-      </ul>
-    </nav>
-    <nuxt-content :document="puzzle" />
-    <author :author="puzzle.author" />
-    <prev-next :prev="prev" :next="next" />
-  </article>
-</template>
 
 <style>
 .description {

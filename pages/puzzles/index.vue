@@ -3,8 +3,9 @@
     <h1>Puzzles</h1>
     <ul>
       <li v-for="puzzle of puzzles" :key="puzzle.slug">
+        #{{ puzzle.slug }} - 
         <NuxtLink :to="{ name: 'puzzles-slug', params: { slug: puzzle.slug } }">
-         {{ puzzle.title }}
+          {{ puzzle.title }}
         </NuxtLink>
       </li>
     </ul>
@@ -22,6 +23,9 @@ export default {
     return {
       puzzles,
     };
+  },
+  head: {
+    title: "Puzzles",
   },
 };
 </script>
