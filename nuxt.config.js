@@ -16,7 +16,13 @@ export default {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "" }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      {
+        rel: "stylesheet",
+        href: "https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.css"
+      }
+    ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -39,5 +45,11 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-  telemetry: true
+  telemetry: true,
+  content: {
+    markdown: {
+      remarkPlugins: ["remark-math"],
+      rehypePlugins: ["rehype-katex"]
+    }
+  }
 };

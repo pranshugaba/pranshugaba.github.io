@@ -25,7 +25,7 @@ export default {
 <template>
   <article>
     <h1>{{ puzzle.title }}</h1>
-    <p class="description">{{ puzzle.description }}</p>
+    <p class="description">{{ puzzle.summary }}</p>
     <p>Post last updated: {{ formatDate(puzzle.updatedAt) }}</p>
 
     <nav>

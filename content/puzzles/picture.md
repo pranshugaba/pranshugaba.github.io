@@ -1,31 +1,67 @@
 ---
-title: The Picture Hanging Problem
-description: Hang a picture so it is easy to remove
+title: "The Picture Hanging Puzzle"
+subtitle: "Mardi Maths #1"
+summary: "Can you hang a picture so that it is easy to remove?"
 author:
   name: Pranshu
   bio: All about Pranshu
+authors: ["pranshu"]
+tags: ["puzzles"]
+categories: []
+date: 2021-03-23T17:30:00+05:30
+lastmod: 2021-03-23T17:30:00+05:30
+reading_time: false
+featured: false
+draft: false
 ---
 
-Welcome to my first puzzle using content module.
+Introducing [Mardi Maths](/puzzles): a new series where I share interesting maths puzzles every other Tuesday. Interesting and enlightening reader-submitted solutions will be featured along with the following puzzle.
 
-## This is a heading
+Here's the first puzzle of the series. 
 
-This is some more info
 
-### This is a sub heading
+## The Problem
+You have stolen an exquisite painting from your local art gallery, and given the daring thief that you are, you would like to hang in your living room! You have with you some nails and a long rope.
 
-This is some more info
 
-### This is another sub heading
+### Level 1
 
-This is some more info
+You would like to hang the painting using two nails. To allow for easy removal, you want the painting to fall if you remove any one of the nails from the wall.
 
-<info-box>
-<template #info-box>
-This is a vue component inside markdown using slots
-</template>
-</info-box>
 
-## This is another heading
+ Is this feat possible? If yes, then how would you hang the painting? If no, then prove that it is impossible.
 
-This is some more info
+
+ *Tip:* Try it out with some pencils and a long string.
+
+Note: The method shown in the figure _does not_ work, because if you remove any one nail, the painting still hangs from the other nail. 
+
+### Level 2
+Now suppose you want to hang the painting using $n$ nails. You would like to painting to fall on removing any one nail.
+
+For what values of $n$ is this possible? 
+In the cases it is possible, how would you hang the painting?
+
+
+### Level 3
+Suppose you want to hang the painting using $n$ nails. This time, you would like the painting to fall on removing any $m$ nails. The painting should not fall if you remove fewer than $m$ nails.
+You may assume $1 \le m \le n$. 
+
+For what values of $m$ and $n$ is this possible? 
+In the cases it is possible, how would you go about hanging the painting?
+
+Good luck, have fun! 
+
+---
+
+[Write to me!](/contact) 
+
+- If you have solved the problem, share your solutions! Best explanations will be featured in the next Mardi Maths. 
+
+- If you are stuck, share your progress. What have you you tried so far? I might give a hint. 
+
+- Let me know if there's an error or  something's not clear in the puzzle. 
+
+- I would love your feedback. Did you find the puzzle interesting / too easy / too difficult?
+
+- If you have any puzzles that you would like featured in this series, share them with me!
