@@ -10,7 +10,9 @@
   </header>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "~/assets/styles/variables.scss";
+
 .container {
   display: flex;
   justify-content: space-between;
@@ -18,9 +20,15 @@
   height: 40px;
 }
 
+a.nuxt-link-active {
+  color: $secondary;
+  text-decoration: underline;
+}
+
 .logo {
   font-weight: bolder;
 }
+
 .link {
   margin-left: 20px;
 }

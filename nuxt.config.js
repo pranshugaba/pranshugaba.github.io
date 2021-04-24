@@ -3,8 +3,8 @@ export default {
   target: "static",
   router: {
     base: "/nuxt-website/",
-    middleware: 'trailingSlashRedirect',
-    trailingSlash: false,
+    middleware: "trailingSlashRedirect",
+    trailingSlash: false
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -13,6 +13,9 @@ export default {
     titleTemplate: "%s | Pranshu Gaba",
     htmlAttrs: {
       lang: "en"
+    },
+    base: {
+      target: "_blank" // open external links in new tabs
     },
     meta: [
       { charset: "utf-8" },

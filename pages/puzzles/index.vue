@@ -3,7 +3,7 @@
     <h1>Puzzles</h1>
     <ul>
       <li v-for="puzzle of puzzles" :key="puzzle.slug">
-        #{{ puzzle.slug }} - 
+        #{{ puzzle.slug }} &nbsp;
         <NuxtLink :to="{ name: 'puzzles-slug', params: { slug: puzzle.slug } }">
           {{ puzzle.title }}
         </NuxtLink>
@@ -29,3 +29,13 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+ul {
+  list-style: none;
+  margin-left: 0;
+}
+li {
+  padding-bottom: 0.75rem;
+}
+</style>

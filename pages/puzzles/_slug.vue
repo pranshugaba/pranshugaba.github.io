@@ -1,21 +1,13 @@
 <template>
-  <article>
+  <main>
     <h1>{{ puzzle.title }}</h1>
     <p class="description">{{ puzzle.summary }}</p>
     <p>{{ formatDate(puzzle.updatedAt) }}</p>
 
-    <nav>
-      <h4>Table of Contents</h4>
-      <ul>
-        <li v-for="link of puzzle.toc" :key="link.id">
-          <NuxtLink :to="`#${link.id}`">{{ link.text }}</NuxtLink>
-        </li>
-      </ul>
-    </nav>
     <nuxt-content :document="puzzle" />
     <author :author="puzzle.author" />
     <prev-next :prev="prev" :next="next" />
-  </article>
+  </main>
 </template>
 
 <script>
@@ -53,13 +45,10 @@ export default {
 }
 .nuxt-content h1 {
   font-weight: bold;
-  font-size: 28px;
+  font-size: 34px;
 }
 .nuxt-content h2 {
   font-weight: bold;
   font-size: 22px;
-}
-.nuxt-content p {
-  margin-bottom: 20px;
 }
 </style>
