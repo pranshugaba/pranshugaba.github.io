@@ -1,10 +1,13 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
+  router: {
+    base: "/nuxt-website/"
+  },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "nuxt-website",
+    title: "Pranshu Gaba",
     htmlAttrs: {
       lang: "en"
     },
