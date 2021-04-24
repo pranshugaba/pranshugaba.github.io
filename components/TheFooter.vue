@@ -1,0 +1,3 @@
+<template>
+  <footer>© 2021 Pranshu Gaba</footer>
+</template>
