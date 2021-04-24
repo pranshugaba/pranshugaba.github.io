@@ -1,8 +1,10 @@
+const baseDir = "/nuxt-website";
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
   router: {
-    base: "/nuxt-website/",
+    base: baseDir + '/',
     middleware: "trailingSlashRedirect",
     trailingSlash: false
   },
@@ -23,7 +25,7 @@ export default {
       { hid: "description", name: "description", content: "" }
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "icon", type: "image/x-icon", href: baseDir + "/favicon.ico" },
       {
         rel: "stylesheet",
         href: "https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.css"
