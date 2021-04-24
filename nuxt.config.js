@@ -37,7 +37,8 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/typescript
-    "@nuxt/typescript-build"
+    "@nuxt/typescript-build",
+    "@nuxtjs/pwa"
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -50,6 +51,19 @@ export default {
     markdown: {
       remarkPlugins: ["remark-math"],
       rehypePlugins: ["rehype-katex"]
+    }
+  },
+  pwa: {
+    meta: {
+      name: "PG",
+      author: "Pranshu Gaba",
+      description: "Pranshu Gaba's website",
+      theme_color: "#0077ff"
+    },
+    manifest: {
+      name: "Pranshu's website",
+      short_name: "Pranshu Gaba",
+      description: "Pranshu Gaba's website",
     }
   }
 };
