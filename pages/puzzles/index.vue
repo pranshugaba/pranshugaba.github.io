@@ -1,9 +1,27 @@
 <template>
   <main>
-    <h1>Puzzles are fun!</h1>
+    <h1>Puzzles</h1>
     <ul>
-      <li>A Chess Puzzle</li>
-      <li>The Picture Hanging Puzzle</li>
+      <li v-for="puzzle of puzzles" :key="puzzle.slug">
+        <NuxtLink :to="{ name: 'puzzles-slug', params: { slug: puzzle.slug } }">
+         {{ puzzle.title }}
+        </NuxtLink>
+      </li>
     </ul>
   </main>
 </template>
+
+<script>
+export default {
+  async asyncData({ $content, params }) {
+    const puzzles = await $content("puzzles")
+      .only(["title", "description", "img", "slug", "author"])
+      .sortBy("createdAt", "asc")
+      .fetch();
+
+    return {
+      puzzles,
+    };
+  },
+};
+</script>
