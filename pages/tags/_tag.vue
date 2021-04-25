@@ -28,7 +28,7 @@ export default {
   async asyncData({ $content, params }) {
     const tag = params.tag;
 
-    const puzzles = await $content("/", { deep: true })
+    const puzzles = await $content("puzzles") 
       .where({ tags: { $containsAny: tag } })
       .only(["title", "slug"])
       .sortBy("createdAt", "asc")
