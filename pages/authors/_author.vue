@@ -6,7 +6,7 @@
     Puzzles by {{ author.name }}
     <ul>
       <li v-for="puzzle of puzzles" :key="puzzle.slug">
-        <NuxtLink :to="puzzle.path">
+        <NuxtLink :to="{ name: 'puzzles-slug', params: { slug: puzzle.slug } }">
           {{ puzzle.title }}
         </NuxtLink>
       </li>
