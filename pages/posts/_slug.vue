@@ -39,7 +39,7 @@ export default {
 
     const [prev, next] = await $content("puzzles")
       .only(["title", "slug"])
-      .sortBy("createdAt", "desc")
+      .sortBy("createdAt", "asc")
       .surround(params.slug)
       .fetch();
 

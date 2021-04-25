@@ -1,8 +1,8 @@
 <template>
   <main>
-    <h1>{{ puzzle.title }}</h1>
-    <p class="description">{{ puzzle.summary }}</p>
-
+    <h1>{{ poem.title }}</h1>
+    
+    <p class="description">{{ poem.summary }}</p>
     By
     <ul>
       <li v-for="author of authors" :key="author.slug">
@@ -12,38 +12,38 @@
         >
       </li>
     </ul>
-    <p>{{ formatDate(puzzle.updatedAt) }}</p>
+    <p>{{ formatDate(poem.updatedAt) }}</p>
 
-    <nuxt-content :document="puzzle" />
+    <nuxt-content :document="poem" />
 
     Tags:
     <ul>
-      <li v-for="tag of puzzle.tags" :key="tag">
+      <li v-for="tag of poem.tags" :key="tag">
         <NuxtLink :to="{ name: 'tags-tag', params: { tag: tag } }">{{
           tag
         }}</NuxtLink>
       </li>
     </ul>
-    <prev-next :prev="prev" :next="next" />
+    <prev-next-poem :prev="prev" :next="next" />
   </main>
 </template>
 
 <script>
 export default {
   async asyncData({ $content, params }) {
-    const puzzle = await $content("puzzles", params.slug).fetch();
+    const poem = await $content("poems", params.slug).fetch();
 
     const authors = await $content("authors")
-      .where({ slug: { $in: puzzle.authors } })
+      .where({ slug: { $in: poem.authors } })
       .fetch();
 
-    const [prev, next] = await $content("puzzles")
+    const [prev, next] = await $content("poems")
       .only(["title", "slug"])
       .sortBy("createdAt", "desc")
       .surround(params.slug)
       .fetch();
 
-    return { puzzle, prev, next, authors };
+    return { poem, authors, prev, next };
   },
   methods: {
     formatDate(date) {
@@ -53,8 +53,8 @@ export default {
   },
   head() {
     return {
-      title: this.puzzle.title,
-      description: this.puzzle.summary,
+      title: this.poem.title,
+      // description: this.poem.summary,
     };
   },
 };

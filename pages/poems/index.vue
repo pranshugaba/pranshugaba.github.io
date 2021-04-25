@@ -1,7 +1,6 @@
 <template>
   <main>
-    <h1>Posts</h1>
-    <h2>Recent Poems</h2>
+    <h1>Poems</h1>
     <ul>
       <li v-for="poem of poems" :key="poem.slug">
         {{ formatDate(poem.createdAt) }} -
@@ -9,17 +8,6 @@
           {{ poem.title }} - {{ poem.subtitle }}
         </NuxtLink>
       </li>
-    </ul>
-        <NuxtLink to='/poems'>
-        See all poems
-        </NuxtLink>
-    <h2>Comics</h2>
-    <ul>
-      <li>Boo!</li>
-    </ul>
-    <h2>Stories</h2>
-    <ul>
-      <li>The Errand</li>
     </ul>
   </main>
 </template>
@@ -30,21 +18,28 @@ export default {
     const poems = await $content("poems")
       .only(["title", "subtitle", "description", "slug", "createdAt"])
       .sortBy("createdAt", "desc")
-      .limit(5)
       .fetch();
 
     return {
       poems,
     };
   },
+
   methods: {
     formatDate(date) {
       const options = { year: "numeric", month: "short", day: "numeric" };
       return new Date(date).toLocaleDateString("en", options);
     },
   },
+
   head: {
-    title: "Posts",
+    title: "Poems",
   },
 };
 </script>
+
+<style lang="scss" scoped>
+li {
+  padding-bottom: 0.75rem;
+}
+</style>
