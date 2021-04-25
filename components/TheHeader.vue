@@ -17,7 +17,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 40px;
+  height: 50px;
+  margin-bottom: 30px;
 }
 
 a.link.nuxt-link-active {

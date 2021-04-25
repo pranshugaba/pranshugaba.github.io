@@ -5,8 +5,6 @@ export default {
   target: "static",
   router: {
     base: baseDir + '/',
-    middleware: "trailingSlashRedirect",
-    trailingSlash: false
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -57,8 +55,8 @@ export default {
   telemetry: true,
   content: {
     markdown: {
-      remarkPlugins: ["remark-math"],
-      rehypePlugins: ["rehype-katex"]
+      remarkPlugins: ["remark-math", "remark-emoji", "@silvenon/remark-smartypants"],
+      rehypePlugins: ["rehype-katex"],
     }
   },
   pwa: {

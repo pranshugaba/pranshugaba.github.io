@@ -1,0 +1,14 @@
+[
+    {
+        "slug": "pranshu",
+        "name": "Pranshu Gaba",
+        "avatarUrl": "https://example.com/example_400x400.jpg",
+        "bio": "Pranshu is a PhD student in computer science. In his spare time, he develops apps, writes poems, and creates puzzles."
+    },
+    {
+        "slug": "dummy",
+        "name": "DummyName",
+        "avatarUrl": "https://example.com/example_400x400.jpg",
+        "bio": "dummyBio"
+    }
+]
