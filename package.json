@@ -21,9 +21,11 @@
     "remark-math": "^4.0.0"
   },
   "devDependencies": {
+    "@aceforth/nuxt-optimized-images": "^1.4.0",
     "@nuxt/types": "^2.15.3",
     "@nuxt/typescript-build": "^2.1.0",
     "fibers": "^5.0.0",
+    "lqip-loader": "^2.2.1",
     "sass": "^1.32.11",
     "sass-loader": "10"
   }
