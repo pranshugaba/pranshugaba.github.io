@@ -55,6 +55,12 @@ export default {
     return {
       title: this.puzzle.title,
       description: this.puzzle.summary,
+      link: [
+        {
+          rel: "stylesheet",
+          href: "https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.css",
+        },
+      ],
     };
   },
 };

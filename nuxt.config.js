@@ -25,11 +25,7 @@ export default {
       { hid: "description", name: "description", content: "" }
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: baseDir + "/favicon.ico" },
-      {
-        rel: "stylesheet",
-        href: "https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.css"
-      }
+      { rel: "icon", type: "image/x-icon", href: baseDir + "/favicon.ico" }
     ]
   },
 
