@@ -1,6 +1,5 @@
 <template>
   <main>
-    {{ posts }}
     <h1>{{ tag }}</h1>
 
     <div v-if="posts.length > 0">
@@ -30,9 +29,8 @@ export default {
     const posts = await $content("/", { deep: true })
       .where({
         tags: { $contains: tag },
-        postType: { $in: ["poems", "puzzles"] },
       })
-      .only(["title", "slug", "postType", "path"])
+      .only(["title", "slug", "path"])
       .sortBy("createdAt", "asc")
       .fetch();
 

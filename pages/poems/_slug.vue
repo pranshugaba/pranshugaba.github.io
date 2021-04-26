@@ -1,7 +1,6 @@
 <template>
   <main>
     <h1>{{ poem.title }}</h1>
-    
     <p class="description">{{ poem.summary }}</p>
     By
     <ul>
@@ -13,7 +12,15 @@
       </li>
     </ul>
     <p>{{ formatDate(poem.updatedAt) }}</p>
-
+    <figure v-if="poem.featuredImage">
+      <img :src="require(`~/assets/images/poems/${poem.featuredImage}`)" />
+      <figcaption v-if="poem.caption">
+        {{ poem.caption }}
+      </figcaption>
+      <figcaption v-else-if="poem.caption !== false">
+        Photo by Pranshu Gaba
+      </figcaption>
+    </figure>
     <nuxt-content :document="poem" />
 
     Tags:
@@ -54,6 +61,7 @@ export default {
   head() {
     return {
       title: this.poem.title,
+      titleTemplate: "%s | A poem by Pranshu Gaba",
       // description: this.poem.summary,
     };
   },

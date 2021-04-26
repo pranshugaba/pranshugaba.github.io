@@ -5,18 +5,17 @@ title: "ambulance"
 subtitle: "a haiku"
 summary: "a haiku"
 
-featuredImage: "~/assets/images/avatar.png"
+featuredImage: "ambulance.jpg"
 
 authors: ["pranshu"]
 
-tags: ["poetry", "haiku", "lights"]
+tags: ["haiku", "lights"]
 
-createdAt: "2020-09-30T13:30:46+05:30"
-updatedAt: 2020-09-30T13:30:46+05:30
+createdAt: 2020-09-30T13:30:00+05:30
+updatedAt: 2020-09-30T13:30:00+05:30
 
-draft: false
 featured: false
-
+draft: false
 ---
 
 rush hour traffic  

@@ -29,7 +29,7 @@ a[href*="//"]::after {
   /* external link styles, use :before or :after if you want! */
   background: transparent url(~assets/images/external_link.svg) 0 0 no-repeat;
   background-size: 16px;
-  content:"";
+  content: "";
   height: 16px;
   width: 16px;
   opacity: 0.6;

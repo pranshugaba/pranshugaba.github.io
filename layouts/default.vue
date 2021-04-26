@@ -8,8 +8,9 @@
 
 <style scoped>
 .layout {
-  max-width: 40rem;
+  max-width: 42rem;
   padding: 0 1rem;
-  margin: 1rem auto 6rem;
+  padding-left: calc(100vw - 100%);
+  margin: 1rem auto 3rem;
 }
 </style>

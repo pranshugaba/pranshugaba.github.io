@@ -1,10 +1,12 @@
+import getRoutes from "./utils/getRoutes";
+
 const baseDir = "/nuxt-website";
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
   router: {
-    base: baseDir + '/',
+    base: baseDir + "/"
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -55,8 +57,12 @@ export default {
   telemetry: true,
   content: {
     markdown: {
-      remarkPlugins: ["remark-math", "remark-emoji", "@silvenon/remark-smartypants"],
-      rehypePlugins: ["rehype-katex"],
+      remarkPlugins: [
+        "remark-math",
+        "remark-emoji",
+        ["@silvenon/remark-smartypants", { dashes: "oldschool" }]
+      ],
+      rehypePlugins: ["rehype-katex"]
     }
   },
   pwa: {
@@ -74,7 +80,9 @@ export default {
   },
   sitemap: {
     path: "/sitemap.xml",
-    hostname: "https://pranshugaba.com/nuxt-website",
-    routes: ["/puzzles/1", "/puzzles/2"]
+    hostname: "https://pranshugaba.com/",
+    routes() {
+      return getRoutes();
+    }
   }
 };
