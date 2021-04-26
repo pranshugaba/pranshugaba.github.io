@@ -46,6 +46,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     "@nuxt/typescript-build",
+    "@aceforth/nuxt-optimized-images",
     "@nuxtjs/pwa"
   ],
 
@@ -64,6 +65,9 @@ export default {
       ],
       rehypePlugins: ["rehype-katex"]
     }
+  },
+  optimizedImages: {
+    optimizeImages: true
   },
   pwa: {
     meta: {
