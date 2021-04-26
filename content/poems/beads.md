@@ -1,5 +1,5 @@
 ---
-# Documentation: https://sourcethemes.com/academic/docs/managing-content/
+postType: "poems"
 
 title: "beads"
 subtitle: "a haiku"

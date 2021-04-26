@@ -1,15 +1,14 @@
 <template>
   <main>
+    {{ posts }}
     <h1>{{ tag }}</h1>
 
-    <div v-if="puzzles.length > 0">
-      Puzzles tagged with {{ tag }}
+    <div v-if="posts.length > 0">
+      Posts tagged with {{ tag }}
       <ul>
-        <li v-for="puzzle of puzzles" :key="puzzle.slug">
-          <NuxtLink
-            :to="{ name: 'puzzles-slug', params: { slug: puzzle.slug } }"
-          >
-            {{ puzzle.title }}
+        <li v-for="post of posts" :key="post.slug">
+          <NuxtLink :to="post.path">
+            {{ post.title }}
           </NuxtLink>
         </li>
       </ul>
@@ -28,13 +27,16 @@ export default {
   async asyncData({ $content, params }) {
     const tag = params.tag;
 
-    const puzzles = await $content("puzzles") 
-      .where({ tags: { $containsAny: tag } })
-      .only(["title", "slug"])
+    const posts = await $content("/", { deep: true })
+      .where({
+        tags: { $contains: tag },
+        postType: { $in: ["poems", "puzzles"] },
+      })
+      .only(["title", "slug", "postType", "path"])
       .sortBy("createdAt", "asc")
       .fetch();
 
-    return { params, puzzles, tag };
+    return { params, posts, tag };
   },
   head() {
     return {

@@ -1,6 +1,8 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
+postType: "poems"
+
 title: "grey water"
 subtitle: "a haiku"
 summary: "a haiku"
