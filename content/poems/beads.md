@@ -5,7 +5,7 @@ title: "beads"
 subtitle: "a haiku"
 summary: "a haiku"
 
-featuredImage: beads.jpg
+featuredImage: beads.webp
 
 authors: ["pranshu"]
 

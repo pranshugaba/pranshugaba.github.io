@@ -5,11 +5,11 @@ title: "beyond"
 subtitle: "a haiku"
 summary: "a haiku"
 
-featuredImage: beyond.jpg
+featuredImage: beyond.webp
 
 authors: ["pranshu"]
 
-tags: ["haiku", "poetry", "colors"]
+tags: ["haiku", "colors"]
 
 createdAt: 2019-07-07T12:42:24+05:30
 updatedAt: 2019-07-07T12:42:24+05:30

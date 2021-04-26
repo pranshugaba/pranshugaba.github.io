@@ -5,7 +5,7 @@ title: "ambulance"
 subtitle: "a haiku"
 summary: "a haiku"
 
-featuredImage: "ambulance.jpg"
+featuredImage: "ambulance.webp"
 
 authors: ["pranshu"]
 

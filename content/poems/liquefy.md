@@ -1,32 +1,21 @@
 ---
-# Documentation: https://sourcethemes.com/academic/docs/managing-content/
+postType: "poems"
 
 title: "liquefy"
 subtitle: "a poem"
 summary: "a poem"
+
+featuredImage: liquefy.webp
+
 authors: ["pranshu"]
-tags: ["poetry", "summer", "ice-cream"]
-categories: []
+
+tags: ["summer", "ice-cream"]
+
 createdAt: 2020-05-03T20:04:04+05:30
 updatedAt: 2020-05-03T20:04:04+05:30
+
 featured: false
 draft: false
-
-# Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder.
-# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
-image:
-  caption: "Photo by Pranshu Gaba"
-  focal_point: ""
-  preview_only: false
-  placement: 1
-
-# Projects (optional).
-#   Associate this post with one or more of your projects.
-#   Simply enter your project's folder or file name without extension.
-#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
-#   Otherwise, set `projects = []`.
-projects: []
 ---
 
 a late afternoon ---  
