@@ -1,14 +1,5 @@
 <template>
-  <footer class="wrapper">
-    <NuxtLink to="/licence"> © 2021 Pranshu Gaba </NuxtLink>
+  <footer class="mt-2 pt-2 pb-1 border-t-2">
+    <NavLink to="/licence"> © 2021 Pranshu Gaba </NavLink>
   </footer>
 </template>
-
-<style scoped lang="scss">
-@import "~/assets/styles/variables.scss";
-
-.wrapper {
-  border-top: 1px solid $primary;
-  padding: 10px 0;
-}
-</style>

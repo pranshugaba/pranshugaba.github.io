@@ -45,9 +45,6 @@ export default {
 </script>
 
 <style>
-.description {
-  color: gray;
-}
 .nuxt-content h1 {
   font-weight: bold;
   font-size: 34px;

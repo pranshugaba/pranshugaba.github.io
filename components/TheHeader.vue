@@ -1,30 +1,10 @@
 <template>
-  <header class="container">
-    <NuxtLink to="/" class="logo"> Pranshu Gaba </NuxtLink>
+  <header class="h-14 flex items-center justify-between">
+    <NavLink to="/" class="font-bold"> Pranshu Gaba </NavLink>
     <nav>
-      <NuxtLink to="/about" class="link"> About</NuxtLink>
-      <NuxtLink to="/posts" class="link"> Posts</NuxtLink>
-      <NuxtLink to="/contact" class="link">Contact</NuxtLink>
+      <NavLink to="/about"> About</NavLink>
+      <NavLink to="/posts" class="ml-2"> Posts</NavLink>
+      <NavLink to="/contact" class="ml-2">Contact</NavLink>
     </nav>
   </header>
 </template>
-
-<style lang="scss" scoped>
-@import "~/assets/styles/variables.scss";
-
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 50px;
-  margin-bottom: 30px;
-}
-
-.logo {
-  font-weight: bolder;
-}
-
-.link {
-  margin-left: 20px;
-}
-</style>

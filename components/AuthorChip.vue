@@ -1,12 +1,12 @@
 <template>
-  <div class="author-chip">
+  <div class="py-4 flex items-center justify-start">
     <img
-      class="avatar"
+      class="h-8 mr-2 rounded-full"
       :src="require(`~/assets/images/authors/${author.avatar}`)"
       alt="Avatar of the author"
     />
     <div class="author-name">
-      <nuxt-link :to="author.path"> {{ author.name }} </nuxt-link>
+      <NavLink :to="author.path"> {{ author.name }} </NavLink>
     </div>
   </div>
 </template>
@@ -21,23 +21,3 @@ export default {
   },
 };
 </script>
-
-<style scoped lang="scss">
-@import "~/assets/styles/variables.scss";
-
-// TODO: Put text below image when not wide enough
-.author-chip {
-  border-radius: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-img {
-  width: 36px;
-  margin-right: 8px;
-  border-radius: 50%;
-}
-</style>

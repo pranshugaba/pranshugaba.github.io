@@ -70,9 +70,6 @@ export default {
 </script>
 
 <style scoped>
-.description {
-  color: gray;
-}
 .nuxt-content h1 {
   font-weight: bold;
   font-size: 34px;
@@ -80,24 +77,5 @@ export default {
 .nuxt-content h2 {
   font-weight: bold;
   font-size: 22px;
-}
-
-.tag-list {
-  display: flex;
-  list-style: none;
-  padding-left: 0;
-  margin-top: 2rem;
-}
-
-.tag-item {
-  background-color: #f2f2f2;
-  border-radius: 5px;
-  padding: 4px 8px;
-  margin-right: 10px;
-}
-
-.author-bios {
-  list-style: none;
-  padding-left: 0;
 }
 </style>

@@ -1,16 +1,15 @@
 <template>
   <main>
-    <h1>{{ poem.title }}</h1>
+    <h1 class="text-2xl font-bold">{{ poem.title }}</h1>
     <p class="description">{{ poem.summary }}</p>
-    <ul class="author-bios">
+    <ul>
       <li v-for="author of authors" :key="author.slug">
         <author-chip :author="author" />
       </li>
     </ul>
     <p>{{ formatDate(poem.updatedAt) }}</p>
     <figure v-if="poem.featuredImage">
-      <img
-        class="featured-img"
+      <FeaturedImage
         :src="require(`~/assets/images/poems/${poem.featuredImage}`)"
       />
       <figcaption v-if="poem.caption">
@@ -34,7 +33,11 @@
 </template>
 
 <script>
+import FeaturedImage from "../../components/FeaturedImage";
 export default {
+  components: {
+    FeaturedImage,
+  },
   async asyncData({ $content, params }) {
     const poem = await $content("poems", params.slug).fetch();
 
@@ -76,41 +79,5 @@ export default {
     font-weight: bold;
     font-size: 22px;
   }
-}
-
-.description {
-  color: gray;
-}
-
-.tag-list {
-  display: flex;
-  list-style: none;
-  padding-left: 0;
-  margin-top: 2rem;
-}
-
-.tag-item {
-  background-color: #f2f2f2;
-  border-radius: 5px;
-  padding: 4px 8px;
-  margin-right: 10px;
-}
-
-.author-bios {
-  list-style: none;
-  padding-left: 0;
-}
-
-figcaption {
-  width: 100%;
-  margin: 10px auto;
-  font-size: 0.8rem;
-  color: #333;
-  text-align: right;
-}
-
-.featured-img {
-  border-radius: 15px;
-  box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.3);
 }
 </style>

@@ -46,22 +46,3 @@ export default {
   // },
 };
 </script>
-
-<style>
-.description {
-  color: gray;
-}
-.nuxt-content h1 {
-  font-weight: bold;
-  font-size: 34px;
-}
-.nuxt-content h2 {
-  font-weight: bold;
-  font-size: 22px;
-}
-
-.avatar {
-  width: 96px;
-  border-radius: 10px;
-}
-</style>

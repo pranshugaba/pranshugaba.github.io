@@ -24,34 +24,3 @@ export default {
   },
 };
 </script>
-
-<style scoped lang="scss">
-@import "~/assets/styles/variables.scss";
-
-// TODO: Put text below image when not wide enough
-.colophon {
-  background-color: #f8f8f8;
-  border-radius: 10px;
-  display: grid;
-  grid-template-columns: 70px 1fr;
-  padding: 15px 15px 20px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  column-gap: 15px;
-}
-
-h4 {
-  font-size: 1.1rem;
-  margin: 0;
-  padding-bottom: 5px;
-}
-p {
-  margin: 0;
-}
-img {
-  width: 64px;
-  margin: auto;
-  border-radius: 20%;
-//  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
-}
-</style>
