@@ -11,8 +11,7 @@
     <ul>
       <li v-for="post of posts" :key="post.slug">
         {{ formatDate(post.createdAt) }} -
-        <!-- <NuxtLink :to="post.path"> -->
-        <NuxtLink to="/">
+        <NuxtLink :to="post.path">
           {{ post.title }}
         </NuxtLink>
       </li>
