@@ -1,13 +1,19 @@
 <template>
   <main>
+    <img
+      class="avatar"
+      :src="require(`~/assets/images/authors/${author.avatar}`)"
+      alt="Avatar of the author"
+    />
+    <p>Posts by</p>
     <h1>{{ author.name }}</h1>
     <p class="description">{{ author.bio }}</p>
-
-    Puzzles by {{ author.name }}
     <ul>
-      <li v-for="puzzle of puzzles" :key="puzzle.slug">
-        <NuxtLink :to="{ name: 'puzzles-slug', params: { slug: puzzle.slug } }">
-          {{ puzzle.title }}
+      <li v-for="post of posts" :key="post.slug">
+        {{ formatDate(post.createdAt) }} -
+        <!-- <NuxtLink :to="post.path"> -->
+        <NuxtLink to="/">
+          {{ post.title }}
         </NuxtLink>
       </li>
     </ul>
@@ -19,13 +25,19 @@ export default {
   async asyncData({ $content, params }) {
     const author = await $content("authors", params.author).fetch();
 
-    const puzzles = await $content("puzzles")
-      .where({ authors: { $containsAny: author.slug } })
-      .only(["title", "slug"])
-      .sortBy("createdAt", "asc")
+    const posts = await $content("/", { deep: true })
+      .where({ authors: { $contains: author.slug } })
+      .only(["title", "slug", "createdAt", "path"])
+      .sortBy("createdAt", "desc")
       .fetch();
 
-    return { params, author, puzzles };
+    return { params, author, posts };
+  },
+  methods: {
+    formatDate(date) {
+      const options = { year: "numeric", month: "short", day: "numeric" };
+      return new Date(date).toLocaleDateString("en", options);
+    },
   },
   // head() {
   //   return {
@@ -47,5 +59,10 @@ export default {
 .nuxt-content h2 {
   font-weight: bold;
   font-size: 22px;
+}
+
+.avatar {
+  width: 96px;
+  border-radius: 10px;
 }
 </style>

@@ -2,18 +2,17 @@
   <main>
     <h1>{{ poem.title }}</h1>
     <p class="description">{{ poem.summary }}</p>
-    By
-    <ul>
+    <ul class="author-bios">
       <li v-for="author of authors" :key="author.slug">
-        <NuxtLink
-          :to="{ name: 'authors-author', params: { author: author.slug } }"
-          >{{ author.name }}</NuxtLink
-        >
+        <author-chip :author="author" />
       </li>
     </ul>
     <p>{{ formatDate(poem.updatedAt) }}</p>
     <figure v-if="poem.featuredImage">
-      <img :src="require(`~/assets/images/poems/${poem.featuredImage}`)" />
+      <img
+        class="featured-img"
+        :src="require(`~/assets/images/poems/${poem.featuredImage}`)"
+      />
       <figcaption v-if="poem.caption">
         {{ poem.caption }}
       </figcaption>
@@ -23,8 +22,8 @@
     </figure>
     <nuxt-content :document="poem" />
 
-    <ul class="tagList">
-      <li class="tagItem" v-for="tag of poem.tags" :key="tag">
+    <ul class="tag-list">
+      <li class="tag-item" v-for="tag of poem.tags" :key="tag">
         <NuxtLink :to="{ name: 'tags-tag', params: { tag: tag } }">{{
           tag
         }}</NuxtLink>
@@ -68,7 +67,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 ::v-deep .nuxt-content {
   h1 {
     font-weight: bold;
@@ -84,17 +82,35 @@ export default {
   color: gray;
 }
 
-.tagList {
+.tag-list {
   display: flex;
   list-style: none;
   padding-left: 0;
   margin-top: 2rem;
 }
 
-.tagItem {
-  background-color: #e9e9e9;
+.tag-item {
+  background-color: #f2f2f2;
   border-radius: 5px;
-  padding: 2px 4px;
+  padding: 4px 8px;
   margin-right: 10px;
+}
+
+.author-bios {
+  list-style: none;
+  padding-left: 0;
+}
+
+figcaption {
+  width: 100%;
+  margin: 10px auto;
+  font-size: 0.8rem;
+  color: #333;
+  text-align: right;
+}
+
+.featured-img {
+  border-radius: 15px;
+  box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.3);
 }
 </style>

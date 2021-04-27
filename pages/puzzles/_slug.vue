@@ -3,26 +3,30 @@
     <h1>{{ puzzle.title }}</h1>
     <p class="description">{{ puzzle.summary }}</p>
 
-    By
-    <ul>
+    <ul class="author-bios">
       <li v-for="author of authors" :key="author.slug">
-        <NuxtLink
-          :to="{ name: 'authors-author', params: { author: author.slug } }"
-          >{{ author.name }}</NuxtLink
-        >
+        <author-chip :author="author" />
       </li>
     </ul>
     <p>{{ formatDate(puzzle.updatedAt) }}</p>
 
     <nuxt-content :document="puzzle" />
 
-    <ul class="tagList">
-      <li class="tagItem" v-for="tag of puzzle.tags" :key="tag">
+    <ul class="tag-list">
+      <li class="tag-item" v-for="tag of puzzle.tags" :key="tag">
         <NuxtLink :to="{ name: 'tags-tag', params: { tag: tag } }">{{
           tag
         }}</NuxtLink>
       </li>
     </ul>
+
+    <div class="authorBios">
+      <author-bio
+        v-for="author of authors"
+        :key="author.slug"
+        :author="author"
+      />
+    </div>
     <prev-next :prev="prev" :next="next" />
   </main>
 </template>
@@ -78,17 +82,22 @@ export default {
   font-size: 22px;
 }
 
-.tagList {
+.tag-list {
   display: flex;
   list-style: none;
   padding-left: 0;
   margin-top: 2rem;
 }
 
-.tagItem {
-  background-color: #e9e9e9;
+.tag-item {
+  background-color: #f2f2f2;
   border-radius: 5px;
-  padding: 2px 4px;
+  padding: 4px 8px;
   margin-right: 10px;
+}
+
+.author-bios {
+  list-style: none;
+  padding-left: 0;
 }
 </style>
