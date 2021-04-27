@@ -16,9 +16,8 @@
 
     <nuxt-content :document="puzzle" />
 
-    Tags:
-    <ul>
-      <li v-for="tag of puzzle.tags" :key="tag">
+    <ul class="tagList">
+      <li class="tagItem" v-for="tag of puzzle.tags" :key="tag">
         <NuxtLink :to="{ name: 'tags-tag', params: { tag: tag } }">{{
           tag
         }}</NuxtLink>
@@ -66,7 +65,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .description {
   color: gray;
 }
@@ -77,5 +76,19 @@ export default {
 .nuxt-content h2 {
   font-weight: bold;
   font-size: 22px;
+}
+
+.tagList {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 2rem;
+}
+
+.tagItem {
+  background-color: #e9e9e9;
+  border-radius: 5px;
+  padding: 2px 4px;
+  margin-right: 10px;
 }
 </style>
