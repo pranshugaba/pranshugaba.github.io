@@ -1,49 +1,29 @@
 <template>
-  <div class="container">
-    <div class="prev">
+  <div class="grid grid-cols-2 gap-8">
+    <div class="prev py-2">
       <NuxtLink
         v-if="prev"
-        :to="{ name: 'puzzles-slug', params: { slug: prev.slug } }"
-        class="text-primary font-bold hover:underline"
+        :to="prev.path"
+        class="font-bold hover:underline inline-block"
       >
-      <span class="label">prev</span>
-       {{ prev.title }}
+        <span class="block text-sm">prev</span>
+        {{ prev.title }}
       </NuxtLink>
       <span v-else>&nbsp;</span>
     </div>
-    <div class="next">
+    <div class="inline-block py-2 text-right">
       <NuxtLink
         v-if="next"
-        :to="{ name: 'puzzles-slug', params: { slug: next.slug } }"
-        class="font-bold hover:underline"
+        :to="next.path"
+        class="font-bold hover:underline inline-block"
       >
-        <span class="label">next</span>
-         {{ next.title }}
+        <span class="block text-sm">next</span>
+        {{ next.title }}
       </NuxtLink>
       <span v-else>&nbsp;</span>
     </div>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.container {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  border-radius: 10px;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  display: grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 2rem;
-}
-.next {
-  text-align: right;
-}
-.label{
-  display: block;
-  color: black;
-}
-</style>
 
 <script>
 export default {

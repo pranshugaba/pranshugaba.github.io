@@ -2,12 +2,7 @@
   <main>
     <h1>{{ poem.title }}</h1>
     <p class="description">{{ poem.summary }}</p>
-    <ul>
-      <li v-for="author of authors" :key="author.slug">
-        <author-chip :author="author" />
-      </li>
-    </ul>
-    <p>{{ formatDate(poem.updatedAt) }}</p>
+    <author-chip :authors="authors" :updatedDate="poem.updatedAt" />
     <figure v-if="poem.featuredImage">
       <FeaturedImage
         :src="require(`~/assets/images/poems/${poem.featuredImage}`)"
@@ -21,14 +16,8 @@
     </figure>
     <nuxt-content :document="poem" />
 
-    <ul class="tag-list">
-      <li class="tag-item" v-for="tag of poem.tags" :key="tag">
-        <NuxtLink :to="{ name: 'tags-tag', params: { tag: tag } }">{{
-          tag
-        }}</NuxtLink>
-      </li>
-    </ul>
-    <prev-next-poem :prev="prev" :next="next" />
+    <TagChips :tags="poem.tags" />
+    <PrevNext :prev="prev" :next="next" />
   </main>
 </template>
 
@@ -46,18 +35,12 @@ export default {
       .fetch();
 
     const [prev, next] = await $content("poems")
-      .only(["title", "slug"])
+      .only(["title", "slug", "path"])
       .sortBy("createdAt", "desc")
       .surround(params.slug)
       .fetch();
 
     return { poem, authors, prev, next };
-  },
-  methods: {
-    formatDate(date) {
-      const options = { year: "numeric", month: "long", day: "numeric" };
-      return new Date(date).toLocaleDateString("en", options);
-    },
   },
   head() {
     return {

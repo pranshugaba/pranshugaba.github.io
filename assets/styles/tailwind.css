@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-4xl mb-5 font-bold dark:text-gray-50;
+  }
+
+  h2 {
+    @apply text-2xl mt-6 mb-2 font-semibold dark:text-gray-50;
+  }
+
+  h3 {
+    @apply text-lg dark:text-gray-50;
+  }
+
+  p {
+    @apply my-4 dark:text-gray-50;
+  }
+
+  div, li, span {
+    @apply dark:text-gray-50;
+  }
+
+  a {
+    @apply text-blue-600 dark:text-blue-300 hover:underline active:text-pink-600 dark:active:text-pink-300;
+  }
+  hr {
+    @apply my-4
+  }
+}

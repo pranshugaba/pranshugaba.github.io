@@ -2,23 +2,11 @@
   <main>
     <h1>{{ puzzle.title }}</h1>
     <p class="description">{{ puzzle.summary }}</p>
+    <author-chip :authors="authors" :updatedDate="puzzle.updatedAt" />
 
-    <ul class="author-bios">
-      <li v-for="author of authors" :key="author.slug">
-        <author-chip :author="author" />
-      </li>
-    </ul>
-    <p>{{ formatDate(puzzle.updatedAt) }}</p>
+    <NuxtContent :document="puzzle" />
 
-    <nuxt-content :document="puzzle" />
-
-    <ul class="tag-list">
-      <li class="tag-item" v-for="tag of puzzle.tags" :key="tag">
-        <NuxtLink :to="{ name: 'tags-tag', params: { tag: tag } }">{{
-          tag
-        }}</NuxtLink>
-      </li>
-    </ul>
+    <TagChips :tags="puzzle.tags" />
 
     <div class="authorBios">
       <author-bio
@@ -27,7 +15,7 @@
         :author="author"
       />
     </div>
-    <prev-next :prev="prev" :next="next" />
+    <PrevNext :prev="prev" :next="next" />
   </main>
 </template>
 
@@ -41,18 +29,12 @@ export default {
       .fetch();
 
     const [prev, next] = await $content("puzzles")
-      .only(["title", "slug"])
+      .only(["title", "slug", "path"])
       .sortBy("createdAt", "desc")
       .surround(params.slug)
       .fetch();
 
     return { puzzle, prev, next, authors };
-  },
-  methods: {
-    formatDate(date) {
-      const options = { year: "numeric", month: "long", day: "numeric" };
-      return new Date(date).toLocaleDateString("en", options);
-    },
   },
   head() {
     return {

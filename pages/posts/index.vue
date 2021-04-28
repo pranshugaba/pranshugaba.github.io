@@ -1,9 +1,9 @@
 <template>
   <main>
     <h1>Posts</h1>
-    <h2>Poems</h2>
+    <h2 class="text-2xl mb-2">Poems</h2>
     <ul>
-      <li v-for="poem of poems" :key="poem.slug">
+      <li class="dark:text-gray-50 my-2" v-for="poem of poems" :key="poem.slug">
         {{ formatDate(poem.createdAt) }} -
         <NuxtLink :to="{ name: 'poems-slug', params: { slug: poem.slug } }">
           {{ poem.title }} - {{ poem.subtitle }}
@@ -12,7 +12,7 @@
     </ul>
     <NuxtLink to="/poems"> See all poems </NuxtLink>
 
-    <h2>Puzzles</h2>
+    <h2 class="mt-6 mb-2">Puzzles</h2>
     <ul>
       <li v-for="puzzle of puzzles" :key="puzzle.slug">
         {{ formatDate(puzzle.createdAt) }} -

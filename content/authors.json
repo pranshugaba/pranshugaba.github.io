@@ -8,7 +8,7 @@
     {
         "slug": "dummy",
         "name": "DummyName",
-        "avatar": "https://example.com/example_400x400.jpg",
+        "avatar": "farm.jpg",
         "bio": "dummyBio"
     }
 ]

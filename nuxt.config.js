@@ -17,7 +17,7 @@ export default {
       lang: "en"
     },
     bodyAttrs: {
-        class: 'bg-gray-50'
+        class: 'bg-gray-50 dark:bg-gray-900'
     },
     base: {
       target: "_blank" // open external links in new tabs
@@ -84,5 +84,8 @@ export default {
     routes() {
       return getRoutes();
     }
+  },
+  tailwindcss: {
+    cssPath: '~/assets/styles/tailwind.css'
   }
 };
