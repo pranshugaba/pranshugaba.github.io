@@ -1,6 +1,6 @@
 <template>
   <main>
-    <h1 class="text-2xl font-bold">{{ poem.title }}</h1>
+    <h1>{{ poem.title }}</h1>
     <p class="description">{{ poem.summary }}</p>
     <ul>
       <li v-for="author of authors" :key="author.slug">

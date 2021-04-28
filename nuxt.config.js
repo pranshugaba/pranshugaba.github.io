@@ -17,7 +17,7 @@ export default {
       lang: "en"
     },
     bodyAttrs: {
-        class: 'bg-gray-100'
+        class: 'bg-gray-50'
     },
     base: {
       target: "_blank" // open external links in new tabs

@@ -1,5 +1,5 @@
 <template>
-  <header class="h-14 flex items-center justify-between">
+  <header class="h-14 mb-8 flex items-center justify-between">
     <NavLink to="/" class="font-bold"> Pranshu Gaba </NavLink>
     <nav>
       <NavLink to="/about"> About</NavLink>
