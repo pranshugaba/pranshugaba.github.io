@@ -19,5 +19,5 @@ draft: false
 ---
 
 an ocean of knowledge  
-and adventures galore---   
+and adventures galore ---   
 sold by weight

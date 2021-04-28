@@ -1,22 +1,16 @@
 <template>
   <main>
-    <h1>{{ poem.title }}</h1>
-    <p class="description">{{ poem.summary }}</p>
-    <author-chip :authors="authors" :updatedDate="poem.updatedAt" />
-    <figure v-if="poem.featuredImage">
-      <FeaturedImage
-        :src="require(`~/assets/images/poems/${poem.featuredImage}`)"
-      />
-      <figcaption v-if="poem.caption">
-        {{ poem.caption }}
-      </figcaption>
-      <figcaption v-else-if="poem.caption !== false">
-        Photo by Pranshu Gaba
-      </figcaption>
-    </figure>
-    <nuxt-content :document="poem" />
+    <h1 class="mb-2">{{ poem.title }}</h1>
+    <p class="text-lg mt-0 mb-6 text-gray-700 dark:text-gray-300">{{ poem.summary }}</p>
+
+    <AuthorChip :authors="authors" :updatedDate="poem.updatedAt" />
+
+    <FigureWithCaption :img="poem.featuredImage" :caption="poem.caption" />
+
+    <NuxtContent :document="poem" />
 
     <TagChips :tags="poem.tags" />
+
     <PrevNext :prev="prev" :next="next" />
   </main>
 </template>

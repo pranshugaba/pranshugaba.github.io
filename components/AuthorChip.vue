@@ -1,5 +1,5 @@
 <template>
-  <div class="my-4 flex items-center justify-start space-x-3">
+  <div class="my-6 flex items-center justify-start space-x-3">
     <div v-for="author of authors" :key="author.slug">
       <img
         class="h-12 rounded-full"
@@ -14,7 +14,7 @@
           ><span v-if="index != authors.length - 1">, </span>
         </span>
       </span>
-      <div class="text-gray-600 dark:text-gray-300 text-sm">
+      <div class="text-gray-600 dark:text-gray-400 text-sm">
         {{ formatDate(updatedDate) }}
         <!-- &#183; 3 min read -->
       </div>

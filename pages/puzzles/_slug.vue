@@ -1,8 +1,8 @@
 <template>
   <main>
-    <h1>{{ puzzle.title }}</h1>
-    <p class="description">{{ puzzle.summary }}</p>
-    <author-chip :authors="authors" :updatedDate="puzzle.updatedAt" />
+    <h1 class="mb-2">{{ puzzle.title }}</h1>
+    <p class="text-lg mt-0 mb-6 text-gray-700 dark:text-gray-300">{{ puzzle.summary }}</p>
+    <AuthorChip :authors="authors" :updatedDate="puzzle.updatedAt" />
 
     <NuxtContent :document="puzzle" />
 
