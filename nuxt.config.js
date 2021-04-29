@@ -17,7 +17,7 @@ export default {
       lang: "en"
     },
     bodyAttrs: {
-        class: 'bg-gray-50 dark:bg-gray-900'
+      class: "bg-gray-50 dark:bg-gray-900"
     },
     base: {
       target: "_blank" // open external links in new tabs
@@ -45,6 +45,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     "@nuxtjs/tailwindcss",
+    "@nuxtjs/svg",
     "@nuxt/typescript-build",
     "@nuxtjs/pwa"
   ],
@@ -86,6 +87,6 @@ export default {
     }
   },
   tailwindcss: {
-    cssPath: '~/assets/styles/tailwind.css'
+    cssPath: "~/assets/styles/tailwind.css"
   }
 };

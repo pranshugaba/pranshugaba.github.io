@@ -6,14 +6,14 @@
       :key="tag"
     >
       <NuxtLink :to="{ name: 'tags-tag', params: { tag: tag } }">
-        {{ kebabToSentence(tag) }}
+        {{ kebabToTitle(tag) }}
       </NuxtLink>
     </li>
   </ul>
 </template>
 
 <script>
-import { kebabToSentence } from "~/utils/helpers";
+import { kebabToTitle } from "~/utils/helpers";
 export default {
   name: "tagChips",
   props: {
@@ -22,7 +22,7 @@ export default {
     },
   },
   methods: {
-    kebabToSentence,
+    kebabToTitle,
   },
 };
 </script>

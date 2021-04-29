@@ -6,9 +6,9 @@
         Email:
         <a href="mailto:pranshu@pranshugaba.com">pranshu@pranshugaba.com</a>
       </li>
-      <li>Github: <a href="https://github.com/pranshugaba">@pranshugaba</a></li>
+      <li>Github: <ExtLink to="https://github.com/pranshugaba">@pranshugaba</ExtLink></li>
       <li>
-        Twitter: <a href="https://twitter.com/pranshugaba">@pranshugaba</a>
+        Twitter: <ExtLink to="https://twitter.com/pranshugaba">@pranshugaba</ExtLink>
       </li>
     </ul>
   </main>

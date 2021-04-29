@@ -4,14 +4,26 @@
     <h2>CC-BY-SA 4.0</h2>
     <p>
       Unless otherwise stated, all content on this website is licensed under a
-      <a href="https://creativecommons.org/licenses/by-sa/4.0/">
-        Commons Attribution-ShareAlike 4.0 International License
-      </a>.
+      <ExtLink to="https://creativecommons.org/licenses/by-sa/4.0/">
+        Commons Attribution-ShareAlike 4.0 International License </ExtLink
+      >.
     </p>
 
-    <h3>Attributions </h3>
+    <h3>Attributions</h3>
     <ul>
-      <li><a href="https://freeicons.io/free-space-icons/external-link-icon-icon">External link icon</a> by <a href="https://freeicons.io/profile/714" target="_blank">Raj Dev</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.
+      <li>
+        <ExtLink
+          to="https://freeicons.io/free-space-icons/external-link-icon-icon"
+          >External link icon</ExtLink
+        >
+        by
+        <ExtLink to="https://freeicons.io/profile/714" target="_blank"
+          >Raj Dev</ExtLink
+        >
+        is licensed under
+        <ExtLink to="https://creativecommons.org/licenses/by-sa/3.0/"
+          >CC BY-SA 3.0</ExtLink
+        >.
       </li>
     </ul>
   </div>
@@ -20,7 +32,7 @@
 <script>
 export default {
   head: {
-    title: 'Licence'
-  }
-}
+    title: "Licence",
+  },
+};
 </script>
