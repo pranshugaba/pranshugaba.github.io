@@ -6,7 +6,7 @@
         {{ caption }}
       </figcaption>
       <figcaption
-        class="my-2 text-sm text-gray-600 dark:text-gray-400 text-center"
+        class="my-2 text-sm text-gray-600 dark:text-gray-400 text-center transition-colors"
         v-else-if="caption !== false"
       >
         Photo by Pranshu Gaba

@@ -8,8 +8,8 @@
     </p>
     <p>
       In the meantime, you can visit
-      <ExtLink to="https://pranshugaba.com">my existing website</ExtLink> that
-      I have built using Hugo.
+      <ExtLink to="https://pranshugaba.com">my existing website</ExtLink> that I
+      have built using Hugo.
     </p>
   </main>
 </template>

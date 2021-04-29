@@ -17,7 +17,7 @@ export default {
       lang: "en"
     },
     bodyAttrs: {
-      class: "bg-gray-50 dark:bg-gray-900"
+      class: "bg-gray-50 dark:bg-gray-900 transition-colors"
     },
     base: {
       target: "_blank" // open external links in new tabs
@@ -45,7 +45,9 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     "@nuxtjs/tailwindcss",
+    "@nuxtjs/color-mode",
     "@nuxtjs/svg",
+    "@nuxt/postcss8",
     "@nuxt/typescript-build",
     "@nuxtjs/pwa"
   ],
@@ -56,6 +58,10 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   telemetry: true,
+  colorMode: {
+    preference: "dark",
+    classSuffix: ""
+  },
   content: {
     markdown: {
       remarkPlugins: [

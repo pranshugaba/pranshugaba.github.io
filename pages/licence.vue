@@ -14,13 +14,21 @@
       <li>
         <ExtLink
           to="https://freeicons.io/free-space-icons/external-link-icon-icon"
-          >External link icon</ExtLink
+          >External link </ExtLink
+        >, 
+        <ExtLink
+          to="https://freeicons.io/free-space-icons/sun-icon-icon"
+          >Sun </ExtLink
+        >, and 
+        <ExtLink
+          to="https://freeicons.io/free-space-icons/moon-icon-icon"
+          >Moon</ExtLink
         >
-        by
+        icons by
         <ExtLink to="https://freeicons.io/profile/714" target="_blank"
           >Raj Dev</ExtLink
         >
-        is licensed under
+        are licensed under
         <ExtLink to="https://creativecommons.org/licenses/by-sa/3.0/"
           >CC BY-SA 3.0</ExtLink
         >.

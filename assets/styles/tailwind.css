@@ -4,27 +4,27 @@
 
 @layer base {
   h1 {
-    @apply text-4xl mb-6 font-bold dark:text-gray-50;
+    @apply text-4xl mb-6 font-bold dark:text-gray-50 transition-colors;
   }
 
   h2 {
-    @apply text-2xl mt-6 mb-2 font-semibold dark:text-gray-50;
+    @apply text-2xl mt-6 mb-2 font-semibold dark:text-gray-50 transition-colors;
   }
 
   h3 {
-    @apply text-lg font-medium dark:text-gray-50;
+    @apply text-lg font-medium dark:text-gray-50 transition-colors;
   }
 
   p {
-    @apply my-4 dark:text-gray-50;
+    @apply my-4 dark:text-gray-50 transition-colors;
   }
 
   li {
-    @apply my-2 dark:text-gray-50;
+    @apply my-2 dark:text-gray-50 transition-colors;
   }
 
   a {
-    @apply text-blue-600 dark:text-blue-300 hover:underline active:text-pink-600 dark:active:text-pink-300;
+    @apply text-blue-600 dark:text-blue-300 hover:underline active:text-pink-600 dark:active:text-pink-300 transition-colors;
   }
   hr {
     @apply my-4;

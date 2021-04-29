@@ -14,7 +14,7 @@
           ><span v-if="index != authors.length - 1">, </span>
         </span>
       </span>
-      <div class="text-gray-600 dark:text-gray-400 text-sm">
+      <div class="text-gray-600 dark:text-gray-400 text-sm transition-colors">
         {{ formatDate(updatedDate) }}
         <span v-if="readingTime !== false">
         &#183; {{ readingTime }} min read

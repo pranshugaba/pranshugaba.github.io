@@ -3,7 +3,7 @@
     <a :href="to">
       <slot />
     </a>
-    <ExternalIcon class="inline h-4 mb-1 mr-1 text-gray-600 dark:text-gray-400" />
+    <ExternalIcon class="inline h-4 mb-1 mr-1 text-gray-600 dark:text-gray-400 transition-colors" />
   </span>
 </template>
 
