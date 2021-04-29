@@ -1,8 +1,10 @@
 <template>
-  <a :href="to">
-    <slot/>
-    <ExternalIcon class="inline h-4 mb-1 text-gray-600 dark:text-gray-400" />
-  </a>
+  <span>
+    <a :href="to">
+      <slot />
+    </a>
+    <ExternalIcon class="inline h-4 mb-1 mr-1 text-gray-600 dark:text-gray-400" />
+  </span>
 </template>
 
 <script>

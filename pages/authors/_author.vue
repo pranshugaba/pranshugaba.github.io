@@ -1,12 +1,11 @@
 <template>
   <main>
-    <img
-      class="avatar"
+    <VImage
+      class="rounded-full max-w-1/4 mx-auto"
       :src="require(`~/assets/images/authors/${author.avatar}`)"
-      alt="Avatar of the author"
     />
-    <p>Posts by</p>
-    <h1>{{ author.name }}</h1>
+    <p class="mb-0">Posts by</p>
+    <h1 class="mb-0">{{ author.name }}</h1>
     <p class="description">{{ author.bio }}</p>
     <ul>
       <li v-for="post of posts" :key="post.slug">

@@ -10,9 +10,15 @@ module.exports = {
 
     "./nuxt.config.{js,ts}"
   ],
-  darkMode: 'media', // or 'media' or 'class'
+  darkMode: "media", // or 'media' or 'class'
   theme: {
-    extend: {}
+    extend: {
+      maxWidth: {
+        "1/4": "25%",
+        "1/2": "50%",
+        "3/4": "75%"
+      }
+    }
   },
   variants: {
     extend: {

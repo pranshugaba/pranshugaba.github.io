@@ -1,7 +1,7 @@
 <template>
   <main>
     <h1>Authors</h1>
-    Authors that have contributed on this website:
+    <p>Authors that have contributed on this website:</p>
     <ul>
       <li v-for="author of authors" :key="author.slug">
         <NuxtLink
