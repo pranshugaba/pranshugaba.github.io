@@ -1,5 +1,5 @@
 <template>
-  <img class="rounded-xl shadow-md" :src="src" />
+  <img class="md:rounded-xl shadow-md" :src="src" />
 </template>
 
 <script>

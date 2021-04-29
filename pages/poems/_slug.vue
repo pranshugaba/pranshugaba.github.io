@@ -13,7 +13,7 @@
 
     <FigureWithCaption :img="poem.featuredImage" :caption="poem.caption" />
 
-    <NuxtContent :document="poem" />
+    <NuxtContent class="text-2xl font-serif" :document="poem" />
 
     <TagChips :tags="poem.tags" />
 
