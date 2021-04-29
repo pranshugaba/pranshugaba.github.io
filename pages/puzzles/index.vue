@@ -17,7 +17,7 @@ export default {
   async asyncData({ $content, params }) {
     const puzzles = await $content("puzzles")
       .only(["title", "description", "img", "slug", "author"])
-      .sortBy("createdAt", "asc")
+      .sortBy("createdAt", "desc")
       .fetch();
 
     return {
@@ -29,13 +29,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-ul {
-  list-style: none;
-  margin-left: 0;
-}
-li {
-  padding-bottom: 0.75rem;
-}
-</style>

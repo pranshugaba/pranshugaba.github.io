@@ -1,9 +1,15 @@
 <template>
   <main>
     <h1 class="mb-2">{{ poem.title }}</h1>
-    <p class="text-lg mt-0 mb-6 text-gray-700 dark:text-gray-300">{{ poem.summary }}</p>
+    <p class="text-lg mt-0 mb-6 text-gray-700 dark:text-gray-300">
+      {{ poem.summary }}
+    </p>
 
-    <AuthorChip :authors="authors" :updatedDate="poem.updatedAt" />
+    <AuthorChip
+      :authors="authors"
+      :updatedDate="poem.updatedAt"
+      :readingTime="false"
+    />
 
     <FigureWithCaption :img="poem.featuredImage" :caption="poem.caption" />
 
@@ -16,7 +22,8 @@
 </template>
 
 <script>
-import FeaturedImage from "../../components/FeaturedImage";
+import FeaturedImage from "~/components/FeaturedImage";
+
 export default {
   components: {
     FeaturedImage,

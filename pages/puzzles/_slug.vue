@@ -1,8 +1,14 @@
 <template>
   <main>
     <h1 class="mb-2">{{ puzzle.title }}</h1>
-    <p class="text-lg mt-0 mb-6 text-gray-600 dark:text-gray-400">{{ puzzle.summary }}</p>
-    <AuthorChip :authors="authors" :updatedDate="puzzle.updatedAt" />
+    <p class="text-lg mt-0 mb-6 text-gray-600 dark:text-gray-400">
+      {{ puzzle.summary }}
+    </p>
+    <AuthorChip
+      :authors="authors"
+      :updatedDate="puzzle.updatedAt"
+      :readingTime="readingTime(puzzle)"
+    />
 
     <NuxtContent :document="puzzle" />
 
@@ -20,7 +26,11 @@
 </template>
 
 <script>
+import { readingTime } from "~/utils/helpers";
 export default {
+  methods: {
+    readingTime,
+  },
   async asyncData({ $content, params }) {
     const puzzle = await $content("puzzles", params.slug).fetch();
 

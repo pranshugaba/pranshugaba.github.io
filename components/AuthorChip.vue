@@ -2,7 +2,7 @@
   <div class="my-6 flex items-center justify-start space-x-3">
     <div v-for="author of authors" :key="author.slug">
       <img
-        class="h-12 rounded-full"
+        class="h-12 w-12 rounded-full"
         :src="require(`~/assets/images/authors/${author.avatar}`)"
         alt="Avatar of the author"
       />
@@ -16,7 +16,9 @@
       </span>
       <div class="text-gray-600 dark:text-gray-400 text-sm">
         {{ formatDate(updatedDate) }}
-        <!-- &#183; 3 min read -->
+        <span v-if="readingTime !== false">
+        &#183; {{ readingTime }} min read
+        </span>
       </div>
     </div>
   </div>
@@ -32,6 +34,10 @@ export default {
     },
     updatedDate: {
       type: String,
+    },
+    readingTime: {
+      type: String,
+      default: "123",
     },
   },
   methods: {

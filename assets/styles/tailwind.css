@@ -19,11 +19,6 @@
     @apply my-4 dark:text-gray-50;
   }
 
-  div,
-  span {
-    @apply dark:text-gray-50;
-  }
-
   li {
     @apply my-2 dark:text-gray-50;
   }
