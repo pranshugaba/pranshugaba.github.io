@@ -56,7 +56,12 @@ export default {
   modules: ["@nuxt/content", "@nuxtjs/sitemap"],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    corejs: 3,
+    babel: {
+      plugins: [["@babel/plugin-proposal-private-methods", { loose: true }]]
+    }
+  },
   telemetry: true,
   colorMode: {
     preference: "dark",

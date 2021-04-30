@@ -1,9 +1,11 @@
 <template>
   <span>
-    <a :href="to">
+    <a :href="to" target="_blank" rel="noopener">
       <slot />
     </a>
-    <ExternalIcon class="inline h-4 mb-1 mr-1 text-gray-600 dark:text-gray-400 transition-colors" />
+    <ExternalIcon
+      class="inline h-4 mb-1 mr-1 text-gray-600 dark:text-gray-400 transition-colors"
+    />
   </span>
 </template>
 

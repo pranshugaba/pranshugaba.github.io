@@ -1,14 +1,13 @@
 <template>
-  <div class="w-6 dark:text-gray-400 text-gray-600 cursor-pointer">
+  <button
+    class="w-6 hover:text-blue-600 dark:hover:text-blue-300 transition dark:text-gray-300 text-gray-700 cursor-pointer"
+  >
     <SunIcon
       v-if="$colorMode.value === 'light'"
       @click="$colorMode.preference = 'dark'"
     />
-    <MoonIcon
-      v-if="$colorMode.value === 'dark'"
-      @click="$colorMode.preference = 'light'"
-    />
-  </div>
+    <MoonIcon v-else @click="$colorMode.preference = 'light'" />
+  </button>
 </template>
 
 <script>

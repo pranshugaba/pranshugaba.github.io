@@ -19,7 +19,7 @@ module.exports = {
         "3/4": "75%"
       },
       transitionDuration: {
-        DEFAULT: "500ms"
+        DEFAULT: "250ms"
       }
     }
   },
