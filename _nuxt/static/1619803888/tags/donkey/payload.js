@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/tags/donkey", (function(a,b){return {data:[{params:{tag:a},posts:[{slug:b,title:b,path:"\u002Fpoems\u002Fequines"}],tag:a}],fetch:{},mutations:void 0}}("donkey","equines")));

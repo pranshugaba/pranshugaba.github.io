@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/authors", {data:[{authors:[{slug:"pranshu",name:"Pranshu Gaba"}]}],fetch:{},mutations:void 0});

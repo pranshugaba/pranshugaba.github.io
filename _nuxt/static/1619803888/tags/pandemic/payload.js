@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/tags/pandemic", (function(a,b){return {data:[{params:{tag:a},posts:[{slug:b,title:b,path:"\u002Fpoems\u002Fmasks"}],tag:a}],fetch:{},mutations:void 0}}("pandemic","masks")));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/tags/cats", (function(a){return {data:[{params:{tag:a},posts:[{slug:"the-cat-named-toad",title:"The Cat Named Toad",path:"\u002Fpoems\u002Fthe-cat-named-toad"}],tag:a}],fetch:{},mutations:void 0}}("cats")));

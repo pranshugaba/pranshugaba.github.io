@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/tags/sunset", (function(a){return {data:[{params:{tag:a},posts:[{slug:"mirror-world",title:"mirror world",path:"\u002Fpoems\u002Fmirror-world"}],tag:a}],fetch:{},mutations:void 0}}("sunset")));

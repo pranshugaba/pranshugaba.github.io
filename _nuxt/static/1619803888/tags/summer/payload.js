@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/tags/summer", (function(a,b,c){return {data:[{params:{tag:a},posts:[{slug:b,title:b,path:"\u002Fpoems\u002Fflames"},{slug:c,title:c,path:"\u002Fpoems\u002Fliquefy"}],tag:a}],fetch:{},mutations:void 0}}("summer","flames","liquefy")));
