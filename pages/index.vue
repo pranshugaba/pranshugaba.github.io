@@ -2,7 +2,7 @@
   <main>
     <h1>Hello There</h1>
     <p>I am Pranshu Gaba. Welcome to my (new) website.</p>
-    <p class="mb-4">
+    <p>
       This website is still under construction. I am learning Vue.js and
       Nuxt.js, and am building this website along the way.
     </p>
@@ -15,7 +15,11 @@
 </template>
 
 <script>
+import ExtLink from "~/components/navigation/ExtLink";
 export default {
+  components: {
+    ExtLink,
+  },
   head: {
     title: "Home",
   },

@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  img {
+    aspect-ratio: attr(width) / attr(height);
+  }
   h1 {
     @apply text-4xl mb-6 font-bold dark:text-gray-50 transition-colors;
   }
@@ -28,5 +31,22 @@
   }
   hr {
     @apply my-4;
+  }
+}
+
+@layer components {
+  .page-enter-active {
+    transition: all 0.20s ease-in;
+  }
+  .page-enter {
+    transform: translateY(4px);
+    opacity: 0;
+  }
+  .page-leave-active {
+    transition: all 0.10s ease-out;
+  }
+  .page-leave-to {
+    transform: translateY(-2px);
+    opacity: 0;
   }
 }

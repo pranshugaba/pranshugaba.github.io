@@ -1,10 +1,10 @@
 <template>
-  <img class="md:rounded-xl shadow-md" :src="src" />
+  <img :src="src" class="h-auto" />
 </template>
 
 <script>
 export default {
-  name: "featuredImage",
+  name: "vImage",
   props: ["src"],
 };
 </script>

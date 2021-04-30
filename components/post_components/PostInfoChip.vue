@@ -7,17 +7,17 @@
         alt="Avatar of the author"
       />
     </div>
-    <div class="text-black">
+    <div>
       <span v-for="(author, index) of authors" :key="author.slug">
-        <span class="author-name">
-          <NavLink :to="author.path">{{ author.name }}</NavLink
+        <span>
+          <NuxtLink :to="author.path">{{ author.name }}</NuxtLink
           ><span v-if="index != authors.length - 1">, </span>
         </span>
       </span>
       <div class="text-gray-600 dark:text-gray-400 text-sm transition-colors">
         {{ formatDate(updatedDate) }}
-        <span v-if="readingTime !== false">
-        &#183; {{ readingTime }} min read
+        <span v-if="readingTime !== 'false'">
+          &#183; {{ readingTime }} min read
         </span>
       </div>
     </div>
@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { formatDate } from "../utils/date";
+import { formatDate } from "~/utils/date";
 export default {
   props: {
     authors: {

@@ -19,7 +19,11 @@
 </template>
 
 <script>
+import VImage from "~/components/images/VImage";
 export default {
+  components: {
+    VImage,
+  },
   async asyncData({ $content, params }) {
     const author = await $content("authors", params.author).fetch();
 

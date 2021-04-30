@@ -1,10 +1,10 @@
 <template>
   <main>
-    <h1 class="mb-2">{{ puzzle.title }}</h1>
+    <PostTitle>{{ puzzle.title }}</PostTitle>
     <p class="text-lg mt-0 mb-6 text-gray-600 dark:text-gray-400">
       {{ puzzle.summary }}
     </p>
-    <AuthorChip
+    <PostInfoChip
       :authors="authors"
       :updatedDate="puzzle.updatedAt"
       :readingTime="readingTime(puzzle)"
@@ -21,13 +21,24 @@
         :author="author"
       />
     </div>
-    <PrevNext :prev="prev" :next="next" />
+    <PrevNextUp :prev="prev" :next="next" :up="up"/>
   </main>
 </template>
 
 <script>
 import { readingTime } from "~/utils/helpers";
+import VFigure from "~/components/images/VFigure";
+import PrevNextUp from "~/components/post_components/PrevNextUp";
+import TagChips from "~/components/post_components/TagChips";
+import AuthorBio from "~/components/post_components/AuthorBio";
+
 export default {
+  components: {
+    VFigure,
+    PrevNextUp,
+    TagChips,
+    AuthorBio
+  },
   methods: {
     readingTime,
   },
@@ -58,16 +69,13 @@ export default {
       ],
     };
   },
+  data() {
+    return {
+      up: {
+        path: "/puzzles",
+        title: "Puzzles",
+      },
+    };
+  },
 };
 </script>
-
-<style scoped>
-.nuxt-content h1 {
-  font-weight: bold;
-  font-size: 34px;
-}
-.nuxt-content h2 {
-  font-weight: bold;
-  font-size: 22px;
-}
-</style>

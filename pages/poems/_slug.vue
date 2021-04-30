@@ -1,32 +1,39 @@
 <template>
   <main>
-    <h1 class="mb-2">{{ poem.title }}</h1>
+    <PostTitle>{{ poem.title }}</PostTitle>
     <p class="text-lg mt-0 mb-6 text-gray-700 dark:text-gray-300">
       {{ poem.summary }}
     </p>
 
-    <AuthorChip
+    <PostInfoChip
       :authors="authors"
       :updatedDate="poem.updatedAt"
-      :readingTime="false"
+      :readingTime="'false'"
     />
 
-    <FigureWithCaption :img="poem.featuredImage" :caption="poem.caption" />
+    <VFigure
+      :imgSrc="require(`~/assets/images/poems/${poem.featuredImage}`)"
+      :caption="poem.caption"
+    />
 
     <NuxtContent class="text-2xl font-serif" :document="poem" />
 
     <TagChips :tags="poem.tags" />
 
-    <PrevNext :prev="prev" :next="next" />
+    <PrevNextUp :prev="prev" :next="next" :up="up" />
   </main>
 </template>
 
 <script>
-import FeaturedImage from "~/components/FeaturedImage";
+import VFigure from "~/components/images/VFigure";
+import PrevNextUp from "~/components/post_components/PrevNextUp";
+import TagChips from "~/components/post_components/TagChips";
 
 export default {
   components: {
-    FeaturedImage,
+    VFigure,
+    TagChips,
+    PrevNextUp,
   },
   async asyncData({ $content, params }) {
     const poem = await $content("poems", params.slug).fetch();
@@ -50,18 +57,13 @@ export default {
       // description: this.poem.summary,
     };
   },
+  data() {
+    return {
+      up: {
+        path: "/poems",
+        title: "Poems",
+      },
+    };
+  },
 };
 </script>
-
-<style lang="scss" scoped>
-::v-deep .nuxt-content {
-  h1 {
-    font-weight: bold;
-    font-size: 34px;
-  }
-  h2 {
-    font-weight: bold;
-    font-size: 22px;
-  }
-}
-</style>
