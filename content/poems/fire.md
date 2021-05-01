@@ -3,7 +3,7 @@ postType: "poems"
 
 title: "fire"
 subtitle: "a haiku"
-summary: "a haiku"
+description: "a haiku"
 
 featuredImage: fire.webp
 

@@ -3,7 +3,7 @@ postType: "poems"
 
 title: "pink"
 subtitle: "a haiku"
-summary: "a haiku"
+description: "a haiku"
 
 featuredImage: pink.webp
 

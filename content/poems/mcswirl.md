@@ -3,7 +3,7 @@ postType: "poems"
 
 title: "McSwirl"
 subtitle: "a haiku"
-summary: "a haiku"
+description: "a haiku"
 
 featuredImage: mcswirl.webp
 

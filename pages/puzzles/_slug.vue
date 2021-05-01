@@ -52,7 +52,7 @@ export default {
   head() {
     return {
       title: this.puzzle.title,
-      description: this.puzzle.summary,
+      description: this.puzzle.description,
       link: [
         {
           rel: "stylesheet",

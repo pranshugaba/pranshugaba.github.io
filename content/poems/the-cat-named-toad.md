@@ -3,7 +3,7 @@ postType: "poems"
 
 title: "The Cat Named Toad"
 subtitle: "A Limerick"
-summary: "A Limerick"
+description: "A Limerick"
 
 featuredImage: the-cat-named-toad.webp
 

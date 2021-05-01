@@ -3,7 +3,7 @@ postType: "poems"
 
 title: "lightning"
 subtitle: "a tanka"
-summary: "a tanka"
+description: "a tanka"
 
 featuredImage: lightning.webp
 

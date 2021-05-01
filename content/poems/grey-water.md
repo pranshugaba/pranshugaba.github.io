@@ -3,7 +3,7 @@ postType: "poems"
 
 title: "grey water"
 subtitle: "a haiku"
-summary: "a haiku"
+description: "a haiku"
 
 featuredImage: grey-water.webp
 

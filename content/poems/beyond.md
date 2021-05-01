@@ -3,7 +3,7 @@ postType: "poems"
 
 title: "beyond"
 subtitle: "a haiku"
-summary: "a haiku"
+description: "a haiku"
 
 featuredImage: beyond.webp
 

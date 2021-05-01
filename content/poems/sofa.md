@@ -3,7 +3,7 @@ postType: "poems"
 
 title: "sofa"
 subtitle: "a haiku"
-summary: "a haiku"
+description: "a haiku"
 
 featuredImage: sofa.webp
 

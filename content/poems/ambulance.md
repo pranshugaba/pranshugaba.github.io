@@ -3,7 +3,7 @@ postType: "poems"
 
 title: "ambulance"
 subtitle: "a haiku"
-summary: "a haiku"
+description: "a haiku"
 
 featuredImage: "ambulance.webp"
 

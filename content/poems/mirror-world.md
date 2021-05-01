@@ -3,7 +3,7 @@ postType: "poems"
 
 title: "mirror world"
 subtitle: "a haiku"
-summary: "a haiku"
+description: "a haiku"
 
 featuredImage: mirror-world.webp
 

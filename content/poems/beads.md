@@ -3,7 +3,7 @@ postType: "poems"
 
 title: "beads"
 subtitle: "a haiku"
-summary: "a haiku"
+description: "a haiku"
 
 featuredImage: beads.webp
 

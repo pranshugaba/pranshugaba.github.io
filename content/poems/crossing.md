@@ -3,7 +3,7 @@ postType: "poems"
 
 title: "crossing"
 subtitle: "a haiku"
-summary: "a haiku"
+description: "a haiku"
 
 featuredImage: crossing.webp
 

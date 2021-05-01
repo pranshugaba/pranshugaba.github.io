@@ -3,7 +3,7 @@ postType: "poems"
 
 title: "liquefy"
 subtitle: "a poem"
-summary: "a poem"
+description: "a poem"
 
 featuredImage: liquefy.webp
 

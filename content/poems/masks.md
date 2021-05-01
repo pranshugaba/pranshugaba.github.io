@@ -3,7 +3,7 @@ postType: "poems"
 
 title: "masks"
 subtitle: "a haiku"
-summary: "a haiku"
+description: "a haiku"
 
 featuredImage: masks.webp
 

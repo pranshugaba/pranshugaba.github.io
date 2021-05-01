@@ -3,7 +3,7 @@ postType: "poems"
 
 title: "spring"
 subtitle: "a haiku"
-summary: "a haiku"
+description: "a haiku"
 
 featuredImage: spring.webp
 

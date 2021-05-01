@@ -3,7 +3,7 @@ postType: "poems"
 
 title: "tributaries"
 subtitle: "a haiku"
-summary: "a haiku"
+description: "a haiku"
 
 featuredImage: tributaries.webp
 

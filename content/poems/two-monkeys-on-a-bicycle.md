@@ -3,7 +3,7 @@ postType: "poems"
 
 title: "Two Monkeys on a Bicycle"
 subtitle: "A Limerick"
-summary: "A Limerick"
+description: "A Limerick"
 
 featuredImage: two-monkeys-on-a-bicycle.webp
 

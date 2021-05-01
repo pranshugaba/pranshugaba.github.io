@@ -3,7 +3,7 @@ postType: "poems"
 
 title: "The Shopping Trolley in the Hall"
 subtitle: "A Limerick"
-summary: "A Limerick"
+description: "A Limerick"
 
 featuredImage: the-shopping-trolley-in-the-hall.webp
 

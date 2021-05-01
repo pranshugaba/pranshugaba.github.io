@@ -3,7 +3,7 @@ postType: "poems"
 
 title: "streaks"
 subtitle: "a haiku"
-summary: "a haiku"
+description: "a haiku"
 
 featuredImage: streaks.webp
 

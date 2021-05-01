@@ -45,7 +45,7 @@ export default {
     return {
       title: this.poem.title,
       titleTemplate: "%s | A poem by Pranshu Gaba",
-      // description: this.poem.summary,
+      // description: this.poem.description,
     };
   },
   data() {

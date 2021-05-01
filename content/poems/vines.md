@@ -3,7 +3,7 @@ postType: "poems"
 
 title: "vines"
 subtitle: "a haiku"
-summary: "a haiku"
+description: "a haiku"
 
 featuredImage: vines.webp
 
