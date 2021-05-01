@@ -3,7 +3,7 @@
     <h1>{{ tag }}</h1>
 
     <div v-if="posts.length > 0">
-      Posts tagged with {{ tag }}
+      <p>Posts tagged with {{ tag }}</p>
       <ul>
         <li v-for="post of posts" :key="post.slug">
           <NuxtLink :to="post.path">
@@ -43,14 +43,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.nuxt-content h1 {
-  font-weight: bold;
-  font-size: 34px;
-}
-.nuxt-content h2 {
-  font-weight: bold;
-  font-size: 22px;
-}
-</style>

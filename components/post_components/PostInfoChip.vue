@@ -1,5 +1,5 @@
 <template>
-  <div class="my-6 flex items-center justify-start space-x-3">
+  <div class="mb-8 flex items-center justify-start space-x-3">
     <div v-for="author of authors" :key="author.slug">
       <img
         class="h-12 w-12 rounded-full"
@@ -9,8 +9,11 @@
     </div>
     <div>
       <span v-for="(author, index) of authors" :key="author.slug">
-        <span>
-          <NuxtLink :to="author.path">{{ author.name }}</NuxtLink
+        <span class="text-gray-700 dark:text-gray-300 transition-colors">
+          <NuxtLink
+            :to="author.path"
+            class="text-gray-800 dark:text-gray-200 transition-colors font-medium"
+            >{{ author.name }}</NuxtLink
           ><span v-if="index != authors.length - 1">, </span>
         </span>
       </span>

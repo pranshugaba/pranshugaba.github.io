@@ -1,18 +1,12 @@
 <template>
   <main>
-    <PostHeading :post="puzzle" :authors="authors"/>
+    <PostHeading :post="puzzle" :authors="authors" />
 
     <NuxtContent :document="puzzle" />
 
     <TagChips :tags="puzzle.tags" />
 
-    <div class="authorBios">
-      <author-bio
-        v-for="author of authors"
-        :key="author.slug"
-        :author="author"
-      />
-    </div>
+    <PostAuthorBios :authors="authors" />
     <PrevNextUp :prev="prev" :next="next" :up="up" />
   </main>
 </template>
@@ -22,14 +16,14 @@ import { readingTime } from "~/utils/helpers";
 import VFigure from "~/components/images/VFigure";
 import PrevNextUp from "~/components/post_components/PrevNextUp";
 import TagChips from "~/components/post_components/TagChips";
-import AuthorBio from "~/components/post_components/AuthorBio";
+import PostAuthorBios from "~/components/post_components/PostAuthorBios";
 
 export default {
   components: {
     VFigure,
     PrevNextUp,
     TagChips,
-    AuthorBio,
+    PostAuthorBios,
   },
   methods: {
     readingTime,
