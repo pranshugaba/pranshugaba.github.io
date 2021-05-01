@@ -34,7 +34,7 @@
   }
 }
 
-@layer components {
+/* @layer components {
   .page-enter-active {
     transition: all 0.20s ease-in;
   }
@@ -49,4 +49,4 @@
     transform: translateY(-2px);
     opacity: 0;
   }
-}
+} */

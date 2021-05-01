@@ -10,6 +10,7 @@ featuredImage: pink.webp
 authors: ["pranshu"]
 
 tags: ["haiku", "colors"]
+category: poetry
 
 createdAt: 2019-07-17T16:40:33+05:30
 updatedAt: 2019-07-17T16:40:33+05:30

@@ -10,6 +10,7 @@ featuredImage: streaks.webp
 authors: ["pranshu"]
 
 tags: ["haiku", "lights"]
+category: poetry
 
 createdAt: 2019-07-12T22:00:00+05:30
 updatedAt: 2019-07-12T22:00:00+05:30

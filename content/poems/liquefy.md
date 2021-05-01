@@ -10,6 +10,7 @@ featuredImage: liquefy.webp
 authors: ["pranshu"]
 
 tags: ["summer", "ice-cream"]
+category: poetry
 
 createdAt: 2020-05-03T20:04:04+05:30
 updatedAt: 2020-05-03T20:04:04+05:30

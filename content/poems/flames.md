@@ -10,6 +10,7 @@ featuredImage: flames.webp
 authors: ["pranshu"]
 
 tags: ["haiku", "summer"]
+category: poetry
 
 createdAt: 2019-07-14T21:19:45+05:30
 updatedAt: 2019-07-14T21:19:45+05:30

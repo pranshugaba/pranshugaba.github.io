@@ -1,14 +1,6 @@
 <template>
   <main>
-    <PostTitle>{{ puzzle.title }}</PostTitle>
-    <p class="text-lg mt-0 mb-6 text-gray-600 dark:text-gray-400">
-      {{ puzzle.summary }}
-    </p>
-    <PostInfoChip
-      :authors="authors"
-      :updatedDate="puzzle.updatedAt"
-      :readingTime="readingTime(puzzle)"
-    />
+    <PostHeading :post="puzzle" :authors="authors"/>
 
     <NuxtContent :document="puzzle" />
 
@@ -21,7 +13,7 @@
         :author="author"
       />
     </div>
-    <PrevNextUp :prev="prev" :next="next" :up="up"/>
+    <PrevNextUp :prev="prev" :next="next" :up="up" />
   </main>
 </template>
 
@@ -37,7 +29,7 @@ export default {
     VFigure,
     PrevNextUp,
     TagChips,
-    AuthorBio
+    AuthorBio,
   },
   methods: {
     readingTime,

@@ -10,6 +10,7 @@ featuredImage: sofa.webp
 authors: ["pranshu"]
 
 tags: ["haiku", "rain"]
+category: poetry
 
 createdAt: 2019-10-20T14:04:32+05:30
 updatedAt: 2019-10-20T14:04:32+05:30

@@ -10,6 +10,7 @@ featuredImage: grey-water.webp
 authors: ["pranshu"]
 
 tags: ["colors", "haiku", "flowers"]
+category: poetry
 
 createdAt: 2019-07-10T18:27:42+05:30
 updatedAt: 2019-07-10T18:27:42+05:30

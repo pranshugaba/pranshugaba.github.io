@@ -10,6 +10,7 @@ featuredImage: purple.webp
 authors: ["pranshu"]
 
 tags: ["haiku", "fractals"]
+category: poetry
 
 createdAt: 2019-07-05T18:19:52+05:30
 updatedAt: 2019-07-05T18:19:52+05:30

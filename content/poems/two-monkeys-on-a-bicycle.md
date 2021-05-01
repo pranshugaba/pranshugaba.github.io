@@ -10,6 +10,7 @@ featuredImage: two-monkeys-on-a-bicycle.webp
 authors: ["pranshu"]
 
 tags: ["limerick", "monkey"]
+category: poetry
 
 createdAt: 2019-07-13T13:27:13+05:30
 updatedAt: 2019-07-13T13:27:13+05:30

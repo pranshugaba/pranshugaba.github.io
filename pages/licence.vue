@@ -15,13 +15,11 @@
         <ExtLink
           to="https://freeicons.io/free-space-icons/external-link-icon-icon"
           >External link </ExtLink
-        >, 
-        <ExtLink
-          to="https://freeicons.io/free-space-icons/sun-icon-icon"
+        >,
+        <ExtLink to="https://freeicons.io/free-space-icons/sun-icon-icon"
           >Sun </ExtLink
-        >, and 
-        <ExtLink
-          to="https://freeicons.io/free-space-icons/moon-icon-icon"
+        >, and
+        <ExtLink to="https://freeicons.io/free-space-icons/moon-icon-icon"
           >Moon</ExtLink
         >
         icons by
@@ -38,7 +36,11 @@
 </template>
 
 <script>
+import ExtLink from "~/components/navigation/ExtLink";
 export default {
+  components: {
+    ExtLink,
+  },
   head: {
     title: "Licence",
   },

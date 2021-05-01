@@ -10,6 +10,7 @@ featuredImage: beads.webp
 authors: ["pranshu"]
 
 tags: ["haiku", "rain"]
+category: poetry
 
 createdAt: 2019-07-26T18:44:50+05:30
 updatedAt: 2019-07-26T18:44:50+05:30

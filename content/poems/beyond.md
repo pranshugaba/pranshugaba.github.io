@@ -10,6 +10,7 @@ featuredImage: beyond.webp
 authors: ["pranshu"]
 
 tags: ["haiku", "colors"]
+category: poetry
 
 createdAt: 2019-07-07T12:42:24+05:30
 updatedAt: 2019-07-07T12:42:24+05:30

@@ -10,6 +10,7 @@ featuredImage: the-cat-named-toad.webp
 authors: ["pranshu"]
 
 tags: ["limerick", "cats"]
+category: poetry
 
 createdAt: 2019-07-06T22:00:00+05:30
 updatedAt: 2019-07-06T22:00:00+05:30

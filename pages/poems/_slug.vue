@@ -1,15 +1,6 @@
 <template>
   <main>
-    <PostTitle>{{ poem.title }}</PostTitle>
-    <p class="text-lg mt-0 mb-6 text-gray-700 dark:text-gray-300">
-      {{ poem.summary }}
-    </p>
-
-    <PostInfoChip
-      :authors="authors"
-      :updatedDate="poem.updatedAt"
-      :readingTime="'false'"
-    />
+    <PostHeading :post="poem" :authors="authors" />
 
     <VFigure
       :imgSrc="require(`~/assets/images/poems/${poem.featuredImage}`)"

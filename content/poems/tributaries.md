@@ -10,6 +10,7 @@ featuredImage: tributaries.webp
 authors: ["pranshu"]
 
 tags: ["haiku", "fractals"]
+category: poetry
 
 createdAt: 2019-07-28T21:46:56+05:30
 updatedAt: 2019-07-28T21:46:56+05:30

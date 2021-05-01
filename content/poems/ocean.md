@@ -10,6 +10,7 @@ featuredImage: ocean.webp
 authors: ["pranshu"]
 
 tags: ["haiku", "books"]
+category: poetry
 
 createdAt: 2020-10-27T13:00:00+05:30
 updatedAt: 2020-10-27T13:00:00+05:30

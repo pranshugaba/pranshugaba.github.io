@@ -1,0 +1,22 @@
+[
+  {
+    "slug": "puzzles",
+    "name": "Puzzle"
+  },
+  {
+    "slug": "poems",
+    "name": "Poetry"
+  },
+  {
+    "slug": "articles",
+    "name": "Poetry"
+  },
+  {
+    "slug": "comics",
+    "name": "Poetry"
+  },
+  {
+    "slug": "stories",
+    "name": "Story"
+  }
+]

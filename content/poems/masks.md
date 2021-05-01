@@ -10,6 +10,7 @@ featuredImage: masks.webp
 authors: ["pranshu"]
 
 tags: ["haiku", "pandemic"]
+category: poetry
 
 createdAt: 2020-11-25T17:15:13+05:30
 updatedAt: 2020-11-25T17:15:13+05:30

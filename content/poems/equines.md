@@ -10,6 +10,7 @@ featuredImage: equines.webp
 authors: ["pranshu"]
 
 tags: ["haiku", "donkey"]
+category: poetry
 
 createdAt: 2019-10-19T18:32:12+05:30
 updatedAt: 2019-10-19T18:32:12+05:30
