@@ -64,7 +64,7 @@ export default {
   },
   telemetry: true,
   colorMode: {
-    preference: "dark",
+    preference: "system",
     classSuffix: ""
   },
   content: {

@@ -1,6 +1,7 @@
 <template>
   <main>
-    <h1>Hello There</h1>
+    <PostTitle>Hello There!</PostTitle>
+    <PostSubtitle>How are you?</PostSubtitle>
     <p>I am Pranshu Gaba. Welcome to my (new) website.</p>
     <p>
       This website is still under construction. I am learning Vue.js and

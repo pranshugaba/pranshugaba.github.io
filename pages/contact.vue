@@ -1,6 +1,7 @@
 <template>
   <main>
-    <h1>Contact me</h1>
+    <PostTitle>Contact me</PostTitle>
+    <PostSubtitle>Get in touch</PostSubtitle>
     <ul>
       <li>
         Email:
