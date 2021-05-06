@@ -1,22 +1,8 @@
 <template>
   <main>
     <PostTitle>Posts</PostTitle>
-    <PostSubtitle>Poems, puzzles and more!</PostSubtitle>
-    <h2>Poems</h2>
-    <ul>
-      <li v-for="poem of poems" :key="poem.slug">
-        <PostPreviewThumbnail
-          :post="poem"
-          :show-category="false"
-          :authors="poem.authors"
-        />
-      </li>
-    </ul>
-    <div class="text-right">
-      <NuxtLink to="/poems"> See all poems &#10230;</NuxtLink>
-    </div>
-
-    <h2 class="mt-6 mb-2">Puzzles</h2>
+    <PostSubtitle>Puzzles, poems and more!</PostSubtitle>
+    <h2>Puzzles</h2>
     <ul>
       <li v-for="puzzle of puzzles" :key="puzzle.slug">
         <span class="text-gray-500 dark:text-gray-400 transition-colors mr-1">
@@ -34,9 +20,23 @@
         </NuxtLink>
       </li>
     </ul>
-    <div class="text-right">
+    <!-- <div class="text-right">
       <NuxtLink to="/puzzles"> See all puzzles &#10230;</NuxtLink>
+    </div> -->
+    <h2>Poems</h2>
+    <ul>
+      <li v-for="poem of poems" :key="poem.slug">
+        <PostPreviewThumbnail
+          :post="poem"
+          :show-category="false"
+          :authors="poem.authors"
+        />
+      </li>
+    </ul>
+    <div class="text-right">
+      <NuxtLink to="/poems"> See all poems &#10230;</NuxtLink>
     </div>
+
     <h2>Comics</h2>
     <ul>
       <li>Boo!</li>

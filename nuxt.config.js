@@ -17,7 +17,7 @@ export default {
       lang: "en"
     },
     bodyAttrs: {
-      class: "bg-gray-50 dark:bg-gray-900 transition-colors"
+      class: "bg-gray-100 dark:bg-gray-900 transition-colors"
     },
     base: {
       target: "_blank" // open external links in new tabs
@@ -62,6 +62,11 @@ export default {
       plugins: [["@babel/plugin-proposal-private-methods", { loose: true }]]
     }
   },
+
+  env: {
+    buildTime: process.env.NUXT_ENV_BUILD_TIME
+  },
+
   telemetry: true,
   colorMode: {
     preference: "system",

@@ -3,7 +3,7 @@
     :to="post.path"
     class="inline-block hover:no-underline transform transition hover:-translate-y-1 mb-6"
   >
-    <div class="flex flex-wrap items-center  group">
+    <div class="flex flex-wrap items-center group">
       <div class="w-1/3">
         <VImage
           class="rounded-lg shadow-lg"
@@ -28,9 +28,10 @@
         </p>
         <p class="text-sm text-gray-600 dark:text-gray-400 transition-colors">
           By
-          <span v-for="(author, index) of authors" :key="author">
+          <span v-for="(author, index) of post.authors" :key="author">
             <span class="text-gray-700 dark:text-gray-300 transition-colors">
-              {{ author }}<span v-if="index != authors.length - 1">, </span>
+              {{ author
+              }}<span v-if="index != post.authors.length - 1">, </span>
             </span>
           </span>
           &#183;
@@ -51,9 +52,6 @@ export default {
   },
   props: {
     post: Object,
-    authors: {
-      type: Array,
-    },
     showCategory: {
       type: Boolean,
       default: true,

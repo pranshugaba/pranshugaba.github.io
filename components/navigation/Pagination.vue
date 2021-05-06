@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="grid grid-cols-2">
     <NuxtLink
       :to="{
         name: 'poems-page-page',
@@ -9,6 +9,7 @@
       prev page
     </NuxtLink>
     <NuxtLink
+      class="text-right"
       :to="{
         name: 'poems-page-page',
         params: { page: nextPage },

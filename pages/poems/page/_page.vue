@@ -2,19 +2,16 @@
   <div>
     <PostTitle>Poems</PostTitle>
     <PostSubtitle>Haiku, tankas, and limericks</PostSubtitle>
-    <Pagination :totalPages="lastPage" :postsPerPage="postsPerPage" />
-    <p>Showing {{ postsPerPage }} posts on a page</p>
-    <p>Page {{ currentPage }} of {{ lastPage }}</p>
-    <p>Posts {{ startPost }}-{{ endPost }} of {{ totalPosts }}</p>
+    <p class="text-center">
+      Posts {{ startPost }}-{{ endPost }} of {{ totalPosts }}
+    </p>
     <ul>
       <li v-for="poem of poems" :key="poem.slug">
-        <PostPreviewThumbnail
-          :post="poem"
-          :show-category="false"
-          :authors="poem.authors"
-        />
+        <PostPreviewThumbnail :post="poem" :show-category="false" />
       </li>
     </ul>
+    <p class="text-center">Page {{ currentPage }} of {{ lastPage }}</p>
+    <Pagination :totalPages="lastPage" :postsPerPage="postsPerPage" />
   </div>
 </template>
 
@@ -65,6 +62,9 @@ export default {
       startPost,
       endPost,
     };
+  },
+  head: {
+    title: "Poems",
   },
 };
 </script>
