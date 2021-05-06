@@ -6,7 +6,7 @@
     <div class="flex flex-wrap items-center  group">
       <div class="w-1/3">
         <VImage
-          class="rounded-lg h-full shadow-lg"
+          class="rounded-lg shadow-lg"
           :src="require(`~/assets/images/poems/${post.featuredImage}`)"
         />
       </div>
@@ -18,7 +18,7 @@
           {{ post.category }}
         </p>
         <h2
-          class="mt-0 mb-0 text-2xl text-black dark:group-hover:text-blue-400 group-hover:text-blue-600"
+          class="mt-0 mb-0 text-xl text-black dark:group-hover:text-blue-400 group-hover:text-blue-600"
         >
           {{ post.title }}
         </h2>

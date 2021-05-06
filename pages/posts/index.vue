@@ -19,9 +19,18 @@
     <h2 class="mt-6 mb-2">Puzzles</h2>
     <ul>
       <li v-for="puzzle of puzzles" :key="puzzle.slug">
-        {{ formatDate(puzzle.createdAt) }} -
+        <span class="text-gray-500 dark:text-gray-400 transition-colors mr-1">
+          {{
+            formatDate(puzzle.createdAt, {
+              day: "2-digit",
+              month: "short",
+              year: "numeric",
+            })
+          }}
+          &raquo;
+        </span>
         <NuxtLink :to="{ name: 'puzzles-slug', params: { slug: puzzle.slug } }">
-          {{ puzzle.title }} - {{ puzzle.subtitle }}
+          {{ puzzle.title }}
         </NuxtLink>
       </li>
     </ul>
@@ -40,6 +49,8 @@
 </template>
 
 <script>
+import { formatDate } from "~/utils/date";
+
 export default {
   async asyncData({ $content }) {
     const poems = await $content("poems")
@@ -70,10 +81,7 @@ export default {
     };
   },
   methods: {
-    formatDate(date) {
-      const options = { year: "numeric", month: "short", day: "numeric" };
-      return new Date(date).toLocaleDateString("en", options);
-    },
+    formatDate,
   },
   head: {
     title: "Posts",
