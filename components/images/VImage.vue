@@ -1,5 +1,5 @@
 <template>
-  <img :src="src" class="h-auto" />
+  <img :src="src" class="h-auto object-cover" />
 </template>
 
 <script>

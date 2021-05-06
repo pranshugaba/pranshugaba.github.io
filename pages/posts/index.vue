@@ -5,10 +5,16 @@
     <h2>Poems</h2>
     <ul>
       <li v-for="poem of poems" :key="poem.slug">
-        <PostPreviewCard :post="poem" />
+        <PostPreviewThumbnail
+          :post="poem"
+          :show-category="false"
+          :authors="poem.authors"
+        />
       </li>
     </ul>
-    <NuxtLink to="/poems"> See all poems </NuxtLink>
+    <div class="text-right">
+      <NuxtLink to="/poems"> See all poems &#10230;</NuxtLink>
+    </div>
 
     <h2 class="mt-6 mb-2">Puzzles</h2>
     <ul>
@@ -19,7 +25,9 @@
         </NuxtLink>
       </li>
     </ul>
-    <NuxtLink to="/puzzles"> See all puzzles </NuxtLink>
+    <div class="text-right">
+      <NuxtLink to="/puzzles"> See all puzzles &#10230;</NuxtLink>
+    </div>
     <h2>Comics</h2>
     <ul>
       <li>Boo!</li>
@@ -33,15 +41,18 @@
 
 <script>
 export default {
-  async asyncData({ $content, params }) {
+  async asyncData({ $content }) {
     const poems = await $content("poems")
       .only([
         "title",
         "description",
         "slug",
         "createdAt",
+        "updatedAt",
         "path",
+        "category",
         "featuredImage",
+        "authors",
       ])
       .sortBy("createdAt", "desc")
       .limit(3)

@@ -3,12 +3,14 @@
     :to="post.path"
     class="inline-block hover:no-underline transform transition hover:-translate-y-1 mb-6"
   >
-    <div class="overflow-hidden rounded-lg shadow-lg dark:bg-gray-800 transition-colors group">
-      <VImage
-        class="w-full"
-        :src="require(`~/assets/images/poems/${post.featuredImage}`)"
-      />
-      <div class="px-4 pt-4">
+    <div class="flex flex-wrap items-center  group">
+      <div class="w-1/3">
+        <VImage
+          class="rounded-lg h-full shadow-lg"
+          :src="require(`~/assets/images/poems/${post.featuredImage}`)"
+        />
+      </div>
+      <div class="w-2/3 pl-4 pt-4">
         <p
           v-if="showCategory"
           class="uppercase text-xs tracking-wider mb-1 text-blue-700 dark:text-blue-300 transition-colors"

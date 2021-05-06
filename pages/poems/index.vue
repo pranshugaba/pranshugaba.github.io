@@ -1,12 +1,14 @@
 <template>
   <main>
-    <h1>Poems</h1>
+    <PostTitle>Poems</PostTitle>
+    <PostSubtitle>haiku, tankas, and limericks</PostSubtitle>
     <ul>
       <li v-for="poem of poems" :key="poem.slug">
-        {{ formatDate(poem.createdAt) }} -
-        <NuxtLink :to="{ name: 'poems-slug', params: { slug: poem.slug } }">
-          {{ poem.title }} - {{ poem.subtitle }}
-        </NuxtLink>
+        <PostPreviewThumbnail
+          :post="poem"
+          :show-category="false"
+          :authors="poem.authors"
+        />
       </li>
     </ul>
   </main>
@@ -16,7 +18,16 @@
 export default {
   async asyncData({ $content, params }) {
     const poems = await $content("poems")
-      .only(["title", "subtitle", "description", "slug", "createdAt"])
+      .only([
+        "title",
+        "description",
+        "slug",
+        "updatedAt",
+        "path",
+        "category",
+        "featuredImage",
+        "authors",
+      ])
       .sortBy("createdAt", "desc")
       .fetch();
 
