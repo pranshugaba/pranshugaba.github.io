@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "NUXT_ENV_BUILD_TIME=`date +%Y-%m-%dT%H:%M:%S` nuxt",
+    "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "NUXT_BUILD_DATE_TIME=`date +%Y-%m-%dT%H:%M:%S` nuxt generate --fail-on-error"

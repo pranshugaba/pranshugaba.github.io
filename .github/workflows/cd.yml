@@ -5,6 +5,8 @@ on: [push, pull_request]
 jobs:
   cd:
     runs-on: ${{ matrix.os }}
+    env:
+      NUXT_ENV_BUILD_TIME: 2021-05-04T21:00:00
 
     strategy:
       matrix:
