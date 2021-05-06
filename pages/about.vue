@@ -66,6 +66,7 @@ export default {
         day: "numeric",
         hour: "numeric",
         minute: "numeric",
+        timeZoneName: "short",
       };
       return formatDate(process.env.NUXT_ENV_BUILD_TIME, options);
     },
