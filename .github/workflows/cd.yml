@@ -6,7 +6,7 @@ jobs:
   cd:
     runs-on: ${{ matrix.os }}
     env:
-      NUXT_ENV_BUILD_TIME: 2021-05-04T21:00:00
+      BUILD_TIME: 2021-05-04T21:00:00
 
     strategy:
       matrix:
@@ -14,6 +14,10 @@ jobs:
         node: [14]
 
     steps:
+      - name: Get current date and time
+        id: datetime
+        run: echo "::set-output name=date::$(date +'%Y-%m-%dT%H:%M:%S')"
+
       - name: Checkout
         uses: actions/checkout@main
 
@@ -26,7 +30,7 @@ jobs:
         run: yarn
 
       - name: Generate
-        run: "NUXT_ENV_BUILD_TIME=${{ env.NUXT_ENV_BUILD_TIME }} yarn run generate"
+        run: "NUXT_ENV_BUILD_TIME=${{ steps.datetime.outputs.date }} yarn run generate"
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
