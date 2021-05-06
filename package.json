@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "NUXT_BUILD_DATE_TIME=`date +%Y-%m-%dT%H:%M:%S` nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate --fail-on-error"
+    "generate": "NUXT_BUILD_DATE_TIME=`date +%Y-%m-%dT%H:%M:%S` nuxt generate --fail-on-error"
   },
   "dependencies": {
     "@nuxt/content": "^1.14.0",

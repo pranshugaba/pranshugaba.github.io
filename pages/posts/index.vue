@@ -30,7 +30,7 @@
           &raquo;
         </span>
         <NuxtLink :to="{ name: 'puzzles-slug', params: { slug: puzzle.slug } }">
-          {{ puzzle.title }}
+          #{{ puzzle.slug }} - {{ puzzle.title }}
         </NuxtLink>
       </li>
     </ul>

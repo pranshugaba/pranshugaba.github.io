@@ -28,13 +28,21 @@
       <li>Arch Linux</li>
     </ul>
 
-    <h2>About this website</h2>
-    <p>Built using Nuxt.js</p>
-    <ul>
-      <li>26 poems</li>
-      <li>2 puzzles</li>
+    <h2>About this site</h2>
+    <p>
+      This site is built using Nuxt.js and Vue.js. You can find the source code
+      on
+      <NavigationExtLink to="https://github.com/pranshugaba/nuxt-website"
+        >GitHub</NavigationExtLink
+      >.
+    </p>
+    <p>There are currently</p>
+    <ul class="list-disc list-inside">
+      <li>{{ totalPoems }} poems</li>
+      <li>{{ totalPuzzles }} puzzles</li>
     </ul>
-    <p>{{ getCurrentDate() }}</p>
+    <p>on this website.</p>
+    <p>Last updated at {{ getBuildDate() }}</p>
   </main>
 </template>
 
@@ -46,18 +54,25 @@ export default {
   },
   methods: {
     formatDate,
-    getCurrentDate: function () {
-      const currentdate = new Date();
+    getBuildDate: function () {
       const options = {
         year: "numeric",
         month: "long",
         day: "numeric",
         hour: "numeric",
         minute: "numeric",
-        second: "numeric",
       };
-      return currentdate.toLocaleDateString("en", options);
+      return formatDate(process.env.NUXT_BUILD_DATE_TIME, options);
     },
+  },
+  async asyncData({ $content }) {
+    const poems = await $content("poems").fetch();
+    const totalPoems = poems.length;
+
+    const puzzles = await $content("puzzles").fetch();
+    const totalPuzzles = puzzles.length;
+
+    return { totalPoems, totalPuzzles };
   },
 };
 </script>
