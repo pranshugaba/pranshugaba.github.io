@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{237:function(t,e,c){"use strict";c.r(e);var n={name:"vImage",props:["src"]},r=c(13),component=Object(r.a)(n,(function(){var t=this,e=t.$createElement;return(t._self._c||e)("img",{staticClass:"h-auto object-cover",attrs:{src:t.src}})}),[],!1,null,null,null);e.default=component.exports}}]);
