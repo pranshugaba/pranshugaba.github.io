@@ -72,6 +72,8 @@
     </ul>
     <p>on this website.</p>
     <p>Last Updated on {{ getBuildDate() }}</p>
+    <h2>Tags</h2>
+    <p>Common tags used:</p>
   </main>
 </template>
 

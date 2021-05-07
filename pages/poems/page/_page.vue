@@ -14,8 +14,8 @@
         />
       </li>
     </ul>
-    <p class="text-center">Page {{ currentPage }} of {{ lastPage }}</p>
     <Pagination :totalPages="lastPage" :postsPerPage="postsPerPage" />
+    <p class="text-center">Page {{ currentPage }} of {{ lastPage }}</p>
   </div>
 </template>
 

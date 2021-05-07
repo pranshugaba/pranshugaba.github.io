@@ -11,7 +11,7 @@
     <ul>
       <li v-for="puzzle of puzzles" :key="puzzle.slug">
         <span
-          class="font-mono text-gray-500 dark:text-gray-400 transition-colors mr-1"
+          class="font-mono text-sm text-gray-500 dark:text-gray-400 transition-colors mr-1"
         >
           {{
             formatDate(puzzle.createdAt, {

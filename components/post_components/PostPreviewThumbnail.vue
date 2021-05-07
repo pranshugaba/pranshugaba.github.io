@@ -26,7 +26,7 @@
         <p class="text-gray-600 dark:text-gray-400 transition-colors my-1">
           {{ post.description }}
         </p>
-        <p class="text-sm text-gray-600 dark:text-gray-400 transition-colors">
+        <p class="text-sm text-gray-600 dark:text-gray-400 transition-colors mb-1">
           By
           <span v-for="(author, index) of authors" :key="author.slug">
             <span class="text-gray-700 dark:text-gray-300 transition-colors">
