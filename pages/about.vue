@@ -50,7 +50,7 @@
       <NuxtLink to="/uses">See what I use &#10230;</NuxtLink>
     </div>
 
-    <h2>About this site</h2>
+    <h1 class="mt-16">About this site</h1>
     <p>
       This site is built using
       <NavigationExtLink to="https://nuxtjs.org/">Nuxt.js</NavigationExtLink>
@@ -60,6 +60,7 @@
         >GitHub</NavigationExtLink
       >.
     </p>
+    <h2>Statistics</h2>
     <p>There are currently</p>
     <ul class="list-disc list-inside">
       <li>
@@ -76,9 +77,7 @@
 
 <script>
 import { formatDate } from "~/utils/date";
-import _author from "./authors/_author.vue";
 export default {
-  components: { _author },
   head: {
     title: "About Me",
   },

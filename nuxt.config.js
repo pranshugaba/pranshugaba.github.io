@@ -82,6 +82,10 @@ export default {
       rehypePlugins: ["rehype-katex"]
     }
   },
+  loading: {
+    color: "#0077ff",
+    height: "5px"
+  },
   pwa: {
     meta: {
       name: "PG",

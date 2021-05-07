@@ -1,11 +1,23 @@
 <template>
   <main>
-    <h1>Puzzles</h1>
+    <PostTitle>Puzzles</PostTitle>
+    <PostSubtitle>Thought-provoking, mind-bending puzzles</PostSubtitle>
     <ul>
       <li v-for="puzzle of puzzles" :key="puzzle.slug">
-        #{{ puzzle.slug }} &nbsp;
+        <span
+          class="font-mono text-gray-500 dark:text-gray-400 transition-colors mr-1"
+        >
+          {{
+            formatDate(puzzle.createdAt, {
+              day: "2-digit",
+              month: "short",
+              year: "numeric",
+            })
+          }}
+          &raquo;
+        </span>
         <NuxtLink :to="{ name: 'puzzles-slug', params: { slug: puzzle.slug } }">
-          {{ puzzle.title }}
+          #{{ puzzle.slug }} - {{ puzzle.title }}
         </NuxtLink>
       </li>
     </ul>
@@ -13,16 +25,20 @@
 </template>
 
 <script>
+import { formatDate } from "~/utils/date";
 export default {
   async asyncData({ $content, params }) {
     const puzzles = await $content("puzzles")
-      .only(["title", "description", "img", "slug", "author"])
+      .only(["title", "description", "slug", "author", "createdAt"])
       .sortBy("createdAt", "desc")
       .fetch();
 
     return {
       puzzles,
     };
+  },
+  methods: {
+    formatDate,
   },
   head: {
     title: "Puzzles",

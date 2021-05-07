@@ -23,7 +23,7 @@
           {{ post.title }}
         </h2>
         <!-- Truncate description with ellipsis -->
-        <p class="text-gray-600 dark:text-gray-400 transition-colors">
+        <p class="text-gray-600 dark:text-gray-400 transition-colors my-1">
           {{ post.description }}
         </p>
         <p class="text-sm text-gray-600 dark:text-gray-400 transition-colors">

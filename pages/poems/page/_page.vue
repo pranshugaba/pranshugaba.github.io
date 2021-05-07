@@ -2,9 +2,9 @@
   <div>
     <PostTitle>Poems</PostTitle>
     <PostSubtitle>Haiku, tankas, and limericks</PostSubtitle>
-    <p class="text-center">
+    <!-- <p class="text-center">
       Posts {{ startPost }}-{{ endPost }} of {{ totalPosts }}
-    </p>
+    </p> -->
     <ul>
       <li v-for="poem of poems" :key="poem.slug">
         <PostPreviewThumbnail
