@@ -7,7 +7,11 @@
     </p>
     <ul>
       <li v-for="poem of poems" :key="poem.slug">
-        <PostPreviewThumbnail :post="poem" :show-category="false" />
+        <PostPreviewThumbnail
+          :post="poem"
+          :show-category="false"
+          :authors="filterAuthors(poem.authors)"
+        />
       </li>
     </ul>
     <p class="text-center">Page {{ currentPage }} of {{ lastPage }}</p>
@@ -52,6 +56,7 @@ export default {
     if (currentPage === 0 || !poems.length) {
       return error({ statusCode: 404, message: "No articles found!" });
     }
+    const allAuthors = await $content("authors").fetch();
 
     return {
       poems,
@@ -61,10 +66,19 @@ export default {
       lastPage,
       startPost,
       endPost,
+      allAuthors,
     };
   },
   head: {
     title: "Poems",
+  },
+  methods: {
+    filterAuthors: function (authorSlugs) {
+      const postAuthors = this.allAuthors.filter((post) =>
+        authorSlugs.includes(post.slug)
+      );
+      return postAuthors;
+    },
   },
 };
 </script>

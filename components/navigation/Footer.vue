@@ -1,0 +1,8 @@
+<template>
+  <footer
+    class="mt-6 pt-3 pb-1 border-t border-gray-600 dark:border-gray-400 transition-colors flex justify-between"
+  >
+    <NuxtLink to="/licence"> © 2021 Pranshu Gaba </NuxtLink>
+    <UtilsColorModeToggle />
+  </footer>
+</template>

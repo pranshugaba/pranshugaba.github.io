@@ -29,7 +29,7 @@
         <PostPreviewThumbnail
           :post="poem"
           :show-category="false"
-          :authors="poem.authors"
+          :authors="filterAuthors(poem.authors)"
         />
       </li>
     </ul>
@@ -69,6 +69,8 @@ export default {
       .limit(3)
       .fetch();
 
+    const allAuthors = await $content("authors").fetch();
+
     const puzzles = await $content("puzzles")
       .only(["title", "subtitle", "slug", "createdAt"])
       .sortBy("createdAt", "desc")
@@ -78,10 +80,17 @@ export default {
     return {
       poems,
       puzzles,
+      allAuthors,
     };
   },
   methods: {
     formatDate,
+    filterAuthors: function (authorSlugs) {
+      const postAuthors = this.allAuthors.filter((post) =>
+        authorSlugs.includes(post.slug)
+      );
+      return postAuthors;
+    },
   },
   head: {
     title: "Posts",
