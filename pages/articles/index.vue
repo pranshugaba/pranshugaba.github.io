@@ -4,7 +4,7 @@
     <PostSubtitle>About Linux and Webdev</PostSubtitle>
     <ul>
       <li v-for="article of articles" :key="article.slug">
-        <PostPreviewList :post="article" />
+        Hello
       </li>
     </ul>
   </main>
