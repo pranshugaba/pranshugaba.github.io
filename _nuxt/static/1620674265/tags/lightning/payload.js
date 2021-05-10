@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/tags/lightning", (function(a){return {data:[{params:{tag:a},posts:[{slug:a,title:a,createdAt:"2019-08-09T09:10:58.000Z",path:"\u002Fpoems\u002Flightning"}],tag:a}],fetch:{},mutations:void 0}}("lightning")));

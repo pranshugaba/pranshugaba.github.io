@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/tags/trains", (function(a,b){return {data:[{params:{tag:a},posts:[{slug:b,title:b,path:"\u002Fpoems\u002Fcrossing"}],tag:a}],fetch:{},mutations:void 0}}("trains","crossing")));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/tags/colors", (function(a,b,c){return {data:[{params:{tag:a},posts:[{slug:b,title:b,path:"\u002Fpoems\u002Fbeyond"},{slug:"grey-water",title:"grey water",path:"\u002Fpoems\u002Fgrey-water"},{slug:c,title:c,path:"\u002Fpoems\u002Fpink"}],tag:a}],fetch:{},mutations:void 0}}("colors","beyond","pink")));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/tags/ice-cream", (function(a,b){return {data:[{params:{tag:a},posts:[{slug:b,title:b,createdAt:"2020-05-03T14:34:04.000Z",path:"\u002Fpoems\u002Fliquefy"},{slug:"mcswirl",title:"McSwirl",createdAt:"2021-01-13T07:30:00.000Z",path:"\u002Fpoems\u002Fmcswirl"}],tag:a}],fetch:{},mutations:void 0}}("ice-cream","liquefy")));

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/articles", {data:[{articles:[{slug:"nuxt-website",title:"How I made this site using Nuxt.js",createdAt:"2021-05-11T14:00:00.000Z",path:"\u002Farticles\u002Fnuxt-website"}]}],fetch:{},mutations:void 0});

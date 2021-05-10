@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/about", {data:[{totalPoems:26,totalPuzzles:2}],fetch:{},mutations:void 0});
