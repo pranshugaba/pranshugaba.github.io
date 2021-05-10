@@ -4,7 +4,7 @@
     <PostSubtitle>About Linux and Webdev</PostSubtitle>
     <ul>
       <li v-for="article of articles" :key="article.slug">
-        Hello
+        <PostPreviewList :post="article" />
       </li>
     </ul>
   </main>
@@ -15,7 +15,7 @@ import { formatDate } from "~/utils/date";
 export default {
   async asyncData({ $content }) {
     const articles = await $content("articles")
-      .only(["title", "slug", "createdAt"])
+      .only(["title", "slug", "createdAt", "path"])
       .sortBy("createdAt", "desc")
       .fetch();
 

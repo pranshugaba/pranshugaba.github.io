@@ -17,7 +17,7 @@ import { formatDate } from "~/utils/date";
 export default {
   async asyncData({ $content, params }) {
     const puzzles = await $content("puzzles")
-      .only(["title", "description", "slug", "author", "createdAt"])
+      .only(["title", "slug", "createdAt", "path"])
       .sortBy("createdAt", "desc")
       .fetch();
 

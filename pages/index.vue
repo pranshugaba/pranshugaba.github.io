@@ -54,19 +54,19 @@ export default {
     const allAuthors = await $content("authors").fetch();
 
     const poems = await $content("poems")
-      .only(["title", "slug", "createdAt"])
+      .only(["title", "slug", "createdAt", "path"])
       .sortBy("createdAt", "desc")
       .limit(5)
       .fetch();
 
     const puzzles = await $content("puzzles")
-      .only(["title", "slug", "createdAt"])
+      .only(["title", "slug", "createdAt", "path"])
       .sortBy("createdAt", "desc")
       .limit(5)
       .fetch();
 
     const articles = await $content("articles")
-      .only(["title", "slug", "createdAt"])
+      .only(["title", "slug", "createdAt", "path"])
       .sortBy("createdAt", "desc")
       .limit(5)
       .fetch();
