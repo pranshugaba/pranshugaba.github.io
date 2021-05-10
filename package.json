@@ -33,7 +33,7 @@
     "fibers": "^5.0.0",
     "postcss": "^8.2.13",
     "sass": "^1.32.11",
-    "sass-loader": "10",
+    "sass-loader": "11",
     "stylelint-config-recommended": "^5.0.0"
   }
 }
