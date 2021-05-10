@@ -1,8 +1,13 @@
 <template>
-  <header class="mb-16 pt-2 pb-2">
-    <div class="flex items-center justify-between pb-2">
-      <NuxtLink to="/" class="font-bold text-lg text-gray-900 dark:text-gray-100 transition-colors"> Pranshu Gaba </NuxtLink>
-      <ul class="flex space-x-6">
+  <header class="mb-12">
+    <div class="flex flex-wrap items-center justify-between py-3">
+      <NuxtLink
+        to="/"
+        class="font-bold text-lg text-gray-900 dark:text-gray-100 transition-colors"
+      >
+        Pranshu Gaba
+      </NuxtLink>
+      <ul class="flex flex-wrap space-x-6">
         <li>
           <NuxtLink
             to="/about"
@@ -21,11 +26,18 @@
     </div>
     <nav>
       <ul
-        class="flex space-x-6 items-center justify-center border-t border-b border-blue-700 dark:border-blue-300 transition-colors"
+        class="flex flex-wrap space-x-8 items-center justify-center border-t border-b border-blue-700 dark:border-blue-300 border-opacity-50 dark:border-opacity-50 transition-colors"
       >
         <li>
           <NuxtLink
-            to="/poems"
+            to="/articles"
+            class="text-gray-900 dark:text-gray-100 transition-colors"
+            >Articles</NuxtLink
+          >
+        </li>
+        <li>
+          <NuxtLink
+            to="/poems/page/1"
             class="text-gray-900 dark:text-gray-100 transition-colors"
             >Poems</NuxtLink
           >

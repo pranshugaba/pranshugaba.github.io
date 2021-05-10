@@ -6,9 +6,7 @@
       <p>Posts tagged with {{ tag }}</p>
       <ul>
         <li v-for="post of posts" :key="post.slug">
-          <NuxtLink :to="post.path">
-            {{ post.title }}
-          </NuxtLink>
+          <PostPreviewList :post="post" />
         </li>
       </ul>
     </div>
@@ -30,7 +28,7 @@ export default {
       .where({
         tags: { $contains: tag },
       })
-      .only(["title", "slug", "path"])
+      .only(["title", "slug", "path", "createdAt"])
       .sortBy("createdAt", "asc")
       .fetch();
 

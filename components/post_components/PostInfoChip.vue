@@ -18,9 +18,9 @@
         </span>
       </span>
       <div class="text-gray-600 dark:text-gray-400 text-sm transition-colors">
-        {{ formatDate(updatedDate) }}
-        <span v-if="readingTime !== 'false'">
-          &#183; {{ readingTime }} min read
+        {{ formatDate(post.updatedAt) }}
+        <span v-if="post.showReadingTime">
+          &#183; {{ readingTime(post) }} min read
         </span>
       </div>
     </div>
@@ -29,22 +29,21 @@
 
 <script>
 import { formatDate } from "~/utils/date";
+import { readingTime } from "~/utils/helpers";
+
 export default {
   props: {
     authors: {
       type: Array,
       required: true,
     },
-    updatedDate: {
-      type: String,
-    },
-    readingTime: {
-      type: String,
-      default: "123",
+    post: {
+      type: Object,
     },
   },
   methods: {
     formatDate,
+    readingTime,
   },
 };
 </script>

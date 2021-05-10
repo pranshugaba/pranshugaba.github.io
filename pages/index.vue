@@ -10,26 +10,19 @@
     <h3>Puzzles</h3>
     <ul>
       <li v-for="puzzle of puzzles" :key="puzzle.slug">
-        <span
-          class="font-mono text-sm text-gray-500 dark:text-gray-400 transition-colors mr-1"
-        >
-          {{
-            formatDate(puzzle.createdAt, {
-              day: "2-digit",
-              month: "short",
-              year: "numeric",
-            })
-          }}
-          &raquo;
-        </span>
-        <NuxtLink :to="{ name: 'puzzles-slug', params: { slug: puzzle.slug } }">
-          #{{ puzzle.slug }} - {{ puzzle.title }}
-        </NuxtLink>
+        <PostPreviewList :post="puzzle"
+          >#{{ puzzle.slug }} - {{ puzzle.title }}
+        </PostPreviewList>
       </li>
     </ul>
-    <!-- <div class="text-right">
-      <NuxtLink to="/puzzles"> See all puzzles &#10230;</NuxtLink>
-    </div> -->
+
+    <h3>Articles</h3>
+    <ul>
+      <li v-for="article of articles" :key="article.slug">
+        <PostPreviewList :post="article" />
+      </li>
+    </ul>
+
     <h3>Poems</h3>
     <ul>
       <li v-for="poem of poems" :key="poem.slug">
@@ -40,6 +33,7 @@
         />
       </li>
     </ul>
+
     <div class="text-right">
       <NuxtLink to="/poems"> See all poems &#10230;</NuxtLink>
     </div>
@@ -79,12 +73,19 @@ export default {
     const allAuthors = await $content("authors").fetch();
 
     const puzzles = await $content("puzzles")
-      .only(["title", "subtitle", "slug", "createdAt"])
+      .only(["title", "slug", "createdAt"])
+      .sortBy("createdAt", "desc")
+      .limit(5)
+      .fetch();
+
+    const articles = await $content("articles")
+      .only(["title", "slug", "createdAt"])
       .sortBy("createdAt", "desc")
       .limit(5)
       .fetch();
 
     return {
+      articles,
       poems,
       puzzles,
       allAuthors,

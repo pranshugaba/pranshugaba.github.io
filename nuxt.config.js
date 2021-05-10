@@ -67,6 +67,10 @@ export default {
     buildTime: process.env.NUXT_ENV_BUILD_TIME
   },
 
+  generate: {
+    fallback: true
+  },
+
   telemetry: true,
   colorMode: {
     preference: "system",
@@ -84,7 +88,7 @@ export default {
   },
   loading: {
     color: "#0077ff",
-    height: "5px"
+    height: "3px"
   },
   pwa: {
     meta: {

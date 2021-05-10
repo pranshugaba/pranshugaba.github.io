@@ -9,10 +9,7 @@
     <p class="description">{{ author.bio }}</p>
     <ul>
       <li v-for="post of posts" :key="post.slug">
-        {{ formatDate(post.createdAt) }} -
-        <NuxtLink :to="post.path">
-          {{ post.title }}
-        </NuxtLink>
+        <PostPreviewList :post="post" />
       </li>
     </ul>
   </main>

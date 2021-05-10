@@ -6,7 +6,7 @@
     <div class="flex flex-wrap items-center group">
       <div class="w-1/3">
         <VImage
-          class="rounded-lg shadow-lg"
+          class="rounded-md shadow-lg"
           :src="require(`~/assets/images/poems/${post.featuredImage}`)"
         />
       </div>
@@ -26,15 +26,15 @@
         <p class="text-gray-600 dark:text-gray-400 transition-colors my-1">
           {{ post.description }}
         </p>
-        <p class="text-sm text-gray-600 dark:text-gray-400 transition-colors mb-1">
-          By
+        <p class="text-sm text-gray-600 dark:text-gray-400 transition-colors mt-4 mb-1">
+          <!-- By
           <span v-for="(author, index) of authors" :key="author.slug">
             <span class="text-gray-700 dark:text-gray-300 transition-colors">
               <NuxtLink :to="author.path"> {{ author.name }}</NuxtLink
               ><span v-if="index != post.authors.length - 1">, </span>
             </span>
           </span>
-          &#183;
+          &#183; -->
           {{ formatDate(post.updatedAt) }}
         </p>
       </div>

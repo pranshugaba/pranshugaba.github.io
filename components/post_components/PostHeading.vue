@@ -4,11 +4,7 @@
     <PostTitle>{{ post.title }}</PostTitle>
     <PostSubtitle>{{ post.subtitle }}</PostSubtitle>
 
-    <PostInfoChip
-      :authors="authors"
-      :updatedDate="post.updatedAt"
-      :readingTime="readingTime(post)"
-    />
+    <PostInfoChip :authors="authors" :post="post" />
   </div>
 </template>
 

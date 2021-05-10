@@ -4,21 +4,9 @@
     <PostSubtitle>Thought-provoking, mind-bending puzzles</PostSubtitle>
     <ul>
       <li v-for="puzzle of puzzles" :key="puzzle.slug">
-        <span
-          class="font-mono text-sm text-gray-500 dark:text-gray-400 transition-colors mr-1"
-        >
-          {{
-            formatDate(puzzle.createdAt, {
-              day: "2-digit",
-              month: "short",
-              year: "numeric",
-            })
-          }}
-          &raquo;
-        </span>
-        <NuxtLink :to="{ name: 'puzzles-slug', params: { slug: puzzle.slug } }">
-          #{{ puzzle.slug }} - {{ puzzle.title }}
-        </NuxtLink>
+        <PostPreviewList :post="puzzle"
+          >#{{ puzzle.slug }} - {{ puzzle.title }}
+        </PostPreviewList>
       </li>
     </ul>
   </main>
