@@ -5,7 +5,10 @@
       v-for="tag of tags"
       :key="tag"
     >
-      <NuxtLink :to="{ name: 'tags-tag', params: { tag: tag } }">
+      <NuxtLink
+        class="text-gray-800 dark:text-gray-200 transition-colors"
+        :to="{ name: 'tags-tag', params: { tag: tag } }"
+      >
         {{ kebabToTitle(tag) }}
       </NuxtLink>
     </li>

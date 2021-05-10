@@ -36,3 +36,14 @@ export function readingTime(content) {
   minutes = Math.ceil(words / wordsPerMinute);
   return minutes;
 }
+
+/**
+ *
+ * @returns a subset of allAuthors
+ */
+export function filterAuthors(allAuthors, authorSlugs) {
+  const postAuthors = allAuthors.filter(post =>
+    authorSlugs.includes(post.slug)
+  );
+  return postAuthors;
+}

@@ -2,7 +2,7 @@
   <div class="mb-12">
     <hr class="border-blue-600 dark:border-blue-400 transition-colors"/>
     <div
-      class="mt-6 mb-3 text-gray-700 dark:text-gray-300 transition-colors uppercase tracking-wider"
+      class="mt-4 mb-4 text-gray-700 dark:text-gray-300 transition-colors uppercase tracking-wider"
     >
       Written by
     </div>

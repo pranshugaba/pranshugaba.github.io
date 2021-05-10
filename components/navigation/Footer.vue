@@ -6,7 +6,7 @@
       to="/licence"
       class="text-gray-900 dark:text-gray-100 transition-colors"
     >
-      🄯 2021 Pranshu Gaba
+      © 2021 Pranshu Gaba
     </NuxtLink>
     <UtilsColorModeToggle />
   </footer>

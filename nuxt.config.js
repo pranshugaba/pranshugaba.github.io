@@ -56,12 +56,7 @@ export default {
   modules: ["@nuxt/content", "@nuxtjs/sitemap"],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-    corejs: 3,
-    babel: {
-      plugins: [["@babel/plugin-proposal-private-methods", { loose: true }]]
-    }
-  },
+  build: [],
 
   env: {
     buildTime: process.env.NUXT_ENV_BUILD_TIME
@@ -78,6 +73,9 @@ export default {
   },
   content: {
     markdown: {
+      prism: {
+        theme: "prism-themes/themes/prism-gruvbox-dark.css"
+      },
       remarkPlugins: [
         "remark-math",
         "remark-emoji",

@@ -1,6 +1,6 @@
 <template>
   <header class="mb-12">
-    <div class="flex flex-wrap items-center justify-between py-3">
+    <div class="flex flex-wrap items-center justify-between py-4">
       <NuxtLink
         to="/"
         class="font-bold text-lg text-gray-900 dark:text-gray-100 transition-colors"
@@ -26,7 +26,7 @@
     </div>
     <nav>
       <ul
-        class="flex flex-wrap space-x-8 items-center justify-center border-t border-b border-blue-700 dark:border-blue-300 border-opacity-50 dark:border-opacity-50 transition-colors"
+        class="flex flex-wrap items-center justify-evenly border-t border-b border-blue-700 dark:border-blue-300 border-opacity-50 dark:border-opacity-50 transition-colors"
       >
         <li>
           <NuxtLink

@@ -1,4 +1,10 @@
-# nuxt-website
+# pranshugaba.com
+
+This is the source for my personal website built using Nuxt.js.
+
+The source code is licensed under GPL-3.0
+
+Unless otherwise stated, all content on this site is licensed under a [Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/)
 
 ## Build Setup
 

@@ -1,7 +1,7 @@
 <template>
   <main>
     <PostTitle>Articles</PostTitle>
-    <PostSubtitle>Linux and webdev</PostSubtitle>
+    <PostSubtitle>About Linux and Webdev</PostSubtitle>
     <ul>
       <li v-for="article of articles" :key="article.slug">
         <PostPreviewList :post="article" />

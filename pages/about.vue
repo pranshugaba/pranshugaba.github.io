@@ -64,10 +64,13 @@
     <p>There are currently</p>
     <ul class="list-disc list-inside">
       <li>
-        <NuxtLink to="/poems"> {{ totalPoems }} poems</NuxtLink>
+        <NuxtLink to="/poems"> {{ totalPoems }} poems</NuxtLink>,
       </li>
       <li>
-        and <NuxtLink to="/puzzles"> {{ totalPuzzles }} puzzles</NuxtLink>
+        <NuxtLink to="/puzzles"> {{ totalPuzzles }} puzzles</NuxtLink>,
+      </li>
+      <li>
+        and <NuxtLink to="/puzzles"> {{ totalArticles }} article</NuxtLink>
       </li>
     </ul>
     <p>on this website.</p>
@@ -106,7 +109,10 @@ export default {
     const puzzles = await $content("puzzles").fetch();
     const totalPuzzles = puzzles.length;
 
-    return { totalPoems, totalPuzzles };
+    const articles = await $content("articles").fetch();
+    const totalArticles = articles.length;
+
+    return { totalPoems, totalPuzzles, totalArticles };
   },
 };
 </script>

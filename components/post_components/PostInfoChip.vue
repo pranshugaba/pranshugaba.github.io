@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-8 flex items-center justify-start space-x-3">
+  <div class="mt-8 mb-10 flex items-center justify-start space-x-3">
     <div v-for="author of authors" :key="author.slug">
       <img
         class="h-12 w-12 rounded-full"

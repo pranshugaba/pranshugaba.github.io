@@ -6,6 +6,7 @@
       I am Pranshu Gaba. I am a PhD student in computer science. Welcome to my
       (new) website.
     </p>
+
     <h2>Recent posts</h2>
     <h3>Puzzles</h3>
     <ul>
@@ -26,11 +27,7 @@
     <h3>Poems</h3>
     <ul>
       <li v-for="poem of poems" :key="poem.slug">
-        <PostPreviewThumbnail
-          :post="poem"
-          :show-category="false"
-          :authors="filterAuthors(poem.authors)"
-        />
+        <PostPreviewList :post="poem" />
       </li>
     </ul>
 
@@ -54,23 +51,13 @@ import { formatDate } from "~/utils/date";
 
 export default {
   async asyncData({ $content }) {
-    const poems = await $content("poems")
-      .only([
-        "title",
-        "description",
-        "slug",
-        "createdAt",
-        "updatedAt",
-        "path",
-        "category",
-        "featuredImage",
-        "authors",
-      ])
-      .sortBy("createdAt", "desc")
-      .limit(2)
-      .fetch();
-
     const allAuthors = await $content("authors").fetch();
+
+    const poems = await $content("poems")
+      .only(["title", "slug", "createdAt"])
+      .sortBy("createdAt", "desc")
+      .limit(5)
+      .fetch();
 
     const puzzles = await $content("puzzles")
       .only(["title", "slug", "createdAt"])
@@ -85,10 +72,10 @@ export default {
       .fetch();
 
     return {
+      allAuthors,
       articles,
       poems,
       puzzles,
-      allAuthors,
     };
   },
   methods: {
