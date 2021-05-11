@@ -2,7 +2,7 @@
   <figure>
     <VImage :src="imgSrc" />
     <figcaption
-      class="mt-2 mb-8 text-sm text-gray-600 dark:text-gray-400 text-center transition-colors"
+      class="mt-2 mb-2 text-xs text-gray-600 dark:text-gray-400 text-center transition-colors"
     >
       <span v-if="caption">
         {{ caption }}

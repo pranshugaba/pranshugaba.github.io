@@ -46,6 +46,7 @@ export default {
     // https://go.nuxtjs.dev/typescript
     "@nuxtjs/tailwindcss",
     "@nuxtjs/color-mode",
+    "@nuxt/image",
     "@nuxtjs/svg",
     "@nuxt/postcss8",
     "@nuxt/typescript-build",
@@ -53,7 +54,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["@nuxt/content", "@nuxtjs/sitemap"],
+  modules: ["@nuxt/content", "@nuxtjs/localtunnel", "@nuxtjs/sitemap"],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: [],

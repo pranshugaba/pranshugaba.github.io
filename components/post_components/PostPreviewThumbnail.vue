@@ -6,7 +6,7 @@
     <div class="flex flex-wrap items-center group">
       <div class="w-1/3">
         <VImage
-          class="rounded-md shadow-lg"
+          class="rounded-md shadow-md"
           :src="require(`~/assets/images/poems/${post.featuredImage}`)"
         />
       </div>

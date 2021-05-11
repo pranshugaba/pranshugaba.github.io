@@ -1,14 +1,14 @@
 [
-    {
-        "slug": "pranshu",
-        "name": "Pranshu Gaba",
-        "avatar": "pranshu.jpg",
-        "bio": "Pranshu is a PhD student in computer science. In his spare time, he develops apps, writes poems, and creates puzzles."
-    },
-    {
-        "slug": "dummy",
-        "name": "DummyName",
-        "avatar": "farm.jpg",
-        "bio": "dummyBio"
-    }
+  {
+    "slug": "pranshu",
+    "name": "Pranshu Gaba",
+    "avatar": "pranshu.webp",
+    "bio": "Pranshu is a PhD student in computer science. In his spare time, he develops apps, writes poems, and creates puzzles."
+  },
+  {
+    "slug": "dummy",
+    "name": "DummyName",
+    "avatar": "farm.webp",
+    "bio": "dummyBio"
+  }
 ]

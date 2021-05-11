@@ -32,9 +32,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-li {
-  padding-bottom: 0.75rem;
-}
-</style>

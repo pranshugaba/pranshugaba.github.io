@@ -70,7 +70,7 @@
         <NuxtLink to="/puzzles"> {{ totalPuzzles }} puzzles</NuxtLink>,
       </li>
       <li>
-        and <NuxtLink to="/puzzles"> {{ totalArticles }} article</NuxtLink>
+        and <NuxtLink to="/articles"> {{ totalArticles }} article</NuxtLink>
       </li>
     </ul>
     <p>on this website.</p>
