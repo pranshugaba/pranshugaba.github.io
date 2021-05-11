@@ -56,7 +56,7 @@
       <NavigationExtLink to="https://nuxtjs.org/">Nuxt.js</NavigationExtLink>
       and <NavigationExtLink to="https://vuejs.org/">Vue.js</NavigationExtLink>.
       You can find the source code on
-      <NavigationExtLink to="https://github.com/pranshugaba/nuxt-website"
+      <NavigationExtLink to="https://github.com/pranshugaba/pranshugaba.github.io"
         >GitHub</NavigationExtLink
       >.
     </p>

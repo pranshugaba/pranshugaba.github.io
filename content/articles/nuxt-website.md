@@ -7,7 +7,7 @@ featuredImage: "avatar.png"
 
 authors: ["pranshu"]
 
-tags: ["nuxt.js", "vue.js", "webdev"]
+tags: ["nuxtjs", "vuejs", "webdev"]
 category: webdev
 
 createdAt: 2021-05-11T19:30:00+05:30

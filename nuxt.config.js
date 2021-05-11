@@ -1,6 +1,6 @@
 import getRoutes from "./utils/getRoutes";
 
-const baseDir = "/nuxt-website";
+const baseDir = "";
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
