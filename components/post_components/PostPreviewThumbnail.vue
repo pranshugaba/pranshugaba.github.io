@@ -34,7 +34,7 @@
             </span>
           </span>
           &#183; -->
-          {{ formatDateHideCurrentYear(post.updatedAt) }}
+          {{ formatDate(post.updatedAt) }}
         </p>
       </div>
     </div>
@@ -43,7 +43,7 @@
 
 <script>
 import VImage from "~/components/images/VImage";
-import { formatDateHideCurrentYear } from "~/utils/helpers";
+import { formatDate } from "~/utils/helpers";
 
 export default {
   components: {
@@ -58,7 +58,7 @@ export default {
     authors: Array,
   },
   methods: {
-    formatDateHideCurrentYear,
+    formatDate,
   },
 };
 </script>

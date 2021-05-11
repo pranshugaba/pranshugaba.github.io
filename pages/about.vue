@@ -1,9 +1,10 @@
 <template>
   <main>
-    <img
+    <NuxtImg
+      src="/cycling.webp"
       class="w-1/3 mx-auto my-8 rounded-3xl shadow-md"
-      :src="require(`~/assets/images/authors/cycling.webp`)"
     />
+
     <h1>About Me</h1>
     <p>
       I am a PhD student in Theoretical Computer Science at

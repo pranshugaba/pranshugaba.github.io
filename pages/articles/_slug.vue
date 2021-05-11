@@ -31,7 +31,7 @@ export default {
       .where({ slug: { $in: article.authors } })
       .fetch();
 
-    const [prev, next] = await $content("puzzles")
+    const [prev, next] = await $content("articles")
       .only(["title", "slug", "path", "createdAt"])
       .sortBy("createdAt", "desc")
       .surround(params.slug)

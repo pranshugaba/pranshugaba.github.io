@@ -1,5 +1,5 @@
 <template>
-  <header class="mb-12">
+  <header class="pt-1 mb-12">
     <div class="flex flex-wrap items-center justify-between py-4">
       <NuxtLink
         to="/"

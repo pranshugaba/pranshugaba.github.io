@@ -75,7 +75,7 @@ export default {
   content: {
     markdown: {
       prism: {
-        theme: "prism-themes/themes/prism-gruvbox-dark.css"
+        theme: "prism-themes/themes/prism-night-owl.css"
       },
       remarkPlugins: [
         "remark-math",
@@ -86,7 +86,7 @@ export default {
     }
   },
   loading: {
-    color: "#0077ff",
+    color: "#3B82F6",
     height: "3px"
   },
   pwa: {
@@ -94,7 +94,7 @@ export default {
       name: "PG",
       author: "Pranshu Gaba",
       description: "Pranshu Gaba's website",
-      theme_color: "#0077ff"
+      theme_color: "#3B82F6"
     },
     manifest: {
       name: "Pranshu's website",

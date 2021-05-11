@@ -1,6 +1,6 @@
 ---
 title: "How I made this site using Nuxt.js"
-subtitle: "It was fun to make"
+subtitle: "Spoiler alert: It was fun to make"
 description: "How I made this site using Nuxt.js"
 
 featuredImage: "avatar.png"
@@ -20,18 +20,22 @@ draft: false
 featured: false
 ---
 
-This site is built using using Nuxt.js, a framework for Vue.js. <NavigationExtLink to="https://hugo.pranshugaba.com">My previous website</NavigationExtLink> was built using Hugo with the Academic theme. While Hugo sites build extremely fast, and are easy to get started with, I was not entirely satisfied with the experience. There are a lot of user-submitted themes available on Hugo's website, but I wasn't happy with most of them.
+This site is built using Nuxt.js, and I have had a great time making it. In this post, I outline how I made this site. I hope it helps anyone who is looking to make a static site using Nuxt.js.
 
-I liked the Academic theme but I saw many others using the same theme, so I would have to customize the theme significantly to make my site unique. The Academic theme has since been renamed to Wowchemy and I did not like the direction it is proceeding in.
+The previous version of this website (now retired to <NavigationExtLink to="https://hugo.pranshugaba.com">hugo.pranshugaba.com</NavigationExtLink>) was built using Hugo. Hugo is quick to install and very easy to get started with.
+There are loads of user-submitted themes available, and the Academic theme was favourite. It served me well at the beginning, however, customizing it was not pleasant. 
 
-I have been interested in Vue.js for some time now, and wanted to see if I can make a site using Vue. I had been doing Android development using Jetpack Compose, and I was enjoying the component based declarative UI.
+I had to modify the theme templates, in some cases rewriting them completely. I had to override CSS styles, and this would often cause unintended effects. 
+I wanted to create a theme from scratch, and I realized that frameworks such as React or Vue would be more powerful. I had heard that Vue is easier to learn than React, so I looked for static site generators based on Vue. I found Vuepress, Nuxt.js, and Gridsome.
 
 I tried out Gridsome (learned some GraphQL) and Next.js (learned React) before ending up with Nuxt.js.
-I have learnt some Vue.js. I did the theming and styling from scratch.
+I did the theming and styling from scratch. I was able to match all the features offered in Hugo, and then some.
 
 ## Features
 
 ### Prefetching
+
+One of the biggest advantages of using Nuxt is the prefetching. It prefetches the outgoing links on any page, so the links begin to load even before you click on them. This makes the site feel fast and snappy!
 
 ### Tags
 
@@ -39,6 +43,23 @@ I have learnt some Vue.js. I did the theming and styling from scratch.
 
 ### Author pages
 
+### Math equations
+
+Install `remark-math` and `rehype-katex` modules and you are good to go!
+
+You can have inline math $e^{i\pi} + 1 = 0$, and
+displaystyle math too!
+
+$$
+\sum_{k=1}^{\infty} \frac{1}{k^2} = \frac{\pi^2}{6}
+$$
+
 ### Code blocks
 
-### Math equations
+Prism js comes pre-installed with Nuxt. You can install themes and plugins too.
+
+```rust [hello.rs]
+fn main() {
+    println!("Hello, world!");
+}
+```
