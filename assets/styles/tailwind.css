@@ -24,7 +24,7 @@
 
   .math-display,
   .math-inline {
-    @apply dark:text-gray-100 transition-colors;
+    @apply dark:text-purple-400 transition-colors;
   }
 
   li {
@@ -39,12 +39,6 @@
     @apply px-2 py-1 rounded-md bg-pink-50 text-pink-600 dark:bg-gray-700 dark:text-pink-200 transition-colors;
   } */
 
-  /* prismjs code block */
-  code[class*="language-"],
-  pre[class*="language-"] {
-    @apply rounded-md;
-  }
-
   hr {
     @apply my-6 border-gray-600 dark:border-gray-400 transition-colors;
   }
@@ -55,12 +49,6 @@
 
   blockquote p {
     @apply inline;
-  }
-  .nuxt-content-highlight {
-    @apply relative;
-  }
-  .nuxt-content-highlight .filename {
-    @apply absolute right-0 text-gray-200 z-10 mr-2 mt-1 text-sm;
   }
 }
 
@@ -80,3 +68,20 @@
     opacity: 0;
   }
 } */
+
+.math-display,
+.math-inline {
+  @apply dark:text-gray-100 transition-colors;
+}
+/* prismjs code block */
+code[class*="language-"],
+pre[class*="language-"] {
+  @apply rounded-md;
+}
+
+.nuxt-content-highlight {
+  @apply relative;
+}
+.nuxt-content-highlight .filename {
+  @apply absolute right-0 text-gray-200 z-10 mr-2 mt-1 text-sm;
+}
