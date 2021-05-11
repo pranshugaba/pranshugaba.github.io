@@ -21,6 +21,8 @@ draft: false
 
 Two monkeys sat on a bicycle,  
 neither knew how to ride the cycle.  
-&nbsp;&nbsp;&nbsp;&nbsp;They tried out a stunt  
-&nbsp;&nbsp;&nbsp;&nbsp;but they really stunk,  
+<nbsp :spaces="2"></nbsp>
+They tried out a stunt  
+<nbsp :spaces="2"></nbsp>
+but they really stunk,  
 ’cause they could only ride a unicycle.

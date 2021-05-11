@@ -4,14 +4,8 @@
     <PostSubtitle>How are you?</PostSubtitle>
     <p>
       I am Pranshu Gaba. I am a PhD student in computer science. Welcome to my
-      (new) website.
+      (new) website!
     </p>
-
-    <NuxtImg
-      src="/farm.jpg"
-      class="mx-auto rounded-lg shadow-md"
-      sizes="sm:60vw md:50vw lg:400px"
-    />
 
     <h2>Recent posts</h2>
     <h3>Puzzles</h3>
@@ -53,7 +47,7 @@
 </template>
 
 <script>
-import { formatDate } from "~/utils/date";
+import { formatDate } from "~/utils/helpers";
 
 export default {
   async asyncData({ $content }) {

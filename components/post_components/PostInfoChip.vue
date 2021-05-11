@@ -18,9 +18,10 @@
         </span>
       </span>
       <div class="text-gray-600 dark:text-gray-400 text-sm transition-colors">
-        {{ formatDate(post.updatedAt) }}
+        {{ formatDateHideCurrentYear(post.updatedAt) }}
         <span v-if="post.showReadingTime">
-          &#183; {{ readingTime(post) }} min read
+          <span class="pl-1"> &#183; </span>
+          <span class="pl-1">{{ readingTime(post) }} min read</span>
         </span>
       </div>
     </div>
@@ -28,8 +29,7 @@
 </template>
 
 <script>
-import { formatDate } from "~/utils/date";
-import { readingTime } from "~/utils/helpers";
+import { formatDateHideCurrentYear, readingTime } from "~/utils/helpers";
 
 export default {
   props: {
@@ -42,7 +42,7 @@ export default {
     },
   },
   methods: {
-    formatDate,
+    formatDateHideCurrentYear,
     readingTime,
   },
 };

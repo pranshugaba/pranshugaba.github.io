@@ -21,6 +21,8 @@ draft: false
 
 There once was a cat named Toad,  
 Who loved to take naps on the road.  
-&nbsp;&nbsp;&nbsp;&nbsp;He was very displeased,  
-&nbsp;&nbsp;&nbsp;&nbsp;When woken from sleep,  
+<nbsp :spaces="2"></nbsp>
+He was very displeased,  
+<nbsp :spaces="2"></nbsp>
+When woken from sleep,  
 Yet he decided to let it go.

@@ -21,7 +21,8 @@ draft: false
 
 There lay a shopping trolley in the hall,  
 so far away from the shopping mall.  
-&nbsp;&nbsp;&nbsp;&nbsp;It was utterly lost,  
-&nbsp;&nbsp;&nbsp;&nbsp;its path uncrossed  
+<nbsp :spaces="2"></nbsp>
+It was utterly lost,  
+<nbsp :spaces="2"></nbsp>
+its path uncrossed  
 with no one there to look at it at all.
-

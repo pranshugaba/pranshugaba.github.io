@@ -13,9 +13,9 @@
     <div v-else>
       <p>No posts with this tag.</p>
     </div>
-    <p>
-      <NuxtLink to="/tags"> View all tags </NuxtLink>
-    </p>
+    <div class="text-right">
+      <NuxtLink to="/tags"> See all tags &#10230;</NuxtLink>
+    </div>
   </main>
 </template>
 

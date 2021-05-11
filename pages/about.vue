@@ -1,5 +1,9 @@
 <template>
   <main>
+    <img
+      class="w-1/3 mx-auto my-8 rounded-3xl shadow-md"
+      :src="require(`~/assets/images/authors/cycling.webp`)"
+    />
     <h1>About Me</h1>
     <p>
       I am a PhD student in Theoretical Computer Science at
@@ -56,13 +60,14 @@
       <NavigationExtLink to="https://nuxtjs.org/">Nuxt.js</NavigationExtLink>
       and <NavigationExtLink to="https://vuejs.org/">Vue.js</NavigationExtLink>.
       You can find the source code on
-      <NavigationExtLink to="https://github.com/pranshugaba/pranshugaba.github.io"
+      <NavigationExtLink
+        to="https://github.com/pranshugaba/pranshugaba.github.io"
         >GitHub</NavigationExtLink
       >.
     </p>
     <h2>Statistics</h2>
     <p>There are currently</p>
-    <ul class="list-disc list-inside">
+    <ul class="list-disc list-inside ml-4">
       <li>
         <NuxtLink to="/poems"> {{ totalPoems }} poems</NuxtLink>,
       </li>
@@ -74,33 +79,25 @@
       </li>
     </ul>
     <p>on this website.</p>
-    <p>Last Updated on {{ getBuildDate() }}</p>
+    <p>Last updated on {{ getBuildDate() }}</p>
     <h2>Tags</h2>
-    <p>Common tags used:</p>
+    <NavigationTagCloud :tagList="tagList" />
   </main>
 </template>
 
 <script>
-import { formatDate } from "~/utils/date";
+import VImage from "~/components/images/VImage.vue";
+import { formatDate, getBuildDate } from "~/utils/helpers";
+import { getTagsFrequency } from "~/utils/getData";
+
 export default {
+  components: { VImage },
   head: {
     title: "About Me",
   },
   methods: {
     formatDate,
-    getBuildDate: function () {
-      const options = {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-        hour: "numeric",
-        minute: "numeric",
-      };
-      return formatDate(process.env.NUXT_ENV_BUILD_TIME, options);
-    },
-    getBuildEnv: function () {
-      return process.env.buildTime;
-    },
+    getBuildDate,
   },
   async asyncData({ $content }) {
     const poems = await $content("poems").fetch();
@@ -112,7 +109,15 @@ export default {
     const articles = await $content("articles").fetch();
     const totalArticles = articles.length;
 
-    return { totalPoems, totalPuzzles, totalArticles };
+    const tagsData = await $content("/", { deep: true }).only(["tags"]).fetch();
+    const tagList = getTagsFrequency(tagsData);
+
+    return {
+      totalPoems,
+      totalPuzzles,
+      totalArticles,
+      tagList,
+    };
   },
 };
 </script>

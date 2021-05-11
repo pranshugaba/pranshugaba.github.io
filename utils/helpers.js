@@ -1,3 +1,39 @@
+const defaultOptions = {
+  year: "numeric",
+  month: "short",
+  day: "numeric"
+};
+
+/**
+ * Formats the date
+ */
+export function formatDate(date, options = defaultOptions) {
+  const currentDate = new Date();
+  return new Date(date).toLocaleDateString("en", options);
+}
+
+/**
+ * If the year is current, then it is not shown 
+ */
+export function formatDateHideCurrentYear(date) {
+  const inputDate = new Date(date);
+  const currentDate = new Date();
+  let options;
+  if (inputDate.getFullYear() < currentDate.getFullYear()) {
+    options = {
+      year: "numeric",
+      month: "short",
+      day: "numeric"
+    };
+  } else {
+    options = {
+      month: "short",
+      day: "numeric"
+    };
+  }
+  return inputDate.toLocaleDateString("en", options);
+}
+
 /**
  * capitalize first letter
  * TODO: Does not work for all locales
@@ -46,4 +82,16 @@ export function filterAuthors(allAuthors, authorSlugs) {
     authorSlugs.includes(post.slug)
   );
   return postAuthors;
+}
+
+/** reads the build date from the env variable */
+export function getBuildDate() {
+  const options = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric"
+  };
+  return formatDate(process.env.NUXT_ENV_BUILD_TIME, options);
 }

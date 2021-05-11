@@ -20,45 +20,41 @@ draft: false
 ---
 
 a late afternoon ---  
-&nbsp;&nbsp;&nbsp;&nbsp;
+<nbsp :spaces="2"></nbsp>
 chocolate and vanilla  
-&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;
-cool delicious chocobar  
+<nbsp :spaces="4"></nbsp>
+cool delicious chocobar
 
-but lo and behold ---   
-&nbsp;&nbsp;&nbsp;&nbsp;
+but lo and behold ---  
+<nbsp :spaces="2"></nbsp>
 misfortune befalls  
-&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;
-the ice-cream falls  
+<nbsp :spaces="4"></nbsp>
+the ice-cream falls
 
-liquefied dessert ---   
-&nbsp;&nbsp;&nbsp;&nbsp;
-will now be eaten   
-&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;
-by a simian  
+liquefied dessert ---  
+<nbsp :spaces="2"></nbsp>
+will now be eaten  
+<nbsp :spaces="4"></nbsp>
+by a simian
 
 <!-- --- -->
 
 <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
-<!-- a hot summer day -->  
-<!-- enjoy cool delicious ice-cream -->  
+<!-- a hot summer day -->
+<!-- enjoy cool delicious ice-cream -->
 <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
-<!-- chocolate and vanilla -->  
-<!-- misfortune befalls -->  
+<!-- chocolate and vanilla -->
+<!-- misfortune befalls -->
 <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
-<!-- dropped out of the hands -->  
-<!-- fallen on the pavement -->  
+<!-- dropped out of the hands -->
+<!-- fallen on the pavement -->
 <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
-<!-- liquefied dessert -->  
-<!-- flows away in the heat -->  
+<!-- liquefied dessert -->
+<!-- flows away in the heat -->
 <!-- will not be eaten again -->
 
-
 <!-- a hot summer day -->
-<!-- chocolate and vanilla -->  
+<!-- chocolate and vanilla -->
 <!-- cold and delicious -->
 <!-- cold delicious chocobar -->
 
@@ -66,8 +62,7 @@ by a simian
 <!-- misfortune befalls -->
 <!-- the icecream falls down -->
 
-<!-- flows on the pavement --> 
-<!-- liquefied dessert --> 
-<!-- flows away down in the heat -->  
+<!-- flows on the pavement -->
+<!-- liquefied dessert -->
+<!-- flows away down in the heat -->
 <!-- will not be eaten again -->
-
