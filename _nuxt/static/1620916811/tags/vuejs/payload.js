@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/tags/vuejs", (function(a){return {data:[{params:{tag:a},posts:[{slug:"migrating-from-hugo-to-nuxtjs",title:"Migrating from Hugo to Nuxt.js",createdAt:"2021-05-11T14:00:00.000Z",path:"\u002Farticles\u002Fmigrating-from-hugo-to-nuxtjs"}],tag:a}],fetch:{},mutations:void 0}}("vuejs")));
