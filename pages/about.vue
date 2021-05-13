@@ -1,10 +1,9 @@
 <template>
   <main>
     <NuxtImg
-      src="/cycling.webp"
-      class="w-1/3 mx-auto my-8 rounded-3xl shadow-md"
+      src="/img/about/pranshu_cover.webp"
+      class="h-auto mx-auto my-8 rounded-xl shadow-md"
     />
-
     <h1>About Me</h1>
     <p>
       I am a PhD student in Theoretical Computer Science at
@@ -20,8 +19,10 @@
       Logic, Discrete Maths, and Algorithms.
     </p>
     <p>
-      I click pictures, write poetry, create puzzles, draw comics, develop apps
-      and games, and write stories.
+      I 
+      <NuxtLink to="/poems">make photopoetry</NuxtLink>,
+      <NuxtLink to="/puzzles">create puzzles</NuxtLink>, draw comics, develop
+      apps and games, and write stories.
     </p>
     <p>
       I also love playing chess, solving puzzles, swimming and cycling but not
@@ -60,7 +61,7 @@
       This site is built using
       <NavigationExtLink to="https://nuxtjs.org/">Nuxt.js</NavigationExtLink>
       and <NavigationExtLink to="https://vuejs.org/">Vue.js</NavigationExtLink>.
-      You can find the source code on
+      You can find the source code for this site on
       <NavigationExtLink
         to="https://github.com/pranshugaba/pranshugaba.github.io"
         >GitHub</NavigationExtLink
@@ -68,7 +69,7 @@
     </p>
     <h2>Statistics</h2>
     <p>There are currently</p>
-    <ul class="list-disc list-inside ml-4">
+    <ul class="list-disc list-inside ml-6">
       <li>
         <NuxtLink to="/poems"> {{ totalPoems }} poems</NuxtLink>,
       </li>

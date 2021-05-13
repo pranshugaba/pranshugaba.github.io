@@ -83,5 +83,5 @@ pre[class*="language-"] {
   @apply relative;
 }
 .nuxt-content-highlight .filename {
-  @apply absolute right-0 text-gray-200 z-10 mr-2 mt-1 text-sm;
+  @apply absolute right-0 text-gray-300 z-10 mr-2 mt-1 text-sm;
 }

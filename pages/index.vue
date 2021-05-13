@@ -1,5 +1,9 @@
 <template>
   <main>
+    <NuxtImg
+      src="/img/yellow.webp"
+      class="w-3/5 h-auto mx-auto my-8 rounded-2xl shadow-md"
+    />
     <PostTitle>Hello There!</PostTitle>
     <PostSubtitle>How are you?</PostSubtitle>
     <p>

@@ -1,8 +1,8 @@
 <template>
   <main>
-    <VImage
-      class="rounded-full max-w-1/4 mx-auto"
-      :src="require(`~/assets/images/authors/${author.avatar}`)"
+    <NuxtImg
+      class="rounded-3xl max-w-1/4 mx-auto"
+      :src="`/img/authors/${author.avatar}`"
     />
     <p class="mb-0">Posts by</p>
     <h1 class="mb-0">{{ author.name }}</h1>

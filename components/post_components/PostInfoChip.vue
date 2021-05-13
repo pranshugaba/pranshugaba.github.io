@@ -1,9 +1,9 @@
 <template>
   <div class="mt-8 mb-10 flex items-center justify-start space-x-3">
     <div v-for="author of authors" :key="author.slug">
-      <img
+      <NuxtImg
         class="h-12 w-12 rounded-full"
-        :src="require(`~/assets/images/authors/${author.avatar}`)"
+        :src="`/img/authors/${author.avatar}`"
         alt="Avatar of the author"
       />
     </div>

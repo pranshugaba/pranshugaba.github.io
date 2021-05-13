@@ -1,5 +1,9 @@
 <template>
   <main>
+    <NuxtImg
+      src="/img/contact/pranshu_kimono.webp"
+      class="w-3/5 h-auto mx-auto my-8 rounded-xl shadow-md"
+    />
     <PostTitle>Contact me</PostTitle>
     <PostSubtitle>Get in touch</PostSubtitle>
     <ul>
