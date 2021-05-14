@@ -13,7 +13,7 @@ export function formatDate(date, options = defaultOptions) {
 }
 
 /**
- * If the year is current, then it is not shown 
+ * If the year is current, then it is not shown
  */
 export function formatDateHideCurrentYear(date) {
   const inputDate = new Date(date);
@@ -94,4 +94,10 @@ export function getBuildDate() {
     minute: "numeric"
   };
   return formatDate(process.env.NUXT_ENV_BUILD_TIME, options);
+}
+
+/** returns category from route */
+export function getCategoryFromRoute(route) {
+  const activeCategory = route.slice(1).split("/");
+  return activeCategory[0] ? activeCategory[0] : "root";
 }

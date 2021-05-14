@@ -18,11 +18,17 @@
         </span>
       </span>
       <div class="text-gray-600 dark:text-gray-400 text-sm transition-colors">
-        {{ formatDate(post.updatedAt) }}
+        {{ formatDate(post.createdAt) }}
         <span v-if="post.showReadingTime">
           <span class="pl-1"> &#183; </span>
           <span class="pl-1">{{ readingTime(post) }} min read</span>
         </span>
+      </div>
+      <div
+        v-if="post.updatedAt > post.createdAt"
+        class="mt-0.5 text-gray-600 dark:text-gray-400 text-sm transition-colors"
+      >
+        Last updated on {{ formatDate(post.updatedAt) }}
       </div>
     </div>
   </div>
