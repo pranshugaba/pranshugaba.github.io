@@ -3,6 +3,28 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-text-base: #000000;
+    --color-text-muted: #374151; /* gray-500 */
+    --color-primary: #2563eb; /* blue-600 */
+    --color-primary-dark: #93c5fd; /* blue-300 */
+  }
+
+  .theme-article {
+    --color-primary: #ea580c; /* orange-600 */
+    --color-primary-dark: #fdba74; /* orange-300 */
+  }
+
+  .theme-poem {
+    --color-primary: #059669; /* emerald-600 */
+    --color-primary-dark: #6ee7b7; /* emerald-300 */
+  }
+
+  .theme-puzzle {
+    --color-primary: #7c3aed; /* violet-600 */
+    --color-primary-dark: #c4b5fd; /* violet-300 */
+  }
+
   h1 {
     @apply text-4xl mb-6 font-bold dark:text-gray-100 transition-colors;
   }
@@ -32,7 +54,7 @@
   }
 
   a {
-    @apply text-blue-600 dark:text-blue-300 hover:underline active:text-pink-600 dark:active:text-pink-300 transition-colors;
+    @apply text-primary-light dark:text-primary-dark hover:underline active:text-pink-600 dark:active:text-pink-300 transition-colors;
   }
 
   /* code {

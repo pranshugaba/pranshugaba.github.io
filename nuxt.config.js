@@ -1,13 +1,8 @@
 import getRoutes from "./utils/getRoutes";
 
-const baseDir = "";
-
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
-  router: {
-    base: baseDir + "/"
-  },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -19,16 +14,13 @@ export default {
     bodyAttrs: {
       class: "bg-gray-100 dark:bg-gray-900 transition-colors"
     },
-    base: {
-      target: "_blank" // open external links in new tabs
-    },
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" }
+      { hid: "description", name: "description", content: "Pranshu Gaba's personal website. Here I share photos, puzzles, poems, and more!" }
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: baseDir + "/favicon.ico" }
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }
     ]
   },
 

@@ -1,6 +1,7 @@
 <template>
   <button
-    class="w-6 hover:text-blue-600 dark:hover:text-blue-300 transition dark:text-gray-300 text-gray-700 cursor-pointer"
+    class="w-6 hover:text-primary-light dark:hover:text-primary-dark transition dark:text-gray-300 text-gray-700 cursor-pointer"
+    aria-label="Toggle dark mode"
   >
     <SunIcon
       v-if="$colorMode.value === 'light'"

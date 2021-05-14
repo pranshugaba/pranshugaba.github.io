@@ -2,6 +2,7 @@
   <main>
     <NuxtImg
       src="/img/yellow.webp"
+      alt="Pranshu Gaba standing in front of yellow flowers, holding a yellow umbrella."
       class="w-3/5 h-auto mx-auto my-8 rounded-2xl shadow-md"
     />
     <PostTitle>Hello There!</PostTitle>
@@ -60,19 +61,19 @@ export default {
     const poems = await $content("poems")
       .only(["title", "slug", "createdAt", "path"])
       .sortBy("createdAt", "desc")
-      .limit(5)
+      .limit(3)
       .fetch();
 
     const puzzles = await $content("puzzles")
       .only(["title", "slug", "createdAt", "path"])
       .sortBy("createdAt", "desc")
-      .limit(5)
+      .limit(3)
       .fetch();
 
     const articles = await $content("articles")
       .only(["title", "slug", "createdAt", "path"])
       .sortBy("createdAt", "desc")
-      .limit(5)
+      .limit(3)
       .fetch();
 
     return {

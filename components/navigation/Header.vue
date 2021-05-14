@@ -27,7 +27,7 @@
     </div>
     <nav>
       <ul
-        class="flex flex-wrap items-center justify-evenly border-t border-b border-blue-700 dark:border-blue-300 border-opacity-50 dark:border-opacity-50 transition-colors"
+        class="flex flex-wrap items-center justify-evenly border-t border-b border-primary-light dark:border-primary-dark border-opacity-50 dark:border-opacity-50 transition-colors"
       >
         <li>
           <NuxtLink

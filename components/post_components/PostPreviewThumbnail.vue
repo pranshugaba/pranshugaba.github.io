@@ -10,12 +10,12 @@
       <div class="w-2/3 pl-4">
         <p
           v-if="showCategory"
-          class="uppercase text-xs tracking-wider mb-1 text-blue-700 dark:text-blue-300 transition-colors"
+          class="uppercase text-xs tracking-wider mb-1 text-primary-light dark:text-primary-dark transition-colors"
         >
           {{ post.category }}
         </p>
         <h2
-          class="mt-0 mb-0 text-xl text-black dark:group-hover:text-blue-400 group-hover:text-blue-600"
+          class="mt-0 mb-0 text-xl text-black group-hover:text-primary-light dark:group-hover:text-primary-dark"
         >
           {{ post.title }}
         </h2>

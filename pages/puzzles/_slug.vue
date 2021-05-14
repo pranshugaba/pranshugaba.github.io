@@ -46,7 +46,32 @@ export default {
   head() {
     return {
       title: this.puzzle.title,
-      description: this.puzzle.description,
+      // description: this.puzzle.description,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.puzzle.description,
+        },
+        // Open Graph
+        { hid: "og:title", property: "og:title", content: this.puzzle.title },
+        {
+          hid: "og:description",
+          property: "og:description",
+          content: this.puzzle.description,
+        },
+        // Twitter Card
+        {
+          hid: "twitter:title",
+          name: "twitter:title",
+          content: this.puzzle.title,
+        },
+        {
+          hid: "twitter:description",
+          name: "twitter:description",
+          content: this.puzzle.description,
+        },
+      ],
       link: [
         {
           rel: "stylesheet",

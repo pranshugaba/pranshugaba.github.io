@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="mt-6 pt-4 pb-4 border-t border-blue-700 dark:border-blue-300 transition-colors flex justify-between"
+    class="mt-6 pt-4 pb-4 border-t border-primary-light dark:border-primary-dark transition-colors flex justify-between"
   >
     <NuxtLink
       to="/licence"

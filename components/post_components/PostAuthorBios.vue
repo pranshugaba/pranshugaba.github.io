@@ -1,6 +1,6 @@
 <template>
   <div class="mb-12">
-    <hr class="border-blue-600 dark:border-blue-400 transition-colors"/>
+    <hr class="border-primary-light dark:border-primary-dark transition-colors"/>
     <div
       class="mt-4 mb-4 text-gray-700 dark:text-gray-300 transition-colors uppercase tracking-wider"
     >

@@ -3,7 +3,9 @@
     :to="post.path"
     class="inline-block hover:no-underline transform transition hover:-translate-y-1 mb-6"
   >
-    <div class="overflow-hidden rounded-lg shadow-lg dark:bg-gray-800 transition-colors group">
+    <div
+      class="overflow-hidden rounded-lg shadow-lg dark:bg-gray-800 transition-colors group"
+    >
       <VImage
         class="w-full"
         :src="require(`~/assets/images/poems/${post.featuredImage}`)"
@@ -11,12 +13,12 @@
       <div class="px-4 pt-4">
         <p
           v-if="showCategory"
-          class="uppercase text-xs tracking-wider mb-1 text-blue-700 dark:text-blue-300 transition-colors"
+          class="uppercase text-xs tracking-wider mb-1 text-primary-light dark:text-primary-dark transition-colors"
         >
           {{ post.category }}
         </p>
         <h2
-          class="mt-0 mb-0 text-2xl text-black dark:group-hover:text-blue-400 group-hover:text-blue-600"
+          class="mt-0 mb-0 text-2xl text-black dark:group-hover:text-primary-dark group-hover:text-primary-light"
         >
           {{ post.title }}
         </h2>
