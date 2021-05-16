@@ -1,55 +1,45 @@
 <template>
   <header class="pt-1 mb-10">
-    <div class="flex flex-wrap items-center justify-between py-4">
+    <div class="flex flex-wrap items-center justify-between pt-4 pb-4">
       <NuxtLink
         to="/"
-        class="font-bold text-lg text-gray-900 dark:text-gray-100 transition-colors"
+        class="font-bold text-lg text-primary-light dark:text-primary-dark transition-colors logo"
       >
         Pranshu Gaba
       </NuxtLink>
       <ul class="flex flex-wrap space-x-6">
         <li>
-          <NuxtLink
-            to="/about"
-            class="text-gray-900 dark:text-gray-100 transition-colors"
-            >About</NuxtLink
-          >
+          <NuxtLink to="/about">About</NuxtLink>
         </li>
         <li>
-          <NuxtLink
-            to="/contact"
-            class="text-gray-900 dark:text-gray-100 transition-colors"
-            >Contact</NuxtLink
-          >
+          <NuxtLink to="/contact">Contact</NuxtLink>
         </li>
       </ul>
     </div>
-    <nav>
+    <nav class="categories">
       <ul
-        class="flex flex-wrap items-center justify-evenly border-t border-b border-primary-light dark:border-primary-dark border-opacity-50 dark:border-opacity-50 transition-colors"
+        class="flex flex-wrap items-center justify-evenly border-t border-b border-primary-light dark:border-primary-dark border-opacity-50 dark:border-opacity-50 transition-colors py-0.5"
       >
         <li>
-          <NuxtLink
-            to="/articles"
-            class="text-gray-900 dark:text-gray-100 transition-colors"
-            >Articles</NuxtLink
-          >
+          <NuxtLink to="/articles" class="theme-article">Articles</NuxtLink>
         </li>
         <li>
-          <NuxtLink
-            to="/poems/page/1"
-            class="text-gray-900 dark:text-gray-100 transition-colors"
-            >Poems</NuxtLink
-          >
+          <NuxtLink to="/poems" class="theme-poem">Poems</NuxtLink>
         </li>
         <li>
-          <NuxtLink
-            to="/puzzles"
-            class="text-gray-900 dark:text-gray-100 transition-colors"
-            >Puzzles</NuxtLink
-          >
+          <NuxtLink to="/puzzles" class="theme-puzzle">Puzzles</NuxtLink>
         </li>
       </ul>
     </nav>
   </header>
 </template>
+
+<style scoped>
+a {
+  @apply px-2 py-1 rounded-md;
+}
+.nuxt-link-active:not(.logo),
+.nuxt-link-exact-active {
+  @apply bg-primary-light text-gray-100 dark:bg-primary-dark dark:text-gray-900;
+}
+</style>

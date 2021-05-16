@@ -1,6 +1,6 @@
 <template>
   <button
-    class="w-6 hover:text-primary-light dark:hover:text-primary-dark transition dark:text-gray-300 text-gray-700 cursor-pointer"
+    class="w-6 text-primary-light dark:text-primary-dark transition-colors cursor-pointer"
     aria-label="Toggle dark mode"
   >
     <SunIcon

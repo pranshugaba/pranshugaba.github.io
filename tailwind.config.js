@@ -59,6 +59,12 @@ module.exports = {
           dark: "var(--color-primary-dark)"
         }
       },
+      backgroundColor: {
+        primary: {
+          light: "var(--color-primary)",
+          dark: "var(--color-primary-dark)"
+        }
+      },
       maxWidth: {
         "1/4": "25%",
         "1/2": "50%",

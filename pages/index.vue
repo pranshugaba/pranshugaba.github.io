@@ -37,7 +37,7 @@
     </ul>
 
     <div class="theme-poem text-right">
-      <NuxtLink to="/poems"> See all poems &#10230;</NuxtLink>
+      <NuxtLink to="/poems/page/1"> See all poems &#10230;</NuxtLink>
     </div>
 
     <!-- <h2>Comics</h2>
