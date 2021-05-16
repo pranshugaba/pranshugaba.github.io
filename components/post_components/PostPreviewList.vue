@@ -12,7 +12,7 @@
       }}
       &raquo;
     </span>
-    <NuxtLink :to="post.path">
+    <NuxtLink :to="post.path" :class="theme">
       <slot>{{ post.title }} </slot>
     </NuxtLink>
   </div>
@@ -20,6 +20,7 @@
 
 <script>
 import { formatDate } from "~/utils/date";
+import { getCategoryFromRoute, getThemeFromCategory } from "~/utils/helpers";
 
 export default {
   props: {
@@ -27,6 +28,16 @@ export default {
   },
   methods: {
     formatDate,
+    getCategoryFromRoute,
+    getThemeFromCategory,
+  },
+  computed: {
+    category: function () {
+      return getCategoryFromRoute(this.post.path);
+    },
+    theme: function () {
+      return getThemeFromCategory(this.category);
+    },
   },
 };
 </script>

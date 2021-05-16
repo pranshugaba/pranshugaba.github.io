@@ -14,7 +14,7 @@
 
     <h2>Recent posts</h2>
     <h3>Puzzles</h3>
-    <ul>
+    <ul class="theme-puzzle">
       <li v-for="puzzle of puzzles" :key="puzzle.slug">
         <PostPreviewList :post="puzzle"
           >#{{ puzzle.slug }} - {{ puzzle.title }}
@@ -23,20 +23,20 @@
     </ul>
 
     <h3>Articles</h3>
-    <ul>
+    <ul class="theme-article">
       <li v-for="article of articles" :key="article.slug">
         <PostPreviewList :post="article" />
       </li>
     </ul>
 
     <h3>Poems</h3>
-    <ul>
+    <ul class="theme-poem">
       <li v-for="poem of poems" :key="poem.slug">
         <PostPreviewList :post="poem" />
       </li>
     </ul>
 
-    <div class="text-right">
+    <div class="theme-poem text-right">
       <NuxtLink to="/poems"> See all poems &#10230;</NuxtLink>
     </div>
 

@@ -12,7 +12,7 @@ export default {
       lang: "en"
     },
     bodyAttrs: {
-      class: "bg-gray-100 dark:bg-gray-900 transition-colors"
+      class: "bg-gray-50 dark:bg-gray-900 transition-colors"
     },
     meta: [
       { charset: "utf-8" },
@@ -67,7 +67,7 @@ export default {
   content: {
     markdown: {
       prism: {
-        theme: "prism-themes/themes/prism-night-owl.css"
+        theme: "prism-themes/themes/prism-gruvbox-dark.css"
       },
       remarkPlugins: [
         "remark-math",

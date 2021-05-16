@@ -96,8 +96,24 @@ export function getBuildDate() {
   return formatDate(process.env.NUXT_ENV_BUILD_TIME, options);
 }
 
+const puzzleRoutes = ["puzzles"];
+const poemRoutes = ["poems"];
+const articleRoutes = ["articles"];
+
 /** returns category from route */
 export function getCategoryFromRoute(route) {
   const activeCategory = route.slice(1).split("/");
   return activeCategory[0] ? activeCategory[0] : "root";
+}
+
+export function getThemeFromCategory(category) {
+  if (puzzleRoutes.includes(category)) {
+    return "theme-puzzle";
+  } else if (poemRoutes.includes(category)) {
+    return "theme-poem";
+  } else if (articleRoutes.includes(category)) {
+    return "theme-article";
+  } else {
+    return "";
+  }
 }

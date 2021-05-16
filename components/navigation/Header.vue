@@ -1,6 +1,5 @@
 <template>
   <header class="pt-1 mb-10">
-    <!-- <div class="text-xl">{{ cat }}</div> -->
     <div class="flex flex-wrap items-center justify-between py-4">
       <NuxtLink
         to="/"
@@ -54,17 +53,3 @@
     </nav>
   </header>
 </template>
-
-<script>
-import { getCategoryFromRoute } from "~/utils/helpers";
-export default {
-  methods: {
-    getCategoryFromRoute,
-  },
-  computed: {
-    cat: function () {
-      return getCategoryFromRoute(this.$route.path);
-    },
-  },
-};
-</script>
