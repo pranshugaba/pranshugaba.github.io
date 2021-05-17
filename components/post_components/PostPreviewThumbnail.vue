@@ -1,13 +1,10 @@
 <template>
   <NuxtLink :to="post.path" class="inline-block hover:no-underline mb-6">
     <div class="flex flex-wrap items-center group">
-      <div class="w-1/3">
-        <VImage
-          class="rounded-md shadow-md"
-          :src="require(`~/assets/images/poems/${post.featuredImage}`)"
-        />
+      <div class="w-[40%]">
+        <VImage :src="require(`~/assets/images/poems/${post.featuredImage}`)" />
       </div>
-      <div class="w-2/3 pl-4">
+      <div class="w-[60%] pl-4">
         <p
           v-if="showCategory"
           class="uppercase text-xs tracking-wider mb-1 text-primary-light dark:text-primary-dark transition-colors"

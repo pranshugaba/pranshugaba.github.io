@@ -1,6 +1,6 @@
 <template>
   <figure>
-    <VImage :src="imgSrc" />
+    <VImage :src="src" />
     <figcaption
       class="mt-2 mb-2 text-xs text-gray-600 dark:text-gray-400 text-center transition-colors"
     >
@@ -19,7 +19,7 @@ export default {
     VImage,
   },
   props: {
-    imgSrc: String,
+    src: String,
     caption: String,
   },
 };

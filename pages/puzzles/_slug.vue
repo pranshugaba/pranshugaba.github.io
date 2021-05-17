@@ -4,7 +4,7 @@
 
     <VFigure
       v-if="puzzle.featuredImage"
-      :imgSrc="require(`~/assets/images/puzzles/${puzzle.featuredImage}`)"
+      :src="require(`~/assets/images/puzzles/${puzzle.featuredImage}`)"
       :caption="puzzle.caption"
     />
     <NuxtContent :document="puzzle" />

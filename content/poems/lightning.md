@@ -9,7 +9,7 @@ featuredImage: lightning.webp
 
 authors: ["pranshu"]
 
-tags: ["tanka", "lightning"]
+tags: ["rain", "lightning", "tanka"]
 category: poetry
 
 createdAt: 2019-08-09T14:40:58+05:30
@@ -23,5 +23,4 @@ scrawled in the sky
 in the middle of the night,  
 brighter than daytime  
 a sudden flash of lightning --  
-thunder follows soon after  
-
+thunder follows soon after

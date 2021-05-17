@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="max-w-screen-lg">
     <div
       class="block md:flex md:flex-row-reverse md:items-center md:justify-between"
     >

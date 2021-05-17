@@ -120,3 +120,24 @@ pre[class*="language-"] {
 .nuxt-content-highlight .filename {
   @apply absolute right-0 text-gray-300 z-10 mr-2 mt-1 text-sm;
 }
+
+.nuxt-content ul li {
+  @apply list-disc ml-8;
+}
+
+.nuxt-content ol li {
+  @apply list-decimal ml-8;
+}
+
+.float-right {
+  float: right;
+}
+
+.align-center {
+  display: flex;
+  justify-content: center;
+}
+.align-right {
+  display: flex;
+  justify-content: flex-end;
+}

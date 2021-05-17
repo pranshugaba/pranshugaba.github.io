@@ -1,9 +1,9 @@
 <template>
   <main class="content-width">
-    <h1>{{ tag }}</h1>
+    <PostTitle>{{ kebabToTitle(tag) }}</PostTitle>
 
     <div v-if="posts.length > 0">
-      <p>Posts tagged with {{ tag }}</p>
+      <PostSubtitle>Posts tagged with {{ tag }}</PostSubtitle>
       <ul>
         <li v-for="post of posts" :key="post.slug">
           <PostPreviewList :post="post" />
@@ -11,7 +11,7 @@
       </ul>
     </div>
     <div v-else>
-      <p>No posts with this tag.</p>
+      <PostSubtitle>No posts with this tag.</PostSubtitle>
     </div>
     <div class="text-right">
       <NuxtLink to="/tags"> See all tags &#10230;</NuxtLink>
@@ -20,7 +20,11 @@
 </template>
 
 <script>
+import { kebabToTitle } from "~/utils/helpers";
 export default {
+  methods: {
+    kebabToTitle,
+  },
   async asyncData({ $content, params }) {
     const tag = params.tag;
 
@@ -29,7 +33,7 @@ export default {
         tags: { $contains: tag },
       })
       .only(["title", "slug", "path", "createdAt"])
-      .sortBy("createdAt", "asc")
+      .sortBy("createdAt", "desc")
       .fetch();
 
     return { params, posts, tag };

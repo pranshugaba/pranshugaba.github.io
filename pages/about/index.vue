@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="max-w-screen-lg">
     <div class="block md:flex md:items-center md:justify-between">
       <NuxtImg
         src="/img/about/pranshu_cover.webp"

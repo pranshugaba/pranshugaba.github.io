@@ -1,5 +1,8 @@
 <template>
-  <img :src="src" class="h-auto object-cover rounded-lg shadow-md" />
+  <img
+    :src="src"
+    class="object-cover rounded-lg max-h-[90vh] mx-auto shadow-md"
+  />
 </template>
 
 <script>

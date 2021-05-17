@@ -41,7 +41,7 @@ Next, I tried out Next.js which uses React. I was surprised to see how easily I 
 
 I discovered the awesome-nuxtjs page on Github, and I loved the number of first-party plugins that Nuxt has.
 
-The Nuxt Content makes it very easy to access markdown files.
+The Nuxt Content module makes it very easy to access markdown files.
 Plugins are great, more contributors and better documentation.
 
 I did the theming and styling from scratch and am adding features gradually. I was able to match all the features offered in Hugo, and then some.
