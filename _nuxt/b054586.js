@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[14],{352:function(t,e,n){"use strict";n.r(e);var o={props:{post:Object}},c=n(11),component=Object(c.a)(o,(function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",{staticClass:"max-w-prose"},[n("NuxtContent",{attrs:{document:t.post}})],1)}),[],!1,null,null,null);e.default=component.exports}}]);

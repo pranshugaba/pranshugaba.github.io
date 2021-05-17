@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/tags/flowers", (function(a,b){return {data:[{params:{tag:a},posts:[{slug:b,title:b,createdAt:"2019-02-08T16:00:00.000Z",path:"\u002Fpoems\u002Fspring"},{slug:"grey-water",title:"grey water",createdAt:"2019-07-10T12:57:42.000Z",path:"\u002Fpoems\u002Fgrey-water"}],tag:a}],fetch:{},mutations:void 0}}("flowers","spring")));

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/playground", {data:[{}],fetch:{"0":{quote:{sentence:"I don't care about checking my worst impulses. I don't care about making the world a better place. Hang the world.",character:{name:"Cersei Lannister",slug:"cersei",house:{name:"House Lannister of Casterly Rock",slug:"lannister"}}}}},mutations:void 0});
