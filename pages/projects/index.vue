@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="content-width">
     <h1>Projects</h1>
     <h2>Apps</h2>
     <p>Decimal Clock</p>

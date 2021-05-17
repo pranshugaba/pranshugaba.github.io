@@ -3,9 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
   :root {
     --color-text-base: #000000;
     --color-text-muted: #374151; /* gray-500 */
@@ -31,6 +28,10 @@
   .theme-puzzle {
     --color-primary: #7c3aed; /* indigo-600 */
     --color-primary-dark: #c4b5fd; /* indigo-300 */
+  }
+
+  .content-width {
+    @apply mx-auto sm:max-w-lg md:max-w-xl lg:max-w-prose;
   }
 
   h1 {

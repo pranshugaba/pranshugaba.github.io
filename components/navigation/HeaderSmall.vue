@@ -1,6 +1,6 @@
 <template>
   <header class="pt-1 mb-10">
-    <div class="flex flex-wrap items-center justify-between pt-4 pb-4">
+    <div class="flex flex-wrap items-center justify-between pt-4 pb-4 md:hidden">
       <NuxtLink
         to="/"
         class="font-bold text-lg text-primary-light dark:text-primary-dark transition-colors logo"

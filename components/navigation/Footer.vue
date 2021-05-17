@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="mt-6 pt-4 pb-4 border-t border-primary-light dark:border-primary-dark transition-colors flex justify-between"
+    class="mt-10 pt-4 pb-4 px-2 border-t border-primary-light dark:border-primary-dark transition-colors flex justify-between"
   >
     <NuxtLink to="/licence"> © 2021 Pranshu Gaba </NuxtLink>
     <UtilsColorModeToggle />

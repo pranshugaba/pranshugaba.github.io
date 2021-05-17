@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="content-width">
     <PostHeading :post="article" :authors="authors" />
 
     <NuxtContent :document="article" />

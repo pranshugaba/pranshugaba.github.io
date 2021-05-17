@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="content-width">
     <PostTitle>My Reading List</PostTitle>
     <PostSubtitle>Some books that I have read recently</PostSubtitle>
     <ul>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="content-width">
     <h1>Licence</h1>
     <h2>CC-BY-SA 4.0</h2>
     <p>

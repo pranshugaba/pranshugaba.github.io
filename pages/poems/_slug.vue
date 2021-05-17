@@ -1,17 +1,23 @@
 <template>
   <main>
-    <PostHeading :post="poem" :authors="authors" />
+    <PostHeading :post="poem" :authors="authors" class="content-width" />
 
-    <VFigure
-      :imgSrc="require(`~/assets/images/poems/${poem.featuredImage}`)"
-      :caption="poem.caption"
-    />
+    <div class="block md:flex md:items-center md:justify-around">
+      <VFigure
+        :imgSrc="require(`~/assets/images/poems/${poem.featuredImage}`)"
+        :caption="poem.caption"
+        class="md:max-w-[60%] mx-auto md:mx-0"
+      />
+      <div class="mx-auto w-max md:mx-0 md:ml-6">
+        <NuxtContent class="text-2xl font-serif" :document="poem" />
+      </div>
+    </div>
 
-    <NuxtContent class="text-2xl font-serif" :document="poem" />
+    <div class="content-width">
+      <TagChips :tags="poem.tags" />
 
-    <TagChips :tags="poem.tags" />
-
-    <PrevNextUp :prev="prev" :next="next" :up="up" />
+      <PrevNextUp :prev="prev" :next="next" :up="up" />
+    </div>
   </main>
 </template>
 

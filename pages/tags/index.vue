@@ -1,7 +1,10 @@
 <template>
-  <main>
+  <main class="content-width">
     <PostTitle>Tags</PostTitle>
-    <PostSubtitle>Common tags</PostSubtitle>
+    <PostSubtitle
+      >All tags used on this site. <br />Font size is proportional to the square
+      root of frequency.
+    </PostSubtitle>
     <NavigationTagCloud :tagList="tagList" />
   </main>
 </template>

@@ -1,10 +1,8 @@
 <template>
-  <div
-    class="px-4 mx-auto sm:max-w-lg md:max-w-xl lg:max-w-prose"
-    :class="theme"
-  >
-    <NavigationHeader />
-    <Nuxt />
+  <div class="px-4 mx-auto max-w-screen-lg" :class="theme">
+    <NavigationHeaderSmall class="md:hidden" />
+    <NavigationHeaderLarge class="hidden md:block" />
+    <Nuxt class="md:mx-auto md:px-4" />
     <NavigationFooter />
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="content-width">
     <PostTitle>Puzzles</PostTitle>
     <PostSubtitle>Thought-provoking, mind-bending puzzles</PostSubtitle>
     <ul>

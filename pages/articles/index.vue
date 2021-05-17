@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="content-width">
     <PostTitle>Articles</PostTitle>
     <PostSubtitle>About Linux and Webdev</PostSubtitle>
     <ul>

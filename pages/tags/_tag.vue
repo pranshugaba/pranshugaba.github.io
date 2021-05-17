@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="content-width">
     <h1>{{ tag }}</h1>
 
     <div v-if="posts.length > 0">

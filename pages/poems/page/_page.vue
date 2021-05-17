@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="content-width">
     <PostTitle>Poems</PostTitle>
     <PostSubtitle>Haiku, tankas, and limericks</PostSubtitle>
     <!-- <p class="text-center">

@@ -1,13 +1,17 @@
 <template>
   <main>
-    <NuxtImg
-      class="rounded-3xl max-w-1/4 mx-auto"
-      :src="`/img/authors/${author.avatar}`"
-    />
-    <p class="mb-0">Posts by</p>
-    <h1 class="mb-0">{{ author.name }}</h1>
-    <p class="description">{{ author.bio }}</p>
-    <ul>
+    <div class="block md:flex md:items-center md:justify-between">
+      <NuxtImg
+        :src="`/img/authors/${author.avatar}`"
+        class="rounded-3xl max-w-1/4 md:max-w-[20%] mx-auto md:mx-0 md:mr-8 my-8 md:my-0 shadow-md"
+      />
+      <div>
+        <p class="mb-0">Posts by</p>
+        <h1 class="mb-0">{{ author.name }}</h1>
+        <p class="description">{{ author.bio }}</p>
+      </div>
+    </div>
+    <ul class="content-width mt-8">
       <li v-for="post of posts" :key="post.slug">
         <PostPreviewList :post="post" />
       </li>

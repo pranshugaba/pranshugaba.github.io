@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="content-width">
     <NuxtContent :document="uses" />
   </main>
 </template>
