@@ -43,7 +43,7 @@
 
 <script>
 import VImage from "~/components/images/VImage";
-import { formatDate } from "~/utils/date";
+import { formatDate } from "~/utils/helpers";
 
 export default {
   components: {

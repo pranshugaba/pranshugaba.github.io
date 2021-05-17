@@ -13,9 +13,9 @@
 </template>
 
 <script>
-import { formatDate } from "~/utils/date";
+import { formatDate } from "~/utils/helpers";
 export default {
-  async asyncData({ $content, params }) {
+  async asyncData({ $content }) {
     const puzzles = await $content("puzzles")
       .only(["title", "slug", "createdAt", "path"])
       .sortBy("createdAt", "desc")

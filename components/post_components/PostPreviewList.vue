@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { formatDate } from "~/utils/date";
+import { formatDate } from "~/utils/helpers";
 import { getCategoryFromRoute, getThemeFromCategory } from "~/utils/helpers";
 
 export default {

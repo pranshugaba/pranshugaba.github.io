@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  async asyncData({ $content, params }) {
+  async asyncData({ $content }) {
     const authors = await $content("authors")
       .where({ slug: { $ne: "dummy" } })
       .only(["name", "slug"])

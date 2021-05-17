@@ -2,6 +2,11 @@
   <main>
     <PostHeading :post="puzzle" :authors="authors" />
 
+    <VFigure
+      v-if="puzzle.featuredImage"
+      :imgSrc="require(`~/assets/images/puzzles/${puzzle.featuredImage}`)"
+      :caption="puzzle.caption"
+    />
     <NuxtContent :document="puzzle" />
 
     <TagChips :tags="puzzle.tags" />

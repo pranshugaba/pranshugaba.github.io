@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { formatDate } from "~/utils/date";
+import { formatDate } from "~/utils/helpers";
 export default {
   async asyncData({ $content }) {
     const articles = await $content("articles")

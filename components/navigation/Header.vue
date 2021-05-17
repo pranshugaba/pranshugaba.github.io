@@ -36,10 +36,12 @@
 
 <style scoped>
 a {
-  @apply px-2 py-1 rounded-md;
+  @apply px-2 py-1 rounded-md hover:no-underline;
 }
+
 .nuxt-link-active:not(.logo),
-.nuxt-link-exact-active {
+.nuxt-link-exact-active,
+a:hover {
   @apply bg-primary-light text-gray-100 dark:bg-primary-dark dark:text-gray-900;
 }
 </style>

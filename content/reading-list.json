@@ -1,0 +1,18 @@
+[
+  {
+    "slug": "hobbit",
+    "title": "The Hobbit, or There and Back Again",
+    "author": "J. R. R. Tolkien",
+    "cover": "hobbit.jpg",
+    "startDate": "2021-03-20",
+    "endDate": "2021-05-11"
+  },
+  {
+    "slug": "shutter-island",
+    "title": "Shutter Island",
+    "author": "Dennis Lehane",
+    "cover": "shutter-island.jpg",
+    "startDate": "2020-11-20",
+    "endDate": "2020-11-21"
+  }
+]
