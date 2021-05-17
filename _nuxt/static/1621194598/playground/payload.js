@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/playground", {data:[{}],fetch:{"0":{quote:{sentence:"Everything before the word \"but\" is horseshit.",character:{name:"Jon Snow",slug:"jon",house:{name:"House Stark of Winterfell",slug:"stark"}}}}},mutations:void 0});
