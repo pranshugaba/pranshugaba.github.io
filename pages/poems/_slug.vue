@@ -8,8 +8,8 @@
         :caption="poem.caption"
         class="md:max-w-[55%] mx-auto md:mx-0"
       />
-      <div class="mx-auto w-full sm:w-max md:mx-0 md:ml-5 lg:ml-7">
-        <NuxtContent class="text-2xl font-serif" :document="poem" />
+      <div class="mx-auto w-max md:mx-0 md:ml-5 lg:ml-7">
+        <NuxtContent class="text-lg sm:text-xl lg:text-2xl font-serif" :document="poem" />
       </div>
     </div>
 

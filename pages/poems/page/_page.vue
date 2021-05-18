@@ -2,9 +2,6 @@
   <div class="content-width">
     <PostTitle>Poems</PostTitle>
     <PostSubtitle>Haiku, tankas, and limericks</PostSubtitle>
-    <!-- <p class="text-center">
-      Posts {{ startPost }}-{{ endPost }} of {{ totalPosts }}
-    </p> -->
     <ul>
       <li v-for="poem of poems" :key="poem.slug">
         <PostPreviewThumbnail
@@ -14,13 +11,15 @@
         />
       </li>
     </ul>
+    <!-- <p class="text-center">
+      Poems {{ startPost }} - {{ endPost }} of {{ totalPosts }}
+    </p> -->
     <Pagination :totalPages="lastPage" :postsPerPage="postsPerPage" />
-    <p class="text-center">Page {{ currentPage }} of {{ lastPage }}</p>
   </div>
 </template>
 
 <script>
-import Pagination from "~/components/navigation/Pagination";
+import Pagination from "~/components/page/Pagination";
 export default {
   components: {
     Pagination,

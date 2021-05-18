@@ -1,22 +1,13 @@
 <template>
   <main class="max-w-screen-lg">
-    <div
-      class="block md:flex md:flex-row-reverse md:items-center md:justify-between"
-    >
-      <NuxtImg
-        src="/img/yellow.webp"
-        alt="Pranshu Gaba standing in front of yellow flowers, holding a yellow umbrella."
-        class="w-3/5 max-w-sm mx-auto md:mx-0 md:ml-4 my-8 md:my-0 rounded-2xl shadow-md"
-      />
-      <div class="max-w-md">
-        <PostTitle>Hello There!</PostTitle>
-        <PostSubtitle>How are you?</PostSubtitle>
-        <p>
-          I am Pranshu Gaba. I am a PhD student in computer science. Welcome to
-          my (new) website!
-        </p>
-      </div>
-    </div>
+    <NavigationHero img="/img/yellow.webp">
+      <PostTitle>Hello There!</PostTitle>
+      <PostSubtitle>How are you?</PostSubtitle>
+      <p>
+        I am Pranshu Gaba. I am a PhD student in computer science. Welcome to my
+        (new) website!
+      </p>
+    </NavigationHero>
 
     <h2>Recent posts</h2>
     <h3>Puzzles</h3>
