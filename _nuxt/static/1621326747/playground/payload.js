@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/playground", {data:[{}],fetch:{"0":{quote:{sentence:"I need you to become the man you were always meant to be. Not next year, not tomorrow, now.",character:{name:"Tywin Lannister",slug:"tywin",house:{name:"House Lannister of Casterly Rock",slug:"lannister"}}}}},mutations:void 0});
