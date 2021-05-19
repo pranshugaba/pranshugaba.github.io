@@ -1,6 +1,6 @@
 <template>
   <main class="max-w-screen-lg">
-    <NavigationHero
+    <PageHero
       img="/img/yellow.webp"
       alt="Pranshu Gaba standing in front of yellow flowers, holding a yellow umbrella."
     >
@@ -10,7 +10,7 @@
         I am Pranshu Gaba. I am a PhD student in computer science. Welcome to my
         (new) website!
       </p>
-    </NavigationHero>
+    </PageHero>
 
     <h2>Recent posts</h2>
     <h3>Puzzles</h3>

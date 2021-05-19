@@ -24,7 +24,7 @@ featured: false
 ---
 
 This site is built using Nuxt.js, and I have had a great time making it.
-The previous version of this website (now retired to <NavigationExtLink to="https://hugo.pranshugaba.com">hugo.pranshugaba.com</NavigationExtLink>) was built using Hugo.
+The previous version of this website (now retired to <NavExtLink to="https://hugo.pranshugaba.com">hugo.pranshugaba.com</NavExtLink>) was built using Hugo.
 In this post, I outline how I made the switch from Hugo to Nuxt. I hope this helps anyone who is looking to make a static site using Nuxt.
 
 Hugo is quick to install and very easy to get started with.

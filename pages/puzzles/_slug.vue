@@ -2,11 +2,12 @@
   <main class="content-width">
     <PostHeading :post="puzzle" :authors="authors" />
 
-    <VFigure
+    <BaseFigure
       v-if="puzzle.featuredImage"
       :src="require(`~/assets/images/puzzles/${puzzle.featuredImage}`)"
       :caption="puzzle.caption"
     />
+
     <NuxtContent :document="puzzle" />
 
     <PostTagChips :tags="puzzle.tags" />
@@ -18,12 +19,8 @@
 
 <script>
 import { readingTime } from "~/utils/helpers";
-import VFigure from "~/components/images/VFigure";
 
 export default {
-  components: {
-    VFigure,
-  },
   methods: {
     readingTime,
   },

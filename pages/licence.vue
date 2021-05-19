@@ -4,31 +4,31 @@
     <h2>CC-BY-SA 4.0</h2>
     <p>
       Unless otherwise stated, all content on this website is licensed under a
-      <ExtLink to="https://creativecommons.org/licenses/by-sa/4.0/">
-        Commons Attribution-ShareAlike 4.0 International License </ExtLink
+      <NavExtLink to="https://creativecommons.org/licenses/by-sa/4.0/">
+        Commons Attribution-ShareAlike 4.0 International License </NavExtLink
       >.
     </p>
 
     <h3>Attributions</h3>
     <ul>
       <li>
-        <ExtLink
+        <NavExtLink
           to="https://freeicons.io/free-space-icons/external-link-icon-icon"
-          >External link </ExtLink
+          >External link </NavExtLink
         >,
-        <ExtLink to="https://freeicons.io/free-space-icons/sun-icon-icon"
-          >Sun </ExtLink
+        <NavExtLink to="https://freeicons.io/free-space-icons/sun-icon-icon"
+          >Sun </NavExtLink
         >, and
-        <ExtLink to="https://freeicons.io/free-space-icons/moon-icon-icon"
-          >Moon</ExtLink
+        <NavExtLink to="https://freeicons.io/free-space-icons/moon-icon-icon"
+          >Moon</NavExtLink
         >
         icons by
-        <ExtLink to="https://freeicons.io/profile/714" target="_blank"
-          >Raj Dev</ExtLink
+        <NavExtLink to="https://freeicons.io/profile/714" target="_blank"
+          >Raj Dev</NavExtLink
         >
         are licensed under
-        <ExtLink to="https://creativecommons.org/licenses/by-sa/3.0/"
-          >CC BY-SA 3.0</ExtLink
+        <NavExtLink to="https://creativecommons.org/licenses/by-sa/3.0/"
+          >CC BY-SA 3.0</NavExtLink
         >.
       </li>
     </ul>
@@ -36,11 +36,7 @@
 </template>
 
 <script>
-import ExtLink from "~/components/navigation/ExtLink";
 export default {
-  components: {
-    ExtLink,
-  },
   head: {
     title: "Licence",
   },

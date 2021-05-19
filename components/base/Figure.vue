@@ -1,6 +1,6 @@
 <template>
   <figure>
-    <VImage :src="src" />
+    <BaseImage :src="src" :alt="alt" />
     <figcaption
       class="mt-2 mb-2 text-xs text-gray-600 dark:text-gray-400 text-center transition-colors"
     >
@@ -13,13 +13,10 @@
 </template>
 
 <script>
-import VImage from "~/components/images/VImage";
 export default {
-  components: {
-    VImage,
-  },
   props: {
     src: String,
+    alt: String,
     caption: String,
   },
 };

@@ -9,12 +9,9 @@
         <PostTitle>About Me</PostTitle>
         <p>
           I am a PhD student in Theoretical Computer Science at
-          <NavigationExtLink to="https://www.tifr.res.in/"
-            >TIFR, Mumbai</NavigationExtLink
-          >. I did my undergraduate studies in Maths at
-          <NavigationExtLink to="https://iisc.ac.in/"
-            >IISc, Bangalore</NavigationExtLink
-          >.
+          <NavExtLink to="https://www.tifr.res.in/">TIFR, Mumbai</NavExtLink>. I
+          did my undergraduate studies in Maths at
+          <NavExtLink to="https://iisc.ac.in/">IISc, Bangalore</NavExtLink>.
         </p>
 
         <p>
@@ -64,13 +61,12 @@
       <h1 class="mt-16">About this site</h1>
       <p>
         This site is built using
-        <NavigationExtLink to="https://nuxtjs.org/">Nuxt.js</NavigationExtLink>
+        <NavExtLink to="https://nuxtjs.org/">Nuxt.js</NavExtLink>
         and
-        <NavigationExtLink to="https://vuejs.org/">Vue.js</NavigationExtLink>.
-        You can find the source code for this site on
-        <NavigationExtLink
-          to="https://github.com/pranshugaba/pranshugaba.github.io"
-          >GitHub</NavigationExtLink
+        <NavExtLink to="https://vuejs.org/">Vue.js</NavExtLink>. You can find
+        the source code for this site on
+        <NavExtLink to="https://github.com/pranshugaba/pranshugaba.github.io"
+          >GitHub</NavExtLink
         >.
       </p>
       <h2>Statistics</h2>
@@ -89,18 +85,16 @@
       <p>on this website.</p>
       <p>Last updated on {{ getBuildDate() }}</p>
       <h2>Tags</h2>
-      <NavigationTagCloud :tagList="tagList" />
+      <NavTagCloud :tagList="tagList" />
     </div>
   </main>
 </template>
 
 <script>
-import VImage from "~/components/images/VImage.vue";
 import { formatDate, getBuildDate } from "~/utils/helpers";
 import { getTagsFrequency } from "~/utils/getData";
 
 export default {
-  components: { VImage },
   head: {
     title: "About Me",
   },

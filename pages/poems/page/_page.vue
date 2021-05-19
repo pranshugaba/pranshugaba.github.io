@@ -14,16 +14,12 @@
     <!-- <p class="text-center">
       Poems {{ startPost }} - {{ endPost }} of {{ totalPosts }}
     </p> -->
-    <Pagination :totalPages="lastPage" :postsPerPage="postsPerPage" />
+    <NavPagination :totalPages="lastPage" :postsPerPage="postsPerPage" />
   </div>
 </template>
 
 <script>
-import Pagination from "~/components/pagination/Pagination";
 export default {
-  components: {
-    Pagination,
-  },
   async asyncData({ $content, params, error }) {
     const postsPerPage = 5;
     const currentPage = parseInt(params.page);

@@ -3,7 +3,7 @@
     <PostHeading :post="poem" :authors="authors" class="content-width" />
 
     <div class="block md:flex md:items-center md:justify-center">
-      <VFigure
+      <BaseFigure
         :src="require(`~/assets/images/poems/${poem.featuredImage}`)"
         :caption="poem.caption"
         class="md:max-w-[55%] mx-auto md:mx-0"
@@ -25,12 +25,7 @@
 </template>
 
 <script>
-import VFigure from "~/components/images/VFigure";
-
 export default {
-  components: {
-    VFigure,
-  },
   async asyncData({ $content, params }) {
     const poem = await $content("poems", params.slug).fetch();
 

@@ -1,6 +1,6 @@
 <template>
   <main class="max-w-screen-lg">
-    <NavigationHero img="/img/contact/pranshu_kimono.webp">
+    <PageHero img="/img/contact/pranshu_kimono.webp">
       <PostTitle>Contact me</PostTitle>
       <PostSubtitle>Get in touch</PostSubtitle>
       <ul>
@@ -10,23 +10,19 @@
         </li>
         <li>
           Github:
-          <ExtLink to="https://github.com/pranshugaba">@pranshugaba</ExtLink>
+          <NavExtLink to="https://github.com/pranshugaba">@pranshugaba</NavExtLink>
         </li>
         <li>
           Twitter:
-          <ExtLink to="https://twitter.com/pranshugaba">@pranshugaba</ExtLink>
+          <NavExtLink to="https://twitter.com/pranshugaba">@pranshugaba</NavExtLink>
         </li>
       </ul>
-    </NavigationHero>
+    </PageHero>
   </main>
 </template>
 
 <script>
-import ExtLink from "~/components/navigation/ExtLink";
 export default {
-  components: {
-    ExtLink,
-  },
   head: {
     title: "Contact",
   },

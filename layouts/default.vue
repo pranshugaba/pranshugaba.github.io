@@ -1,9 +1,9 @@
 <template>
   <div class="px-4 mx-auto max-w-screen-xl" :class="theme">
-    <NavigationHeaderSmall class="md:hidden" />
-    <NavigationHeaderLarge class="hidden md:block" />
+    <NavHeaderSmall class="md:hidden" />
+    <NavHeaderLarge class="hidden md:block" />
     <Nuxt class="md:mx-auto lg:px-4" />
-    <NavigationFooter />
+    <NavFooter />
   </div>
 </template>
 

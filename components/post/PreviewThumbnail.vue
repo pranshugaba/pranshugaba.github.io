@@ -2,7 +2,9 @@
   <NuxtLink :to="post.path" class="inline-block hover:no-underline mb-6">
     <div class="flex flex-wrap items-center group">
       <div class="w-[40%]">
-        <VImage :src="require(`~/assets/images/poems/${post.featuredImage}`)" />
+        <BaseImage
+          :src="require(`~/assets/images/poems/${post.featuredImage}`)"
+        />
       </div>
       <div class="w-[60%] pl-4">
         <p
@@ -39,13 +41,9 @@
 </template>
 
 <script>
-import VImage from "~/components/images/VImage";
 import { formatDate } from "~/utils/helpers";
 
 export default {
-  components: {
-    VImage,
-  },
   props: {
     post: Object,
     showCategory: {

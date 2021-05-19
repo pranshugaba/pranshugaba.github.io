@@ -12,12 +12,7 @@
 </template>
 
 <script>
-import VFigure from "~/components/images/VFigure";
-
 export default {
-  components: {
-    VFigure,
-  },
   async asyncData({ $content, params }) {
     const article = await $content("articles", params.slug).fetch();
 

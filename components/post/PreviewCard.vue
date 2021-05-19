@@ -6,7 +6,7 @@
     <div
       class="overflow-hidden rounded-lg shadow-lg dark:bg-gray-800 transition-colors group"
     >
-      <VImage
+      <BaseImage
         class="w-full"
         :src="require(`~/assets/images/poems/${post.featuredImage}`)"
       />
@@ -42,13 +42,9 @@
 </template>
 
 <script>
-import VImage from "~/components/images/VImage";
 import { formatDate } from "~/utils/helpers";
 
 export default {
-  components: {
-    VImage,
-  },
   props: {
     post: Object,
     authors: {

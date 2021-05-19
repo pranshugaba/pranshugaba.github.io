@@ -5,7 +5,7 @@
       >All tags used on this site. <br />Font size is proportional to the square
       root of frequency.
     </PostSubtitle>
-    <NavigationTagCloud :tagList="tagList" />
+    <NavTagCloud :tagList="tagList" />
   </main>
 </template>
 
