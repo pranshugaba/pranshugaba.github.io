@@ -1,6 +1,9 @@
 <template>
   <main class="max-w-screen-lg">
-    <NavigationHero img="/img/yellow.webp">
+    <NavigationHero
+      img="/img/yellow.webp"
+      alt="Pranshu Gaba standing in front of yellow flowers, holding a yellow umbrella."
+    >
       <PostTitle>Hello There!</PostTitle>
       <PostSubtitle>How are you?</PostSubtitle>
       <p>

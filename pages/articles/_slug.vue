@@ -4,27 +4,19 @@
 
     <NuxtContent :document="article" />
 
-    <TagChips :tags="article.tags" />
+    <PostTagChips :tags="article.tags" />
 
     <PostAuthorBios :authors="authors" />
-    <PrevNextUp :prev="prev" :next="next" :up="up" />
+    <PostPrevNextUp :prev="prev" :next="next" :up="up" />
   </main>
 </template>
 
 <script>
 import VFigure from "~/components/images/VFigure";
-import PrevNextUp from "~/components/post_components/PrevNextUp";
-import TagChips from "~/components/post_components/TagChips";
-import PostAuthorBios from "~/components/post_components/PostAuthorBios";
-import PostSocialLinks from "~/components/post_components/PostSocialLinks";
 
 export default {
   components: {
     VFigure,
-    PrevNextUp,
-    TagChips,
-    PostAuthorBios,
-    PostSocialLinks,
   },
   async asyncData({ $content, params }) {
     const article = await $content("articles", params.slug).fetch();

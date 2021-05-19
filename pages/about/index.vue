@@ -5,7 +5,7 @@
         src="/img/about/pranshu_cover.webp"
         class="sm:max-w-3/4 md:max-w-[45%] mx-auto md:mx-0 md:mr-8 my-8 md:my-0 rounded-xl shadow-md"
       />
-      <div>
+      <div class="content-width">
         <PostTitle>About Me</PostTitle>
         <p>
           I am a PhD student in Theoretical Computer Science at

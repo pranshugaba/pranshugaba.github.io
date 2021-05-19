@@ -9,30 +9,27 @@
         class="md:max-w-[55%] mx-auto md:mx-0"
       />
       <div class="mx-auto w-max md:mx-0 md:ml-5 lg:ml-7">
-        <NuxtContent class="text-lg sm:text-xl lg:text-2xl font-serif" :document="poem" />
+        <NuxtContent
+          class="text-lg sm:text-xl lg:text-2xl font-serif"
+          :document="poem"
+        />
       </div>
     </div>
 
     <div class="content-width">
-      <TagChips :tags="poem.tags" />
+      <PostTagChips :tags="poem.tags" />
       <PostAuthorBios :authors="authors" />
-      <PrevNextUp :prev="prev" :next="next" :up="up" />
+      <PostPrevNextUp :prev="prev" :next="next" :up="up" />
     </div>
   </main>
 </template>
 
 <script>
 import VFigure from "~/components/images/VFigure";
-import PrevNextUp from "~/components/post_components/PrevNextUp";
-import TagChips from "~/components/post_components/TagChips";
-import PostAuthorBios from "~/components/post_components/PostAuthorBios";
 
 export default {
   components: {
     VFigure,
-    TagChips,
-    PrevNextUp,
-    PostAuthorBios,
   },
   async asyncData({ $content, params }) {
     const poem = await $content("poems", params.slug).fetch();

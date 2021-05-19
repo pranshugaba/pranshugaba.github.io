@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import Pagination from "~/components/page/Pagination";
+import Pagination from "~/components/pagination/Pagination";
 export default {
   components: {
     Pagination,

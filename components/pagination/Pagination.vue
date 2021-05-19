@@ -23,7 +23,7 @@
             name: 'poems-page-page',
             params: { page: index },
           }"
-          class="hover:no-underline"
+          class="hover:no-underline group"
         >
           <div
             class="px-2 py-0.5 rounded transition-colors"
@@ -87,9 +87,9 @@ export default {
 <style scoped>
 .current-page {
   @apply bg-primary-light text-white dark:bg-primary-dark dark:text-black
-  hover:no-underline;
+  group-hover:no-underline;
 }
 .other-page {
-  @apply border border-transparent hover:no-underline hover:border-primary-light dark:hover:border-primary-dark;
+  @apply border border-transparent group-hover:no-underline group-hover:border-primary-light dark:group-hover:border-primary-dark;
 }
 </style>

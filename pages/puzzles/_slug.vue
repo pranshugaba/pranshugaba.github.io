@@ -1,5 +1,5 @@
 <template>
-  <main class="content-width" >
+  <main class="content-width">
     <PostHeading :post="puzzle" :authors="authors" />
 
     <VFigure
@@ -9,26 +9,20 @@
     />
     <NuxtContent :document="puzzle" />
 
-    <TagChips :tags="puzzle.tags" />
+    <PostTagChips :tags="puzzle.tags" />
 
     <PostAuthorBios :authors="authors" />
-    <PrevNextUp :prev="prev" :next="next" :up="up" />
+    <PostPrevNextUp :prev="prev" :next="next" :up="up" />
   </main>
 </template>
 
 <script>
 import { readingTime } from "~/utils/helpers";
 import VFigure from "~/components/images/VFigure";
-import PrevNextUp from "~/components/post_components/PrevNextUp";
-import TagChips from "~/components/post_components/TagChips";
-import PostAuthorBios from "~/components/post_components/PostAuthorBios";
 
 export default {
   components: {
     VFigure,
-    PrevNextUp,
-    TagChips,
-    PostAuthorBios,
   },
   methods: {
     readingTime,
