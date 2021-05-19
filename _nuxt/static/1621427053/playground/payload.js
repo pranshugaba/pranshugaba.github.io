@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/playground", (function(a){return {data:[{}],fetch:{"0":{quote:{sentence:"Chaos isn't a pit. Chaos is a ladder.",character:{name:"Petyr Baelish",slug:a,house:{name:"House Baelish of Harrenhal",slug:a}}}}},mutations:void 0}}("baelish")));
