@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/playground", {data:[{}],fetch:{"0":{quote:{sentence:"Never forget what you are. The rest of the world will not. Wear it like armour, and it can never be used to hurt you.",character:{name:"Tyrion Lannister",slug:"tyrion",house:{name:"House Lannister of Casterly Rock",slug:"lannister"}}}}},mutations:void 0});
