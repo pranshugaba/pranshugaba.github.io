@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/playground", {data:[{}],fetch:{"0":{quote:{sentence:"When you play the game of thrones, you win or you die. There is no middle ground.",character:{name:"Cersei Lannister",slug:"cersei",house:{name:"House Lannister of Casterly Rock",slug:"lannister"}}}}},mutations:void 0});
