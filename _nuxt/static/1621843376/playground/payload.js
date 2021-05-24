@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/playground", {data:[{}],fetch:{"0":{quote:{sentence:"By what right does the wolf judge the lion?",character:{name:"Jaime Lannister",slug:"jaime",house:{name:"House Lannister of Casterly Rock",slug:"lannister"}}}}},mutations:void 0});
