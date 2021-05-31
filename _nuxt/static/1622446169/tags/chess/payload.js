@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/tags/chess", (function(a){return {data:[{params:{tag:a},posts:[{slug:"2",title:"A Chess Puzzle",createdAt:"2021-04-05T19:00:00.000Z",path:"\u002Fpuzzles\u002F2"}],tag:a,_img:{}}],fetch:{},mutations:void 0}}("chess")));

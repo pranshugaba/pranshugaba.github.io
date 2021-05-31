@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/tags/group-theory", (function(a){return {data:[{params:{tag:a},posts:[{slug:"1",title:"The Picture Hanging Puzzle",createdAt:"2021-03-23T12:00:00.000Z",path:"\u002Fpuzzles\u002F1"}],tag:a}],fetch:{},mutations:void 0}}("group-theory")));

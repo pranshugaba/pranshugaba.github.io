@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/tags/books", (function(a,b){return {data:[{params:{tag:a},posts:[{slug:b,title:b,createdAt:"2020-10-27T07:30:00.000Z",path:"\u002Fpoems\u002Focean"}],tag:a}],fetch:{},mutations:void 0}}("books","ocean")));
