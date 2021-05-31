@@ -1,5 +1,10 @@
 <template>
   <main>
+    <SocialHead
+      :title="this.poem.title"
+      :description="this.poem.description"
+      :image="this.poem.featuredImage"
+    />
     <PostHeading :post="poem" :authors="authors" class="content-width" />
 
     <div class="block md:flex md:items-center md:justify-center">
@@ -43,9 +48,7 @@ export default {
   },
   head() {
     return {
-      title: this.poem.title,
       titleTemplate: "%s | A poem by Pranshu Gaba",
-      // description: this.poem.description,
     };
   },
   data() {

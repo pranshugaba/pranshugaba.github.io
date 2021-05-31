@@ -1,5 +1,6 @@
 <template>
   <main class="max-w-screen-lg">
+    <SocialHead title="Home" image="/img/authors/pranshu.webp" />
     <PageHero
       img="/img/yellow.webp"
       alt="Pranshu Gaba standing in front of yellow flowers, holding a yellow umbrella."
@@ -91,9 +92,6 @@ export default {
       );
       return postAuthors;
     },
-  },
-  head: {
-    title: "Home",
   },
 };
 </script>

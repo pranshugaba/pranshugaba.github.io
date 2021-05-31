@@ -1,5 +1,6 @@
 <template>
   <div class="content-width">
+    <SocialHead title="Licence" description="Licence and attributions" />
     <h1>Licence</h1>
     <h2>CC-BY-SA 4.0</h2>
     <p>

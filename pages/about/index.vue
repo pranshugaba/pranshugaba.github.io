@@ -1,5 +1,6 @@
 <template>
   <main class="max-w-screen-lg">
+    <SocialHead title="About me" image="/img/about/pranshu_cover.webp" />
     <div class="block md:flex md:items-center md:justify-between">
       <NuxtImg
         src="/img/about/pranshu_cover.webp"
@@ -95,9 +96,6 @@ import { formatDate, getBuildDate } from "~/utils/helpers";
 import { getTagsFrequency } from "~/utils/getData";
 
 export default {
-  head: {
-    title: "About Me",
-  },
   methods: {
     formatDate,
     getBuildDate,

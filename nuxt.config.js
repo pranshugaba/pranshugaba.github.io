@@ -1,5 +1,8 @@
 import getRoutes from "./utils/getRoutes";
 
+const siteDescription =
+  "Personal website of Pranshu Gaba. Here I share photos, poems, puzzles, and more!";
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
@@ -17,11 +20,9 @@ export default {
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "Pranshu Gaba's personal website. Here I share photos, puzzles, poems, and more!" }
+      { hid: "description", name: "description", content: siteDescription }
     ],
-    link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }
-    ]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -83,15 +84,15 @@ export default {
   },
   pwa: {
     meta: {
-      name: "PG",
+      name: "Pranshu Gaba",
       author: "Pranshu Gaba",
-      description: "Pranshu Gaba's website",
+      description: siteDescription,
       theme_color: "#3B82F6"
     },
     manifest: {
       name: "Pranshu's website",
       short_name: "Pranshu Gaba",
-      description: "Pranshu Gaba's website"
+      description: siteDescription
     }
   },
   sitemap: {

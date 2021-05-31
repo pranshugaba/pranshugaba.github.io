@@ -1,27 +1,15 @@
 <template>
-  <main>
+  <main class="content-width">
     <PostTitle>Playground</PostTitle>
     <PostSubtitle>Testing out new features for this website</PostSubtitle>
 
-    <h2>Random quote from ASOIAF</h2>
+    <h2>Quote from ASOIAF</h2>
     <blockquote>
-      <p>{{ quote.sentence }}</p>
-      <cite class="text-right block">-- {{ quote.character.name }}</cite>
+      <p>
+        Never forget what you are. The rest of the world will not. Wear it like
+        armour, and it can never be used to hurt you.
+      </p>
+      <cite class="text-right block">-- Tyrion Lannister</cite>
     </blockquote>
   </main>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      quote: {},
-    };
-  },
-  async fetch() {
-    this.quote = await fetch(
-      "https://game-of-thrones-quotes.herokuapp.com/v1/random"
-    ).then((res) => res.json());
-  },
-};
-</script>

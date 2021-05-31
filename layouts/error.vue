@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="content-width">
     <h1 v-if="error.statusCode === 404">404 - Page not found</h1>
     <h1 v-else>An error occurred</h1>
     <p>
