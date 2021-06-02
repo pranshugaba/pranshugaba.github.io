@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/articles", {data:[{articles:[{slug:"redesigning-my-website",title:"Redesigning my website",createdAt:"2021-05-11T14:00:00.000Z",path:"\u002Farticles\u002Fredesigning-my-website"}],_img:{}}],fetch:{},mutations:void 0});
