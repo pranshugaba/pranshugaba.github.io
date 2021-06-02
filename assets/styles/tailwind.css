@@ -114,6 +114,11 @@ pre[class*="language-"] {
   @apply rounded-md;
 }
 
+/* styles inline code but not code blocks */
+.nuxt-content p code {
+  @apply rounded px-1 py-0.5 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200;
+}
+
 .nuxt-content-highlight {
   @apply relative;
 }

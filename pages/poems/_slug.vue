@@ -1,9 +1,9 @@
 <template>
   <main>
     <SocialHead
-      :title="this.poem.title"
-      :description="this.poem.description"
-      :image="this.poem.featuredImage"
+      :title="poem.title"
+      :description="poem.description"
+      :image="`~/assets/images/poems/${poem.featuredImage}`"
     />
     <PostHeading :post="poem" :authors="authors" class="content-width" />
 

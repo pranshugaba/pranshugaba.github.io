@@ -1,6 +1,6 @@
 ---
-title: "Migrating from Hugo to Nuxt.js"
-subtitle: "A review of some static site generators"
+title: "Redesigning my website"
+subtitle: "Migrating from Hugo to Nuxt.js"
 description: "Migrating from Hugo to Nuxt.js"
 
 # featuredImage: "avatar.png"
@@ -33,11 +33,11 @@ There are a variety of user-submitted themes available, and out of those, the Ac
 When I wanted to modify the theme, I would have to override the templates, and in some cases rewrite them completely. This would often cause unintended effects.
 I wanted to create a theme from scratch, and I realized that frameworks such as React and Vue are better suited for this.
 
-I chose Vue because I had read that it is easier to learn than React. The top two candidate static site generators for Vue were Nuxt.js and Gridsome.
+Some of the popular static site generators are Gridsome, Next.js, and Nuxt.js.
 
-I tried out Gridsome first because it was more oriented towards static sites. I had to learn GraphQL in order to parse the markdown files.
+I tried out Gridsome first because it was more oriented towards static sites. I learnt GraphQL, which is required to parse the markdown files. I found the syntax quite verbose.
 
-Next, I tried out Next.js which uses React. I was surprised to see how easily I could pickup React since I knew Vue. Again, it wasn't easy parsing markdown files.
+Next, I tried out Next.js which uses React. I was surprised to see how easily I could pickup React since I knew Vue. It wasn't easy parsing markdown files. I had to use a third-party plugin `next-mdx-remote` which didn't work very well with NextLinks.
 
 I discovered the awesome-nuxtjs page on Github, and I loved the number of first-party plugins that Nuxt has.
 

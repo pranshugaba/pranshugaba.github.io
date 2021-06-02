@@ -1,11 +1,13 @@
 <template>
   <div class="mt-8 mb-10 flex items-center justify-start space-x-3">
     <div v-for="author of authors" :key="author.slug">
-      <NuxtImg
-        class="h-12 w-12 rounded-full"
-        :src="`/img/authors/${author.avatar}`"
-        alt="Avatar of the author"
-      />
+      <NuxtLink :to="author.path">
+        <NuxtImg
+          class="h-12 w-12 rounded-full"
+          :src="`/img/authors/${author.avatar}`"
+          alt="Avatar of the author"
+        />
+      </NuxtLink>
     </div>
     <div>
       <span v-for="(author, index) of authors" :key="author.slug">

@@ -2,7 +2,7 @@
   <figure>
     <BaseImage :src="src" :alt="alt" />
     <figcaption
-      class="mt-2 mb-2 text-xs text-gray-600 dark:text-gray-400 text-center transition-colors"
+      class="mt-3 mb-2 text-xs text-gray-600 dark:text-gray-400 text-center transition-colors"
     >
       <span v-if="caption">
         {{ caption }}

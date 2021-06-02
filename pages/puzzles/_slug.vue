@@ -1,6 +1,10 @@
 <template>
   <main class="content-width">
-    <PostHeading :post="puzzle" :authors="authors" />
+    <PostHeading
+      :category="`${puzzle.category} #${puzzle.slug}`"
+      :post="puzzle"
+      :authors="authors"
+    />
 
     <BaseFigure
       v-if="puzzle.featuredImage"

@@ -1,7 +1,7 @@
 <template>
   <main class="content-width">
     <PostTitle>Articles</PostTitle>
-    <PostSubtitle>About Linux and Webdev</PostSubtitle>
+    <PostSubtitle>About Linux, Android, and Webdev</PostSubtitle>
     <ul>
       <li v-for="article of articles" :key="article.slug">
         <PostPreviewList :post="article" />

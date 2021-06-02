@@ -39,6 +39,9 @@ module.exports = {
   darkMode: "class", // or 'media' or 'class'
   theme: {
     extend: {
+      // fontFamily: {
+      //   sans: ["Inter", "Roboto"]
+      // },
       textColor: {
         primary: {
           light: "var(--color-primary)",

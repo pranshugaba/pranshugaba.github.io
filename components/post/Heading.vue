@@ -1,6 +1,6 @@
 <template>
   <div>
-    <PostCategory>{{ post.category }}</PostCategory>
+    <PostCategory>{{ category }}</PostCategory>
     <PostTitle>{{ post.title }}</PostTitle>
     <PostSubtitle>{{ post.subtitle }}</PostSubtitle>
 
@@ -14,6 +14,12 @@ export default {
   props: {
     post: Object,
     authors: Array,
+    category: {
+      type: String,
+      default: function () {
+        return this.post.category;
+      },
+    },
   },
   methods: {
     readingTime,
