@@ -4,9 +4,9 @@
     <PostSubtitle>Thought-provoking, mind-bending puzzles</PostSubtitle>
     <ul>
       <li v-for="puzzle of puzzles" :key="puzzle.slug">
-        <PostPreviewList :post="puzzle"
+        <PostPreviewFancyList :post="puzzle"
           >#{{ puzzle.slug }} - {{ puzzle.title }}
-        </PostPreviewList>
+        </PostPreviewFancyList>
       </li>
     </ul>
   </main>
@@ -17,7 +17,7 @@ import { formatDate } from "~/utils/helpers";
 export default {
   async asyncData({ $content }) {
     const puzzles = await $content("puzzles")
-      .only(["title", "slug", "createdAt", "path"])
+      .only(["title", "slug", "createdAt", "path", "description"])
       .sortBy("createdAt", "desc")
       .fetch();
 

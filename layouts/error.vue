@@ -1,9 +1,10 @@
 <template>
   <div class="content-width">
-    <h1 v-if="error.statusCode === 404">404 - Page not found</h1>
-    <h1 v-else>An error occurred</h1>
+    <PostTitle v-if="error.statusCode === 404">404 - Page not found</PostTitle>
+    <PostTitle v-else>An error occurred</PostTitle>
+    <PostSubtitle>The page you requested could not be found. </PostSubtitle>
     <p>
-      <NuxtLink to="/">Return to Home page</NuxtLink>
+      <NuxtLink to="/">Return to the homepage</NuxtLink>
     </p>
     <!-- TODO: Add recent posts-->
   </div>

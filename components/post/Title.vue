@@ -1,3 +1,5 @@
 <template>
-  <h1 class="mb-3"><slot /></h1>
+  <h1 class="mb-2">
+    <slot />
+  </h1>
 </template>

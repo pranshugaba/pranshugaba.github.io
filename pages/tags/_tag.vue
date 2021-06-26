@@ -14,7 +14,7 @@
       <PostSubtitle>No posts with this tag.</PostSubtitle>
     </div>
     <div class="text-right">
-      <NuxtLink to="/tags"> See all tags &#10230;</NuxtLink>
+      <NuxtLink to="/tags"> See all tags -></NuxtLink>
     </div>
   </main>
 </template>

@@ -15,7 +15,7 @@ export default {
       lang: "en"
     },
     bodyAttrs: {
-      class: "bg-gray-50 dark:bg-gray-900 transition-colors"
+      class: "bg-white dark:bg-gray-900 transition-colors"
     },
     meta: [
       { charset: "utf-8" },
@@ -39,6 +39,7 @@ export default {
     // https://go.nuxtjs.dev/typescript
     "@nuxtjs/tailwindcss",
     "@nuxtjs/color-mode",
+    "@nuxtjs/google-fonts",
     "@nuxt/image",
     "@nuxtjs/svg",
     "@nuxt/postcss8",
@@ -68,7 +69,7 @@ export default {
   content: {
     markdown: {
       prism: {
-        theme: "prism-themes/themes/prism-gruvbox-dark.css"
+        theme: "prism-themes/themes/prism-night-owl.css"
       },
       remarkPlugins: [
         "remark-math",
@@ -77,6 +78,14 @@ export default {
       ],
       rehypePlugins: ["rehype-katex"]
     }
+  },
+  googleFonts: {
+    families: {
+      Inter: true,
+      "Pt+Serif": true,
+      "JetBrains+Mono": true
+    },
+    display: "swap"
   },
   loading: {
     color: "#3B82F6",

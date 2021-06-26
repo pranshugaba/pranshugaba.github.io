@@ -1,3 +1,5 @@
+import { stringify } from "postcss";
+
 const defaultOptions = {
   year: "numeric",
   month: "short",
@@ -115,5 +117,13 @@ export function getThemeFromCategory(category) {
     return "theme-article";
   } else {
     return "";
+  }
+}
+
+export function trimString(str, len = 50) {
+  if (str.length > len) {
+    return str.substring(0, len - 3) + "…";
+  } else {
+    return str;
   }
 }

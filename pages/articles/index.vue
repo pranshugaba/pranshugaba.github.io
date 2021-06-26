@@ -1,10 +1,10 @@
 <template>
   <main class="content-width">
     <PostTitle>Articles</PostTitle>
-    <PostSubtitle>About Linux, Android, and Webdev</PostSubtitle>
+    <PostSubtitle>About GameDev and WebDev</PostSubtitle>
     <ul>
       <li v-for="article of articles" :key="article.slug">
-        <PostPreviewList :post="article" />
+        <PostPreviewFancyList :post="article" />
       </li>
     </ul>
   </main>
@@ -15,7 +15,7 @@ import { formatDate } from "~/utils/helpers";
 export default {
   async asyncData({ $content }) {
     const articles = await $content("articles")
-      .only(["title", "slug", "createdAt", "path"])
+      .only(["title", "slug", "createdAt", "path", "description"])
       .sortBy("createdAt", "desc")
       .fetch();
 

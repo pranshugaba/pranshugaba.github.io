@@ -13,35 +13,92 @@
       </p>
     </PageHero>
 
-    <h2>Recent posts</h2>
-    <h3>Puzzles</h3>
-    <ul class="theme-puzzle">
-      <li v-for="puzzle of puzzles" :key="puzzle.slug">
-        <PostPreviewList :post="puzzle"
-          >#{{ puzzle.slug }} - {{ puzzle.title }}
-        </PostPreviewList>
-      </li>
-    </ul>
+    <div
+      class="
+        border-t border-primary-light
+        dark:border-primary-dark
+        transition-colors
+        mt-12
+      "
+    >
+      <h2 class="font-medium text-4xl tracking-tight mt-12">Recent posts</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+        <div
+          class="
+            theme-article
+            p-4
+            bg-primary-dark bg-opacity-10
+            rounded-xl
+            transition-colors
+          "
+        >
+          <h3
+            class="
+              pb-0.5
+              mt-0
+              border-b-2 border-primary-light border-dotted
+              dark:border-primary-dark
+              transition-colors
+              max-w-max
+            "
+          >
+            Articles
+          </h3>
+          <ul>
+            <li v-for="article of articles" :key="article.slug">
+              <PostPreviewFancyList :post="article" :descriptionLength="140" />
+            </li>
+          </ul>
+        </div>
 
-    <h3>Articles</h3>
-    <ul class="theme-article">
-      <li v-for="article of articles" :key="article.slug">
-        <PostPreviewList :post="article" />
-      </li>
-    </ul>
+        <div class="theme-poem p-4 bg-primary-dark bg-opacity-10 rounded-xl">
+          <h3
+            class="
+              pb-0.5
+              mt-0
+              border-b-2 border-dotted border-primary-light
+              dark:border-primary-dark
+              transition-colors
+              max-w-max
+            "
+          >
+            Poems
+          </h3>
+          <ul>
+            <li v-for="poem of poems" :key="poem.slug">
+              <PostPreviewFancyList :post="poem" />
+            </li>
+          </ul>
+          <div class="text-right">
+            <NuxtLink to="/poems/page/1">
+              See all {{ totalPoems }} poems -></NuxtLink
+            >
+          </div>
+        </div>
 
-    <h3>Poems</h3>
-    <ul class="theme-poem">
-      <li v-for="poem of poems" :key="poem.slug">
-        <PostPreviewList :post="poem" />
-      </li>
-    </ul>
+        <div class="theme-puzzle p-4 bg-primary-dark bg-opacity-10 rounded-xl">
+          <h3
+            class="
+              pb-0.5
+              mt-0
+              border-b-2 border-dotted border-primary-light
+              dark:border-primary-dark
+              transition-colors
+              max-w-max
+            "
+          >
+            Puzzles
+          </h3>
+          <ul>
+            <li v-for="puzzle of puzzles" :key="puzzle.slug">
+              <PostPreviewFancyList :post="puzzle"
+                >#{{ puzzle.slug }} - {{ puzzle.title }}
+              </PostPreviewFancyList>
+            </li>
+          </ul>
+        </div>
 
-    <div class="theme-poem text-right">
-      <NuxtLink to="/poems/page/1"> See all poems &#10230;</NuxtLink>
-    </div>
-
-    <!-- <h2>Comics</h2>
+        <!-- <h2>Comics</h2>
     <ul>
       <li>Boo!</li>
     </ul>
@@ -49,6 +106,8 @@
     <ul>
       <li>The Errand</li>
     </ul> -->
+      </div>
+    </div>
   </main>
 </template>
 
@@ -60,19 +119,22 @@ export default {
     const allAuthors = await $content("authors").fetch();
 
     const poems = await $content("poems")
-      .only(["title", "slug", "createdAt", "path"])
+      .only(["title", "slug", "createdAt", "path", "description"])
       .sortBy("createdAt", "desc")
       .limit(3)
       .fetch();
 
+    const allPoems = await $content("poems").only(["slug"]).fetch();
+    const totalPoems = allPoems.length;
+
     const puzzles = await $content("puzzles")
-      .only(["title", "slug", "createdAt", "path"])
+      .only(["title", "slug", "createdAt", "path", "description"])
       .sortBy("createdAt", "desc")
       .limit(3)
       .fetch();
 
     const articles = await $content("articles")
-      .only(["title", "slug", "createdAt", "path"])
+      .only(["title", "slug", "createdAt", "path", "description"])
       .sortBy("createdAt", "desc")
       .limit(3)
       .fetch();
@@ -81,6 +143,7 @@ export default {
       allAuthors,
       articles,
       poems,
+      totalPoems,
       puzzles,
     };
   },

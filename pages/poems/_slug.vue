@@ -11,6 +11,8 @@
       <BaseFigure
         :src="require(`~/assets/images/poems/${poem.featuredImage}`)"
         :caption="poem.caption"
+        :rounded="true"
+        :shadow="true"
         class="md:max-w-[55%] mx-auto md:mx-0"
       />
       <div class="mx-auto w-max md:mx-0 md:ml-5 lg:ml-7">

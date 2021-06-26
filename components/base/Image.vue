@@ -2,7 +2,8 @@
   <img
     :src="src"
     :alt="alt"
-    class="object-cover rounded-lg max-h-[90vh] mx-auto shadow-md"
+    class="object-cover mx-auto"
+    :class="`${rounded ? 'rounded-lg' : ''} ${shadow ? 'shadow-md' : ''}`"
   />
 </template>
 
@@ -11,6 +12,12 @@ export default {
   props: {
     src: String,
     alt: String,
+    rounded: {
+      default: true,
+    },
+    shadow: {
+      default: true,
+    },
   },
 };
 </script>

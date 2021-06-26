@@ -1,7 +1,6 @@
 <template>
   <div class="px-4 mx-auto max-w-screen-xl" :class="theme">
-    <NavHeaderSmall class="md:hidden" />
-    <NavHeaderLarge class="hidden md:block" />
+    <NavHeader />
     <Nuxt class="md:mx-auto lg:px-4" />
     <NavFooter />
   </div>

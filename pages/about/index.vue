@@ -4,9 +4,19 @@
     <div class="block md:flex md:items-center md:justify-between">
       <NuxtImg
         src="/img/about/pranshu_cover.webp"
-        class="sm:max-w-3/4 md:max-w-[45%] mx-auto md:mx-0 md:mr-8 my-8 md:my-0 rounded-xl shadow-md"
+        class="
+          sm:max-w-3/4
+          md:max-w-[45%]
+          mx-auto
+          md:mx-0
+          md:mr-8
+          my-8
+          md:my-0
+          rounded-xl
+          shadow-md
+        "
       />
-      <div class="content-width">
+      <div class="content-width theme-default">
         <PostTitle>About Me</PostTitle>
         <p>
           I am a PhD student in Theoretical Computer Science at
@@ -33,9 +43,12 @@
     </div>
     <div class="content-width">
       <h2>Reading</h2>
-      <p>I am currently reading The Hobbit, or There and Back again.</p>
+      <p>
+        I am currently reading The Lord of the Rings: The Fellowship of the
+        Ring.
+      </p>
       <div class="text-right">
-        <NuxtLink to="/reading-list">See my reading list &#10230;</NuxtLink>
+        <NuxtLink to="/reading-list">See my reading list -></NuxtLink>
       </div>
 
       <h2>Projects</h2>
@@ -44,9 +57,7 @@
         <li>Maths Wiki</li>
       </ul>
       <div class="text-right">
-        <NuxtLink to="/projects"
-          >See what I have been working on &#10230;</NuxtLink
-        >
+        <NuxtLink to="/projects">See what I have been working on -></NuxtLink>
       </div>
 
       <h2>Uses</h2>
@@ -56,7 +67,7 @@
         <li>Godot</li>
       </ul>
       <div class="text-right">
-        <NuxtLink to="/uses">See what I use &#10230;</NuxtLink>
+        <NuxtLink to="/uses">See what I use -></NuxtLink>
       </div>
 
       <h1 class="mt-16">About this site</h1>
@@ -74,13 +85,13 @@
       <p>There are currently</p>
       <ul class="list-disc list-inside ml-6">
         <li>
-          <NuxtLink to="/poems"> {{ totalPoems }} poems</NuxtLink>,
+          <NuxtLink to="/poems">{{ totalPoems }} poems</NuxtLink>,
         </li>
         <li>
-          <NuxtLink to="/puzzles"> {{ totalPuzzles }} puzzles</NuxtLink>,
+          <NuxtLink to="/puzzles">{{ totalPuzzles }} puzzles</NuxtLink>,
         </li>
         <li>
-          and <NuxtLink to="/articles"> {{ totalArticles }} article</NuxtLink>
+          and <NuxtLink to="/articles">{{ totalArticles }} articles</NuxtLink>
         </li>
       </ul>
       <p>on this website.</p>
