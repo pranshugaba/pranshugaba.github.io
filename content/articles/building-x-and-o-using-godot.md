@@ -12,8 +12,8 @@ authors: ["pranshu"]
 tags: ["godot", "gamedev"]
 category: gamedev
 
-createdAt: 2021-06-23T19:30:00+05:30
-updatedAt: 2021-06-23T19:30:00+05:30
+createdAt: 2021-06-28T19:30:00+05:30
+updatedAt: 2021-06-28T19:30:00+05:30
 
 showReadingTime: false
 math: false
@@ -264,7 +264,7 @@ Our text looks good. Next, we will add the grid.
 
 ### The Grid
 
-The grid is a bit more complex. In addition to showing the grid, we also need to listen for clicks and display an 'X' or 'O' in each of the nine cells.
+The grid is a bit more complex. In addition to showing the grid, we also need to listen for clicks and display an "X" or "O" in each of the nine cells.
 
 Let's create an 2D node and name it `Grid`. We will store all nodes related to the grid as children of this node. This will make our `Game` scene more organised.
 
@@ -276,45 +276,48 @@ We can see the grid in our game now, but it's too big for our screen. We need to
 
 IMAGE: Scale transform
 
-We want to be able to detect clicks and display "X" and "O" symbols in each cell of the grid.
+We want to be able to detect clicks.
 We can detect clicks in an area using the `Area2D` node. We will have nine `Area2D` nodes, one for each cell of the grid.
 
-First, let's add one `Area2D` node as a child of `Grid`, and rename it to `GridCell`. Now we get
+First, let's add one `Area2D` node as a child of `Grid`, and rename it to `GridCell`. This gives
 a warning telling us to add a `CollisionShape2D` as a child.
-This is because we have an `Area2D` node, but we haven't defined its area. Add a `CollisionShape2D` as a child of `GridCell`.
+This is because we have an `Area2D` node, but we haven't defined its area. Add a `CollisionShape2D` as a child of `GridCell` to remove this warning.
 
 The `CollisionShape2D` now shows a warning: it needs a shape. Our cells are squares, so we select New RectangleShape2D in the inspector tab. Resize and move the blue area so it covers one of the grid cell.
 Using GridSnap will make it easier to fit the CollisionShape2D on the cell perfectly.
 
 <post-info-box type="tip">
-We do not want the <code>CollisionShape2</code> to move relative to the <code>GridCell</code>. Select <code>GridCell</code>, and "Make sure that children are not selectable." This is a potential for bugs, and doing this avoids that.
+We do not want the <code>CollisionShape2D</code> to move relative to the <code>GridCell</code>. Select <code>GridCell</code>, and "Make sure that children are not selectable." This is a potential for bugs, and doing this avoids that.
 <br/>
 <br/>
 IMAGE: Children not selectable
 </post-info-box>
 
-DONE TILL HERE.
-
-We want to show symbols in `GridCell`. Add a Sprite as a child of `GridCell`. Rename this node to `CellSymbol`. Choose the texture as `x.png`. If you are using my assets, you might need to scale to `0.3` and translate by `96` and `96` to make in the centre of the cell.
+We would like to show "X" and "O" symbols in the cells when the game is played. Recall that we show images using the `Sprite` node.
+Add a `Sprite` as a child of `GridCell`, and rename it to `CellSymbol`. Choose the texture as `x.png`. If you are using my assets, you will need to scale it to `0.3` and translate by `96` and `96` to centre the image in the cell.
 
 IMAGE: Sprite in cell
 
-We have logic common to all GridCells.
+Our `GridCell` node is ready. We could duplicate it nine times and our game would work.
+However, if we want to make any changes to this node in the future, we would have to apply the changes on all nine nodes. This is tedious at best, and a source for errors at worst.
 
-We can save it as a scene and then create more instances of it. Right click it, and select "Save Branch as Scene" and save it as `GridCell.tscn` in the `scenes` folder. Click on the "Open in Editor" button.
+We solve this problem by saving the `GridCell` node as a scene. Then, anytime we want to use this node, we can create an instance of it. Any changes that we make to the `GridCell` scene will be reflected in all of its instances.
+
+To save the node as a scene, right click on the node in the scene tab, select "Save Branch as Scene", and save it as `GridCell.tscn` in the `scenes` folder.
+
+The `GridCell` node has changed to an instance of the scene. You can see the new button now. Click on the "Open in Editor" button to edit it.
 
 IMAGE: Open in editor button.
 
-Now we can focus on only the `GridCelll`. Any changes you make in this scene will be reflected in the `Game.tscn` scene as well.
-Duplicate the node nine times, and place one in each grid. Make sure to arrange them in order, because we will refer to them later when we want to detect win conditions.
+Duplicate the node nine times. Move the nodes so we have one in each grid. Make sure to arrange them in order, because we will refer to them later when we want to detect win conditions. Also, rename `GridCell` to `GridCell1` for consistency.
 
 IMAGE: Nine GridCells
 
-The texture set in the sprite in `GridCell` appears nine times in `Grid`. If you change the texture in the `GridCell` scene, then we will observe the same change in all nine cells in the `Game` scene.
+The texture that we set in the sprite in `GridCell` appears nine times in the grid. If we change the texture of the sprite in the `GridCell` scene, say to `o.png`, then observe that the sprite of every cell in the grid changes to an "O".
 
-Since we start the game with the empty grid, we don't want any of the X's and O's showing at the beginning. We will show them one by one, programmatically when the players play the game. For now, remove the texture from the `CellSymbol` sprite in `GridCell`.
+Since we start the game with the empty grid, we don't want any of the X's and O's to show initially. We will show them one by one, programmatically, when the players play the game. For now, remove the texture from the `CellSymbol` sprite in `GridCell` to get an empty grid.
 
-We have added all the nodes needed to make the game, and while it looks pretty, the game is static and doesn't do much.
+We have added all the nodes needed to make the game, but the game is still static and doesn't do much.
 We will now add the code to make it dynamic and interactive.
 
 ## Implementing the logic
@@ -324,15 +327,23 @@ We control the behaviour of nodes using scripting. Godot officially supports 4 l
 We will write our scripts in GDScript. Its syntax is similar to Python.
 You can read the <NavExtLink to="https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/gdscript_basics.html">Godot Docs for GDScript </NavExtLink> for more information about GDScript.
 
-Click on this button to attach a script to the `Game` node. The default options are fine, click "Create". This will create a file named `Game.gd`. This is where will write the logic for the game.
+Click on the Attach Script button to attach a script to the `Game` node.
+
+IMAGE: Attach Script button
+
+This shows the "Attach Script dialog".
+
+IMAGE: Attach Script Dialog
+
+The default options are fine, click "Create". This will create a file named `Game.gd`. This is where will write the logic for the game.
 The contents of this script will look like this.
 
 ```gdscript [Game.gd]
 extends Node2D
 
 # Declare member variables here. Examples:
-# var a: int = 2
-# var b: String = "text"
+# var a = 2
+# var b = "text"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -340,33 +351,47 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float):
-	pass
+#func _process(delta):
+#	pass
 ```
 
-This is the default script. The functions are empty as of now; they don't do anything.
-
-You can <kbd>Ctrl</kbd>+Click on any inbuilt function to read its documentation. You can also search for help or open online docs directly from the script editor.
-
-<post-info-box type="tip" title="See Also" >
-If you find any Godot term unclear, refer to the <nav-ext-link to="https://docs.godotengine.org/en/stable/index.html">Godot docs</nav-ext-link>. It is an excellent resource.
+<post-info-box>
+Lines starting with <code>#</code> are called comments. These are for humans to read and are ignored by the compiler. Write concise comments that will help anyone who reads your code understand how your code works. The person reading the code could also be you from the future, and Future You would thank you for the well-documented code.
 </post-info-box>
 
-IMAGE: Online Docs + Search Help
+The `_ready` method is called when the `Game` node and all its children have entered the scene tree and have become active. Therefore, any work that we want to do when the game starts, we do it in `_ready`.
+This mostly involves initialising variables.
 
-Let look at the gameplay loop again. It takes decisions base on the state of the game. We need a way to store the state of the game.
+The `_process` method is called every frame. Anything that must be done every frame goes in `_process`. For example, in a platformer game, we would need to update the position of the character every frame, so we would calculate its position in `_process`. We won't use `_process` much in this game.
+
+Since the function `_ready` contains only `pass`, and `_process` is commented out, these functions don't do anything now.
+
+<post-info-box type="tip">
+You can <kbd>Ctrl</kbd>+Click on any inbuilt function to read its documentation. You can also search for help or open online docs directly from the script editor.
+<br/>
+<br/>
+If you find any Godot term unclear, refer to the <nav-ext-link to="https://docs.godotengine.org/en/stable/index.html">Godot docs</nav-ext-link>. 
+<br/>
+<br/>
+IMAGE: Online Docs + Search Help
+</post-info-box>
+
+Let's look at the gameplay loop again. The game takes decisions based on the state of the game. We need a way to store the game's state.
 
 ### Storing the state of the game
 
-What information would we like to save in a state? Given the state, we must be able to uniquely determine the state of the game.
+What information would we like to save in a state? Given the state, we must be able to accurately make the decisions in our gameplay flowchart. We must be able to tell if someone has won, if the game has drawn or if it is still going on. In the last case, we must also be able to tell whose turn it is to play. We need to know the state of each cell in order to determine if someone has drawn or not.
+
+We will save the following information in our state:
 
 - `game_started`: Is a game in progress? If yes, then we need to listen for clicks and check for wins and draws. Otherwise, we need to show a "Start New Game" button.
 - `turns_played`: How many turns have been played so far? This value will help us check whether all cells have been filled, in which case the game has ended.
-- `player_turn`: We would like to store whose turn it is to play now. We will use this to determine if the next click should add an `X` or an `O`. We will also display this information to the players.
-- `cells`: For each cell in the grid, we need to store whether it is empty, has an `X` or an `O`.
+- `player_turn`: We would like to store whose turn it is to play now. We will use this to determine if the next click should add an "X" or an "O". We will also display this information to the players.
+- `cells`: For each cell in the grid, we need to store whether it is empty, has an "X" or an "O".
 
 For each property, we will declare the variable and initialise it.
-The function `_ready` is called when the `Game` node and all its children nodes have entered the scene tree and have become active. This is the perfect place to initialise our state variables. We will declare the variables outside `_ready` so we can access them in other functions.
+We will declare the variables outside `_ready` so we can access them in other functions.
+We will initialise our variables in `_ready`.
 
 #### `game_started`
 
@@ -409,8 +434,13 @@ func _ready():
 	player_turn = 1  # Player with 'X' goes first
 ```
 
-Once a player's turn ends, the other player get to play. At the end of each turn, the value of `player_turn` must change.
-Let's write a function `change_player` function that changes the state of `player_turn`. Due to our choice of player names, this is function is a one-liner.
+Once a player's turn ends, the other player gets to play. Therefore, the value of `player_turn` must change at the end of every turn.
+
+Let's write a function `change_player` function that changes the state of `player_turn`.
+We need to care about the details how we change the player in this function only. Then, any time we want to change the player, we can call `change_player` without having to know how it works.
+This is called <NavExtLink to="https://en.wikipedia.org/wiki/Separation_of_concerns">separation of concerns</NavExtLink>, and helps keep our code organised.
+
+Due to our choice of player names, this is function is a one-liner.
 
 ```gdscript [Game.gd]
 func change_player():
@@ -422,18 +452,29 @@ Calling `change_player` switches the value of `player_turn` from `1` to `-1` and
 #### `cells`
 
 We need to store the state of each cell in the grid.
-We will store these in an array so we can access them easily.
 The variable `cells` will be an array in which we store references to all `GridCell` nodes.
+We store these in an array so we can access them easily.
 We will be able to read/edit properties of the nodes using these references.
 
-We can get a reference to a node using the `get_node` method. To access a node, we pass the path of the node relative to the current node (the node that the script is attached to) to `get_node`.
-Some examples:
+We get a reference to a node using the `get_node` method. To access a node, we pass the path of the node relative to the current node (the node that the script is attached to) to `get_node`.
 
-- We can access the `Grid` node with `get_node("Grid")`.
-- We can access the `GridCell2` node with `get_node("Grid/GridCell2")`.
-- We can access the `CellSymbol` node of `GridCell3` with `get_node("Grid/GridCell3/CellSymbol")`.
+<post-info-box type="example" title="Examples">
+<ul>
+<li>
+ Access the <code>Grid</code> node with <code>get_node("Grid")</code>.
+</li>
+<li>
+ Access the <code>GridCell2</code> node with <code>get_node("Grid/GridCell2")</code>.
+</li>
+<li>
+ Access the <code>CellSymbol</code> node of <code>GridCell3</code> with <code>get_node("Grid/GridCell3/CellSymbol")</code>.
+</li>
+ </ul>
+  </post-info-box>
 
-For more details, you can read the reference page for <NavExtLink to="https://docs.godotengine.org/en/stable/classes/class_node.html#class-node-method-get-node">get_node</NavExtLink>.
+<post-info-box>
+For more details, you can read the reference page for <nav-ext-link to="https://docs.godotengine.org/en/stable/classes/class_node.html#class-node-method-get-node">get_node</nav-ext-link>.
+</post-info-box>
 
 Since accessing nodes is common pattern in Godot, there is a shorthand notation for it. We can write `$Grid/GridSprite` instead of `get_node("Grid/GridSprite")`. We will follow this shorter notation from now on.
 
@@ -456,11 +497,11 @@ func _ready():
 	$Grid/GridSprite.visible = false
 ```
 
-If you play the game, the grid lines will not be visible.
+If you play the game now, the grid lines will not be visible.
 This is how we can control nodes from our scripts.
 (Let's undo this so the grid is visible when you play the game.)
 
-We now know how to access the `GridCell` nodes and store them in an array:
+Now that we know how to access the `GridCell` nodes, we might try something like this:
 
 ```gdscript
 var cells
@@ -476,16 +517,24 @@ func _ready():
 	cells = [cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8, cell9]
 ```
 
-This is a lot of code, a lot of repetition. It is difficult to read or make any changes to this code.
-TODO: Explain why we should DRY.
+This code works, but there is a lot of repetition. It is difficult to read it or make changes to it.
+If you find yourself repeating the same code a lot, there is probably a better way to write it.
 
-We can do better. We can make use of the <NavExtLink to="https://docs.godotengine.org/en/stable/classes/class_node.html?#class-node-method-get-children">get_children</NavExtLink> method. This method takes as an argument a reference to a node, and returns an array of references to the children of the node.
+<post-info-box type="tip">
+<nav-ext-link to="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">Don't repeat yourself</nav-ext-link> too often.
+</post-info-box>
 
-ALSO SEE get_child
+We _can_ do better. We can make use of the <NavExtLink to="https://docs.godotengine.org/en/stable/classes/class_node.html?#class-node-method-get-children">get_children</NavExtLink> method. This method takes as an argument a reference to a node, and returns an array of references to the children of the node.
 
-Let's create a node of type `Node2D` in `Grid` and name it `GridCells`. Select all nine `GridCell` nodes and drag them on to `GridCells` to make them children of `GridCells`. Now, `$Grid/GridCells.get_children()` returns an array of references to the `GridCell` nodes.
+<post-info-box title="Also see">
+Reference for get_child
+</post-info-box>
 
-We can delete the ten lines we added in `_ready` and add this one line in its place. The resulting code is much cleaner.
+Create a node of type `Node2D` in `Grid` and name it `GridCells`. Select all nine `GridCell` nodes and drag them on to `GridCells` to make them children of `GridCells`.
+Now, all `GridCell` we want to access are children of `GridCells`.
+We can call `$Grid/GridCells.get_children()` to get an array of references to the `GridCell` nodes.
+
+We can delete the ten lines we added in `_ready` and add this one line in its place:
 
 ```gdscript [Game.gd]
 func _ready():
@@ -493,15 +542,16 @@ func _ready():
 	cells = $Grid/GridCells.get_children():
 ```
 
-We have references to each `GridCell` node, but we still need a way to save information in each node.
+The resulting code is much cleaner.
+We have references to each `GridCell` node. Now, we need to save information in each node. We use a script!
+
 Attach a script to the `GridCell` scene.
-Delete everything except the first line `extends Area2D`.
+This creates a script with the name `GridCell.gd`. Delete everything except the first line `extends Area2D`.
 
 For each cell, we want to store if it is empty, or has an X or an O. Let's store this information in a variable named `value`.
+Continuing our notation with the player names, a cell with an "X" has `value` equal to `1` and a cell with an "O" has `value` `-1`. Cells can also be empty. Let empty cells have `value` `0`.
 
-Continuing our notation with the player names, a cell with an "X" has `value` equal to `1` and a cell with an "O" has `value` `-1`. Cells can also be empty. Empty cells have `value` `0`.
-
-Let's declare `value` in `GridCell.gd`
+Declare the `value` variable in `GridCell.gd`:
 
 ```gdscript [GridCell.gd]
 extends Area2D
@@ -509,21 +559,19 @@ extends Area2D
 var value
 ```
 
-We can access this variable from the `Game.gd` script by accessing the node and then reading its `value` property. For example, `cells[0]` is a `GridCell` node. We can access its `value` variable by `cells[0].value`. For example, we can print its value.
+Now, every `GridCell` node has a property named `value`. If you can access a `GridCell` node, you can also access its `value` property.
+For example, in `Game.gd`, `cells[0]` holds a reference to `GridCell1`. We can access its `value` variable with `cells[0].value`. We can now read and edit the `value` of any `GridCell` node.
+
+We can use the `print` method to read the value during development. The output of `print` is shown in the Output tab (below the code editor).
 
 ```gdscript [Game.gd]
 func _ready():
 	...
-	print(cells[0].value)
+	print("The value of GridCell1 is ", cells[0].value)
 ```
 
-You will see `Null` in the output. This is because we declared it, but did not initialise it.
-
-<post-info-box type="tip" >
-<code>print</code> is very useful in debugging and understanding what is happening.
-</post-info-box>
-
-Since all cells are empty initially, we will initialise `value` of each `GridCell` with `0`.
+If we run the game now, we see `The value of GridCell1 is Null` in the output. Oops. This is because we declared `value`, but did not initialise it.
+Since all cells are empty initially, we will initialise the `value` of each `GridCell` with `0`.
 
 ```gdscript [Game.gd]
 func _ready():
@@ -532,30 +580,38 @@ func _ready():
 		cell.value = 0
 ```
 
-If you print `cells[0].value` after the initialisation, you will see `0` and not `Null`.
+If you print `cells[0].value` after the initialisation, you will see it has `value` equal `0` and not `Null`.
+
+<post-info-box type="tip" >
+You can check the state of any variable using the <code>print</code> method. It is very useful for debugging. 
+</post-info-box>
 
 ### Listening for clicks using signals
 
-We have initialised the state. Now we need a way to respond when cells are clicked.
+We have initialised the state of the game. We need a way to detect when cells are clicked and respond to it.
 
-We can have a function `play_turn` in `Game.gd` that makes the appropriate changes to the states when the player clicks a grid cell.
+We will write a function `play_turn` in `Game.gd` that makes appropriate changes to the game's state when the player clicks on a grid cell.
 
 ```gdscript [Game.gd]
 func play_turn():
 	print("play_turn called")
 ```
 
-We will fill in this function later. First, we want to call this function when a player clicks a cell.
-We could do the following.
+We will fill in this function later. For now, we just want to call it when a cell is clicked. The `print` method let's us know if the method is called.
 
-PSEUdocode
+Here's one way to call `play_turn` when a cell is clicked. In `GridCell.gd`, we could check if the cell is clicked. If it is clicked, we call the `play_turn` method in `Game.gd`.
 
 ```[GridCell.gd]
 if cell is clicked:
-	play_turn in Game.gd
+	call play_turn in Game.gd
 ```
 
-This is fine for a small game, but it would get out of hand as the game becomes bigger.
+<post-info-box>
+The above code is pseudocode. It does not follow the syntax of GDScript, but it conveys an sketch of how the code would look like.
+</post-info-box>
+
+This is acceptable for a small game, but it would quickly get out of hand as the game becomes bigger. For every node that needs to
+react to the cell being clicked, we would need to call a method in `GridCell.gd`.
 
 ```[GridCell.gd]
 if cell is clicked:
@@ -565,122 +621,179 @@ if cell is clicked:
 	call method_d in D.gd
 ```
 
-This methods are not relevant to the `GridCell` node.
+This is bad code design, as we have a lot of code in `GridCell.gd` that is not relevant to `GridCell`.
+A better way of achieving the same effect is to use signals (also known as the observer pattern).
 
-A better way of acheiving this is by using signals, also known as the observer pattern.
-We can do the following.
+We add only the following code in `GridCell.gd`.
 
 ```[GridCell.gd]
 if cell is clicked:
 	emit signal "cell was clicked"
 ```
 
-Other nodes can listen for this signal.
+Now, any node that needs to react to the cell being clicked observes `GridCell`, and if it hears the `cell was clicked` signal, it calls the appropriate method.
 
-```[A.gd]
-Listen for signal "cell was clicked" from GridCell node.
-If "cell was clicked" signal received, call method_a.
+```[Game.gd]
+listen for signal "cell was clicked" from GridCell
+if signal is received:
+	call play_turn
 ```
 
-and so on for any other interested nodes.
+The concerns remain separated, and the code is more organised and manageable.
 
-The `GridCell` node remains clean.
+READMORE Signals https://docs.godotengine.org/en/stable/getting_started/step_by_step/signals.html
 
-We can do this with the help of signals!
+As you have seen, signals is a very important concept in game development. We will now see how to implement this in Godot.
 
-Signals are very important in game development.
+Nodes in Godot can emit signals when certain events occur.
+Each node in Godot has some signals predefined in them. You can see the signals defined for any node by clicking on the Node tab next to the Inspector tab.
 
-Nodes can emit signals when certain events occur. Nodes can subscribe to signals that they are interested in.
-
-Different nodes in Godot have different signals defined in them. You can see the signals defined for any node by clicking on the Node tab next to the Inspector tab.
-
-IMAGE: Signals of a sprite
-
+<post-info-box type="example">
 A sprite node can emit a signal when its texture is changed, when its visibility changes, and so on.
+<br/>
+<br/>
+IMAGE: Signals of a sprite
+</post-info-box>
 
 We can also make our own custom signals.
-Signals can also carry additional data.
-For example, in our game, we can make a signal for the `GridCell` node say, `cell_clicked`. The cell emits this signal whenever it is clicked.
+For example, in our game, we can make a signal named `cell_clicked` for `GridCell`. We do this by declaring it in `GridCell.gd`.
 
 ```gdscript [GridCell.gd]
-signal "cell_clicked"
+signal cell_clicked
+```
 
+We can get a node to emit a signal with the `emit_signal` method. In the following code, `cell` will emit the `cell_clicked` signal if it is clicked.
+
+```gdscript [GridCell.gd]
 if cell is clicked:
 	emit_signal("cell_clicked")
 ```
 
-WARNING: This won't work because the syntax is improper.
-We will fix this soon.
+<post-info-box type="warning">
+The above code won't work because the syntax of the <code>if</code> statement is incorrect.
+Comment this lines out for now. We will fix this soon.
+</post-info-box>
 
-We will connect it in `Game.gd`. The `play_turn` function will be called when `Game` receives the `cell_clicked` signal.
+Nodes can also listen for signals.
+We want the `Game` node to listen for the `cell_clicked` signal emitted by a `GridCell` node.
+We use the `connect` method to listen for signals. The syntax for connecting signals is:
+
+```gdscript
+SOURCE_NODE.connect(SIGNAL_NAME, TARGET_NODE, METHOD_NAME)
+```
+
+The way to read this is if when the `SOURCE_NODE` emits the `SIGNAL_NAME` signal, the `TARGET_NODE` calls the `METHOD_NAME` method. Let's see this in action for our game.
 
 ```gdscript [Game.gd]
 func _ready():
   ...
   # listen for clicks
   for cell in cells:
-    cell.connect("cell_clicked", self, "play_turn")
+  	cell.connect("cell_clicked", self, "play_turn")
 ```
 
-The way to read this is when the `cell` node emits the `cell_clicked` signal, the `self` node (in this case the `Game` node) calls the `play_turn` method.
+We want to listen for signals from every cell in the grid, so we have a `for` loop that iterates over all cells in the grid.
+For each cell, when the `cell` node emits the `cell_clicked` signal, the `self` node (in this case the `Game` node) calls the `play_turn` method.
 
-Whenever a `GridCell` node emits a `cell_clicked` signal, the `play_turn` method in `Game.gd` will be called.
+Great, we are almost done. We just need to fix the `if cell is clicked` statement in `GridCell.gd`.
 
-NOTE Any node that is listening for a signal must have a script attached to it.
+How do we check if a cell is clicked? Godot has a predefined signal for it! We can use the `input_event` signal defined in nodes of type `Area2D`. If we hover over the name, we see that it is emitted when an input event occurs. What is an input event? We will investigate this soon. First, let's connect this signal.
 
-Now, let's fix the `if cell is clicked` in `GridCell.gd`. We will use an inbuilt signal for this.
+We have seen how to connect signals using code. We can also use the GUI to connect signals in Godot. Let's see how to do that now.
 
-Since `GridCell` is an `Area2D` node, it has an `input_event` signal inbuilt.
+Select the source node, the node that emits the signal. In our game, it's the `GridCell` node in the `GridCell` scene. It is of type `Area2D`. Open the Node tab, find the `input_event` signal and click ``Connect...''.
 
-We can also connect signals using the GUI. Let's do that now. In the `GridCell` scene, in the `Node` tab, select `input_event` and click "Connect".
+IMAGE
 
-The `GridCell` node will emit the `input_event` when an `input_event` occurs.
+We must now select the target node, the node that listens for the signal.
+We are listening for the signal in the `GridCell` node as well. This is a case where we connect a node to itself.
 
-READMORE in the docs `input_event`
+Also note the "Receiver method" field says `_on_GridCell_input_event`. This is the method that will be called in the target node when the signal is emitted.
 
-The node that we connect to will listen for the signal. Let's select `GridCell` to receive the signal.
+IMAGE
 
-This will create a callback function `_on_GridCell_input_event`. Notice the signal icon in the margin.
+Select `GridCell` and click "Connect".
+This creates the receiver function `_on_GridCell_input_event` in `GridCell.gd` for us.
 
 ```gdscript [GridCell.gd]
-func _on_GridSquare_clicked(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+func _on_GridCell_input_event(viewport, event, shape_idx):
 	pass
 ```
 
-TRY `print(event)` to see when this signal is emitted.
+<post-info-box type="tip">
+Notice the signal icon in the margin. This indicates that this method is called by a function. You can click on this icon to see more details about the signal.
+<br/>
+IMAGE Signal Icon
+</post-info-box>
 
-The signal is emitted whenever the mouse moves over the Area or it clicks.
+The `_on_GridCell_input_event` takes in three parameters. The signal contains some information about the `input_event` and we can access it in this method.
 
-`_on_GridCell_input_event` is called for every such input_event. In this method, we will filter out the events when the grid is clicked and then emit the `cell_clicked` signal.
+<post-info-box type="example" title="Try it yourself">
+Use <code>print</code> to figure out when this signal is emitted.
+<br/>
+<br/>
+<strong>Hint:</strong> Add <code>print(event)</code> to <code>_on_GridCell_input_event</code>. Run the game and work out what generates an output.
+</post-info-box>
+
+READMORE in the docs `input_event`
+
+If you add `print(event)` in the method and run the game, you will see that moving your mouse on a cell creates an `InputEventMouseMotion` event, and clicking on a cell creates an `InputEventMouseButton` event.
+
+We are only interested if the players click on a cell. We do not care if the players move their mouse on the grid.
+We will filter only the mouse click events with an `if` statement.
 
 ```gdscript [GridCell.gd]
-extends Area2D
+func _on_GridCell_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton:
+		print(event)
+```
 
-signal cell_clicked
+If you run the game now and move the mouse on the grid, the output does not change. If you click on a cell, two mouse click event appear. Once when you press the button, and once when you release it. We would like to emit only one signal per click.
 
-func _ready() -> void:
-	connect("input_event", self, "_on_GridSquare_clicked")
+```gdscript [GridCell.gd]
+func _on_GridCell_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.is_pressed():
+		print(event)
+```
 
-func _on_GridSquare_clicked(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+READMORE InputEventMouse
+
+This is working well. We are printing an event if and only if a cell is clicked. We can replace `print` with `emit_signal`.
+
+```gdscript [GridCell.gd]
+func _on_GridCell_clicked(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_pressed():
 		emit_signal("cell_clicked")
 ```
 
-We have added underscores to unused variables to supress the Godot warnings.
+Now everytime we click a cell, `play_turn` is called and we see `play_turn is called` in the output.
+We know if a cell is clicked, but we don't know which cell is clicked.
 
-In `Game.gd`, the `play_turn` method is called everytime we click a cell, but we don't know which cell is clicked.
+Signals can carry additional data that can be passed a parameter to the method. We can add additional data to a signal by appending arguments in the `emit_signal` method.
 
-We can add a bind argument in `connect`. Update `connect` to
-
-```gdscript [Game.gd]
-func _ready():
-  ...
-  # listen for clicks
-  for cell in cells:
-    cell.connect("cell_clicked", self, "play_turn", [cell])
+```gdscript [GridCell.gd]
+func _on_GridCell_clicked(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.is_pressed():
+		emit_signal("cell_clicked", self)
 ```
 
-If you run now, we get an error. `play_turn` needs an argument now.
+Here, we are passing `self` as additional data in the signal. Any node that is listening for the `cell_clicked` signal will also get to know the node that has emitted the signal.
+
+Since the signal is now carrying additional data, we need to update its declaration to reflect this change.
+
+```gdscript [GridCell.gd]
+signal cell_clicked(cell)
+```
+
+<post-info-box type="error">
+If we run the game now, we get an error:
+<br/>
+<code>The method expected 0 arguments, but called with 1. </code>
+<br/>
+We get this error because the number of arguments taken by the called method does not agree with the data carried by the signal. 
+</post-info-box>
+
+We fix this by adding an argument to `play_turn`. We can print the name of the cell and see if it's correct.
 
 ```gdscript [Game.gd]
 func play_turn(cell):
@@ -688,65 +801,41 @@ func play_turn(cell):
 	print(cell.name, " was clicked")
 ```
 
-Great! `Game.gd` now knows when a cell is clicked and which cell is clicked. We will now make appropriate changes to the game state.
+Run the game, click on a cell, and see that the correct name is printed in the output.
 
-```gdscript
-Error connect(signal: String, target: Object, method: String, binds: Array = [  ], flags: int = 0)
-```
-
-Whenever it receives the signal, the function is called.
-
-```gdscript
-void emit_signal(signal: String, ...) vararg
-```
-
-Try adding `print(event)` in `_on_GridSquare_clicked` and look at the output. Any mouse motion and mouse click emits an `input_event` signal. We are only interested in a mouse click event.
-
-We check if the event is of type click, in which case we emit the cell clicked signal. Note that we are sending an additional parameter: `self.name`. This way, when we receive the signal, we know which cell was clicked.
+Great! We can detect if a cell is clicked, and if so, then which cell is clicked in `Game.gd`. We will use this information to make appropriate changes to the game's state.
 
 ### Executing a turn of the game
 
-Whenever a `GridCell` is clicked, the function `play_turn` is called. We will perform all our tasks in this function.
-The signal lets `play_turn` know which cell was clicked.
+We will now fill in the `play_turn` method. Recall that it is called when the `cell_clicked` signal is emitted, which happens when a player clicks on a cell.
 
-If the game has not started, we do nothing.
-If the cell that was clicked is not empty, we do nothing. Strictly speaking, we do not need this check since our signals are oneshot. However, this is safer as the oneshot does not always work if it is emitted in rapid succession.
+We look at the gameplay loop flowchart and describe how `play_turn` should behave.
 
-So the cell that was clicked is non-empty, and we need to display a symbol in it. The symbol depends on `player_turn`.
-We can show the symbol by setting the texture of the GridCell. We can set the texture of the square to the appropriate image.
+- If the game has not started, we do nothing.
+- Else, if the cell that was clicked is not empty, we do nothing.
+- Else, the cell is empty.
+  - We need to set its value depending on `player_turn`.
+  - Increment `turns_played`.
+  - Check for wins. If someone won, it's `game_over`.
+  - Else, check for draw. If it's a draw, it's `game_over`.
+  - Else, we change the player and update the labels.
 
-```gdscript [Game.gd]
-var player_turn_text = "Player %s's turn"
-var player_instruction_text = "Place an %s"
-
-var player_symbols = ["?", "X", "O"]  # Player 1 uses X, Player 2 uses O
-
-func update_labels():
-	$PlayerTurn.text = player_turn_text % (player_turn * (-0.5) + 1.5)
-	$PlayerInstruction.text = player_instruction_text % player_symbols[player_turn]
-```
+We write this in code.
 
 ```gdscript [Game.gd]
-var x_symbol = preload("res://assets/x.png")
-var o_symbol = preload("res://assets/o.png")
-
 func play_turn(cell):
 	if game_started:
-		if cell.symbol == 0:
-			var player_symbol
+		if cell.isEmpty():
 			if player_turn == 1:
-				player_symbol = x_symbol
+				cell.setX()
 			else:
-				player_symbol = o_symbol
+				cell.setO()
 
-			cell.get_node("symbol").texture = player_symbol
-			cell.value = player_turn
 			turns_played += 1
 
 			if check_win():
 				game_over()
 				return
-
 			if check_draw():
 				game_over()
 				return
@@ -754,6 +843,95 @@ func play_turn(cell):
 			change_player()
 			update_labels()
 ```
+
+This code reads a lot like our description of the function. It is almost written in English.
+We have introduced many new functions (that we haven't defined yet) to keep concerns separate and make the `play_turn` method easy to read.
+
+We will first work on `cell.setX`, `cell.setO`, and `cell.isEmpty`. Declare all other methods and write `pass` in their bodies for now. This suppresses the "Method not declared" errors while we work on the cell functions.
+
+```gdscript [Game.gd]
+func check_win():
+	pass  # TODO
+func check_draw():
+	pass  # TODO
+func game_over():
+	pass  # TODO
+func update_labels():
+	pass  # TODO
+```
+
+Since the `setX` method is related to the cell, we will define it `setX` in `GridCell.gd`. This is also why we call it as `cell.setX()` in `Game.gd` and not just `setX`.
+
+For each cell, we store a `value` and display a sprite.
+When we set "X" in a cell, we must update the `value` of the cell and change the sprite shown in the cell.
+Recall that `X` has `value` `1` and `O` has value `-1`.
+
+We can change the sprite shown by changing the texture of the `CellSymbol` node.
+We load and access the textures in our scripts using the `preload` method.
+
+```gdscript [GridCell.gd]
+var x_symbol = preload("res://assets/x.png")
+var o_symbol = preload("res://assets/o.png")
+```
+
+We define the `setX` method:
+
+```gdscript [GridCell.gd]
+func setX():
+	value = 1
+	$CellSymbol.texture = x_symbol
+```
+
+The `setO` method is defined similarly.
+
+```gdscript [GridCell.gd]
+func setO():
+	value = -1
+	$CellSymbol.texture = o_symbol
+```
+
+Let's also define `setEmpty`. To remove the texture of a sprite, we set its texture to `null`. Otherwise, this is similar to `setX` and `setO` as well.
+
+```gdscript [GridCell.gd]
+func setEmpty():
+	value = 0
+	$CellSymbol.texture = null
+```
+
+Finally, we define `isEmpty`. This method tells us if a cell is empty or not.
+
+```gdscript [GridCell.gd]
+func isEmpty():
+	return value == 0
+```
+
+Try playing the game now. Click on different cells. You will an X and an O appearing alternatively with each click.
+Our setters work!
+
+The text labels are static. We would like to use the labels to tell the players whether it's "X" to play or if it's "O" to play. We want to update our labels as well.
+
+Format strings are useful here.
+
+```gdscript [Game.gd]
+var player_turn_text = "Player %s's turn"
+var player_instruction_text = "Place an %s"
+```
+
+We will update the texts of `PlayerTurn` and `PlayerInstruction` nodes to show the name of the current player in the `update_labels` method.
+
+```gdscript [Game.gd]
+var player_symbols = ["?", "X", "O"]  # Player 1 uses X, Player 2 uses O
+
+func update_labels():
+	$PlayerTurn.text = player_turn_text % player_symbols[player_turn]
+	$PlayerInstruction.text = player_instruction_text % player_symbols[player_turn]
+```
+
+We have used a trick to write the `player_symbols` array.
+
+- Arrays are counted starting with 0. Therefore, `player_symbols[1]` returns "X".
+- We can access arrays from the end using negative indices. The `-1` index of an array is the last element of the array. Therefore, `player_symbols[-1]` returns "O".
+- We can set the zeroeth element of the array to anything, as it will never be read.
 
 ### Checking for wins and draws
 
@@ -814,20 +992,6 @@ func check_draw():
 		return false
 ```
 
-```gdscript [Game.gd]
-func play_turn(_node, cell):
-  if game_started:
-    if cell.value == 0:
-      ...
-      if check_win():
-        game_over()
-        return
-
-      if check_draw():
-        game_over()
-        return
-```
-
 The game is over. We let the players know this. We stop listening for clicks, and start listening for the restart.
 
 ```gdscript [Game.gd]
@@ -843,8 +1007,8 @@ func game_over():
 	$PlayerInstruction.text = reset_text
 
 	for cell in cells:
-		if cell.node.is_connected("cell_clicked", self, "play_turn"):
-			cell.node.disconnect("cell_clicked", self, "play_turn")
+		if cell.is_connected("cell_clicked", self, "play_turn"):
+			cell.disconnect("cell_clicked", self, "play_turn")
 
 	game_started = false
 ```
@@ -857,6 +1021,7 @@ A lot of the code that we require is already in `_ready`. We would like to execu
 
 ```gdscript [Game.gd]
 func _ready():
+	cells = $Grid/GridCells.get_children()
 	start_game()
 
 func start_game():
@@ -865,16 +1030,13 @@ func start_game():
 	update_labels()
 	turns_played = 0
 	winner = 0
-	cells = []
-
-	for i in range(1, 10):
-		var cell = { "node": $Grid.get_child(i), "value": 0 }
-		print(cell.node)
-		cells.push_back(cell)
 
 	# listen for clicks
 	for cell in cells:
-		cell.node.connect("cell_clicked", self, "play_turn", [cell], 4) # last paramater is oneshot signal
+		cell.connect("cell_clicked", self, "play_turn")
+	# remove symbols from grid
+	for cell in cells:
+		cell.setEmpty()
 ```
 
 We listen for reset button pressed, in which case we call the `start_game` function.
@@ -885,16 +1047,6 @@ func _process(_delta: float) -> void:
 		if Input.is_action_pressed("ui_reset"):
 			print("Resetting game")
 			start_game()
-```
-
-We forgot to remove symbols from the grid. We had started with an empty grid, so we did not have to care about this when we were using `_ready`. We can remove the symbols by setting the textures of the sprites to `null`. Add this to the end of `start_game`.
-
-```gdscript [Game.gd]
-func start_game():
-	...
-	# remove symbols from grid
-	for cell in cells:
-		cell.node.get_node("symbol").texture = null
 ```
 
 It should work now. We are almost done!
@@ -911,15 +1063,14 @@ We can now export to Windows, macOS, Linux, Android, iOS, and the Web.
 
 ### Further info
 
-We can add a play again button.
-
 Some new features that can be added:
 
-- Improve UI
-- Undo (This is hard)
+- Make it usable on mobile. devices without a keyboard. We can add a play again button.
+- Undo (This is a bit hard. Store the move history in a stack.)
 
 Hurray! Make it on your own. Improve it, publish it. Make more games!
 
-If you are feeling adventurous (or curious), you can visit <NavExtLink to="https://github.com/godotengine/godot">Godot's GitHub page</NavExtLink> and look at Godot's source code. You can see how it's made and how it works. If you face any issues, you can create an issue. If you can make some improvements, you can submit a pull request.
+If you are feeling adventurous (or curious), you can visit <NavExtLink to="https://github.com/godotengine/godot">Godot's GitHub page</NavExtLink> and look at Godot's source code. You can see how it's made and how it works.
+You can report bugs and submit improvements here.
 
-If you enjoyed this guide and found it useful, consider supporting my work on Ko-fi. I would love to write more guides on GameDev and your support will go a long way.
+If you enjoyed this guide and found it useful, consider supporting my work on Ko-fi. I would love to write more guides on game development and your support will go a long way.

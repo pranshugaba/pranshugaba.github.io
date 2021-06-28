@@ -43,10 +43,7 @@
     </div>
     <div class="content-width">
       <h2>Reading</h2>
-      <p>
-        I am currently reading The Lord of the Rings: The Fellowship of the
-        Ring.
-      </p>
+      <p>I am currently reading <em>Dune</em> by Frank Herbert.</p>
       <div class="text-right">
         <NuxtLink to="/reading-list">See my reading list -></NuxtLink>
       </div>

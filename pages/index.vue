@@ -21,7 +21,7 @@
         mt-12
       "
     >
-      <h2 class="font-medium text-4xl tracking-tight mt-12">Recent posts</h2>
+      <h2 class="font-medium text-4xl tracking-tighter mt-12">Recent posts</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
         <div
           class="
@@ -36,6 +36,8 @@
             class="
               pb-0.5
               mt-0
+              font-semibold
+              tracking-tight
               border-b-2 border-primary-light border-dotted
               dark:border-primary-dark
               transition-colors
@@ -56,6 +58,8 @@
             class="
               pb-0.5
               mt-0
+              font-semibold
+              tracking-tight
               border-b-2 border-dotted border-primary-light
               dark:border-primary-dark
               transition-colors
@@ -81,6 +85,8 @@
             class="
               pb-0.5
               mt-0
+              font-semibold
+              tracking-tight
               border-b-2 border-dotted border-primary-light
               dark:border-primary-dark
               transition-colors

@@ -1,6 +1,6 @@
 <template>
   <div class="mt-6 mb-6">
-    <NuxtLink :to="post.path" :class="theme" class="text-lg">
+    <NuxtLink :to="post.path" :class="theme" class="text-lg font-medium">
       <slot>{{ post.title }} </slot>
     </NuxtLink>
     <div
@@ -11,7 +11,7 @@
     <div class="text-sm text-gray-500 dark:text-gray-400 transition-colors">
       {{
         formatDate(post.createdAt, {
-          day: "2-digit",
+          day: "numeric",
           month: "short",
           year: "numeric",
         })
