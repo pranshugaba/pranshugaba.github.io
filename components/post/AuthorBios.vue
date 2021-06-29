@@ -22,11 +22,11 @@
       class="
         mb-6
         px-4
-        py-4
-        flex
+        py-6
+        sm:flex
         items-center
         justify-start
-        space-x-4
+        gap-4
         bg-primary-light bg-opacity-10
         dark:bg-primary-dark dark:bg-opacity-20
         transition-colors
@@ -34,12 +34,14 @@
       "
     >
       <NuxtImg
-        class="h-20 rounded-xl"
+        class="h-24 sm:h-20 rounded-xl mx-auto mb-2 sm:my-0"
         :src="`/img/authors/${author.avatar}`"
         alt="Avatar of the author"
       />
       <div>
-        <div class="text-lg font-semibold">
+        <div
+          class="text-lg text-center sm:text-left mb-2 sm:mb-1 font-semibold"
+        >
           <NuxtLink :to="author.path"> {{ author.name }} </NuxtLink>
         </div>
         <p class="my-0 leading-normal">{{ author.bio }}</p>

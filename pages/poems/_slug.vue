@@ -42,7 +42,7 @@ export default {
 
     const [prev, next] = await $content("poems")
       .only(["title", "slug", "path"])
-      .sortBy("createdAt", "desc")
+      .sortBy("createdAt", "asc")
       .surround(params.slug)
       .fetch();
 

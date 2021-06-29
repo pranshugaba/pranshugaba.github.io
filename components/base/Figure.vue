@@ -1,6 +1,12 @@
 <template>
   <figure>
-    <BaseImage :src="src" :alt="alt" :rounded="rounded" :shadow="shadow" />
+    <BaseImage
+      :src="src"
+      :alt="alt"
+      :rounded="rounded"
+      :shadow="shadow"
+      :class="`${caption ? 'mt-12' : 'mt-8'}`"
+    />
     <figcaption
       class="
         mt-3
