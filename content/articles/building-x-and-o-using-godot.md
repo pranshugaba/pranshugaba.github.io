@@ -198,7 +198,7 @@ This way our game looks reasonably good on all screens with minimal effort. We w
 
 By default, the background colour of the game is dark grey. Let's change the background colour. In the same "General" tab of project settings, go to Rendering -> Environment -> Default Clear Colour.
 As mentioned before, I want the game to be bright and colourful.
-I set it to `#eaeaea`, which is a bright white colour. Feel free to choose a colour that goes with your theme.
+I set it to `#ffffff`, which is the hex code for white. Feel free to choose a colour that goes with your theme.
 
 ### Importing assets
 
@@ -270,23 +270,35 @@ We can display text in a game with a `Label` node. Select `Game` and click on th
 
 <BaseFigure src="/img/articles/x-and-o/label-node.png" :caption="false"> </BaseFigure>
 
-A `Label` node appears as a child of `Game` in the scene tab. We do not see any change in our game because the label has no text. We can add/edit the text of the `Label` by editing the `Text` property in the inspector tab. This label will display the name of the game: "X and O". Change the text of the label to "X and O". Rename the name of this node to `GameName` because that's what it is.
+A `Label` node appears as a child of `Game` in the scene tab.
+Rename the name of this node to `GameName` because that's what it is.
+
+<BaseFigure src="/img/articles/x-and-o/scene-tree-gamename.png" :caption="false"> </BaseFigure>
+
+We do not see any change in our game because the label has no text. We can add/edit the text of the `Label` by editing the `Text` property in the inspector tab. This label will display the name of the game: "X and O". Change the text of the label to "X and O".
+
+<BaseFigure src="/img/articles/x-and-o/inspector-label-text.png" :caption="false"> </BaseFigure>
 
 The label is hard to read: it is small and is white on a white background. We will fix this by using a custom font.
 
-In the inspector tab, in `Custom Fonts`, enable the Font property. Click on Empty -> New DynamicFont. In the new options that appear, in Font -> Font Data, click on Empty -> Load and select your font file. We can adjust the font size in `Settings`. We would like the name of the game to be big, so I set the font size to `96`. We can also change the font colours in Custom Colours -> Font colours. Play with the parameters until you have happy with the appearance.
+<BaseFigure src="/img/articles/x-and-o/label-bad.png" :caption="false"> </BaseFigure>
+
+In the inspector tab, in `Custom Fonts`, enable the Font property. Click on Empty -> New DynamicFont.
+
+<BaseFigure src="/img/articles/x-and-o/new-dynamic-font.png" :caption="false"> </BaseFigure>
+
+Click on "Dynamic Font" to show some additional settings. In Font -> Font Data, click on Empty -> Load and select your font file. We can adjust the font size in `Settings`. We would like the name of the game to be big, so I set the font size to `96`. We can also change the font colours in Custom Colours -> Font colours. Play with the parameters until you have happy with the appearance.
+
+<BaseFigure src="/img/articles/x-and-o/dynamic-font.png" :caption="false"> </BaseFigure>
 
 We have three more labels to show in our interface. Repeat this process three times to end up with a total of four labels.
 I made three new `Label` nodes with names `WinCondition`, `PlayerTurn`, and `PlayerInstruction`. My game looks like this now.
 
-IMAGE: Four labels
+<BaseFigure src="/img/articles/x-and-o/four-labels.png" :caption="false"> </BaseFigure>
 
 <post-info-box type="tip">
-You can move around the Labels in Move mode. Click on the button (or press <kbd>W</kbd>).
-Using GridSnap will make it easier to align the labels.
-<br/>
-<br/>
-IMAGE: GridSnap icon in toolbar.
+Enable "Grid Snap" in the toolbar to make it easier to align items.
+<base-figure src="/img/articles/x-and-o/grid-snap.png" :caption="false"> </base-figure>
 </post-info-box>
 
 Our text looks good. Next, we will add the grid.
@@ -295,25 +307,39 @@ Our text looks good. Next, we will add the grid.
 
 The grid is a bit more complex. In addition to showing the grid, we also need to listen for clicks and display an "X" or "O" in each of the nine cells.
 
-Let's create a 2D node and name it `Grid`. We will store all nodes related to the grid as children of this node. This will make our `Game` scene more organised.
+Create a 2D node and name it `Grid`. We will store all nodes related to the grid as children of this node. This will make our `Game` scene more organised.
 
 We can show images in Godot using the `Sprite` node.
 Add a child node to `Grid` of type `Sprite`, and rename the node to `GridSprite`.
 We do not see any change in our game because the sprite does not have a texture. Drag and drop `grid.png` from the FileSystem to the `Texture` property of the sprite.
 
-We can see the grid in our game now, but it's too big for our screen. We need to scale it down. In `GridSprite`, in transform, set the Scale to `0.3` and `0.3`. The grid fits in the screen now.
+We can see the grid in our game now, but it's too big for our screen. We need to scale it down.
 
-IMAGE: Scale transform
+<BaseFigure src="/img/articles/x-and-o/large-grid.png" :caption="false"> </BaseFigure>
+
+In `GridSprite`, in transform, set the Scale to `0.3` and `0.3`.
+
+<BaseFigure src="/img/articles/x-and-o/scale-grid.png" :caption="false"> </BaseFigure>
+
+The grid fits in the screen now.
+
+<BaseFigure src="/img/articles/x-and-o/correct-grid.png" :caption="false"> </BaseFigure>
 
 We want to be able to detect clicks.
 We can detect clicks in an area using the `Area2D` node. We will have nine `Area2D` nodes, one for each cell of the grid.
 
 First, let's add one `Area2D` node as a child of `Grid`, and rename it to `GridCell`. This gives
-a warning telling us to add a `CollisionShape2D` as a child.
-This is because we have an `Area2D` node, but we haven't defined its area. Add a `CollisionShape2D` as a child of `GridCell` to remove this warning.
+a yellow warning symbol. Hover over it, and it tells us to add a `CollisionShape2D` as a child.
+We get this warning because we have an `Area2D` node, but we haven't defined its area. Add a `CollisionShape2D` as a child of `GridCell` to remove this warning.
 
-The `CollisionShape2D` now shows a warning: it needs a shape. Our cells are squares, so we select New RectangleShape2D in the inspector tab. Resize and move the blue area so it covers one of the grid cells.
-Using GridSnap will make it easier to fit the CollisionShape2D on the cell perfectly.
+The `CollisionShape2D` now shows a warning: it needs a shape to function. Our cells are squares, so we select New RectangleShape2D in the inspector tab.
+
+<BaseFigure src="/img/articles/x-and-o/new-rectangle-2d.png" :caption="false"> </BaseFigure>
+
+Resize and move the blue area so it covers one of the grid cells.
+Using Grid Snap will make it easier to fit the CollisionShape2D on the cell perfectly.
+
+<BaseFigure src="/img/articles/x-and-o/collision-shape.png" :caption="false"> </BaseFigure>
 
 <post-info-box type="tip">
 We do not want the <code>CollisionShape2D</code> to move relative to the <code>GridCell</code>. Select <code>GridCell</code>, and "Make sure that children are not selectable." This is a potential for bugs, and doing this avoids that.
@@ -336,13 +362,15 @@ To save the node as a scene, right-click on the node in the Scene tab, select "S
 
 The `GridCell` node has changed to an instance of the scene. You can see the new button now. Click on the "Open in Editor" button to edit it.
 
-IMAGE: Open in editor button.
+<BaseFigure src="/img/articles/x-and-o/open-scene.png" :caption="false"> </BaseFigure>
 
 Duplicate the node nine times. Move the nodes so we have one in each grid. Make sure to arrange them in order, because we will refer to them later when we want to detect win conditions. Also, rename `GridCell` to `GridCell1` for consistency.
 
-IMAGE: Nine GridCells
+<BaseFigure src="/img/articles/x-and-o/nine-gridcells.png" :caption="false"> </BaseFigure>
 
-The texture that we set in the sprite in `GridCell` appears nine times in the grid. If we change the texture of the sprite in the `GridCell` scene, say to `o.png`, then observe that the sprite of every cell in the grid changes to an "O".
+The texture that we set in the sprite in `GridCell` appears nine times in the grid. If we change the texture of the sprite in the `GridCell` scene, say to `x.png`, then observe that the sprite of every cell in the grid changes to an "X".
+
+<BaseFigure src="/img/articles/x-and-o/grid-complete.png" :caption="false"> </BaseFigure>
 
 Since we start the game with the empty grid, we don't want any of the X's and O's to show initially. We will show them one by one, programmatically, when the players play the game. For now, remove the texture from the `CellSymbol` sprite in `GridCell` to get an empty grid.
 
@@ -358,11 +386,11 @@ You can read the <NavExtLink to="https://docs.godotengine.org/en/stable/getting_
 
 Click on the Attach Script button to attach a script to the `Game` node.
 
-IMAGE: Attach Script button
+<BaseFigure src="/img/articles/x-and-o/attach-script.png" :caption="false"> </BaseFigure>
 
 This shows the "Attach Script dialog".
 
-IMAGE: Attach Script Dialog
+<BaseFigure src="/img/articles/x-and-o/attach-script-dialog.png" :caption="false"> </BaseFigure>
 
 The default options are fine, click "Create". This will create a file named `Game.gd`. This is where will write the logic for the game.
 The contents of this script will look like this.
@@ -385,7 +413,10 @@ func _ready():
 ```
 
 <post-info-box>
-Lines starting with <code>#</code> are called comments. These are for humans to read and are ignored by the compiler. Write concise comments that will help anyone who reads your code understand how your code works. The person reading the code could also be you from the future, and Future You would thank you for the well-documented code.
+Lines starting with <code>#</code> are called comments. These are for humans to read and are ignored by the compiler. 
+<br/>
+<br/>
+Write concise comments that will help anyone who reads your code understand how your code works. The person reading the code could also be you from the future, and Future You would thank you for the well-documented code.
 </post-info-box>
 
 The `_ready` method is called when the `Game` node and all its children have entered the scene tree and have become active. Therefore, any work that we want to do when the game starts, we do it in `_ready`.
@@ -402,7 +433,7 @@ You can <kbd>Ctrl</kbd>+Click on any inbuilt function to read its documentation.
 If you find any Godot term unclear, refer to the <nav-ext-link to="https://docs.godotengine.org/en/stable/index.html">Godot docs</nav-ext-link>. 
 <br/>
 <br/>
-IMAGE: Online Docs + Search Help
+<base-figure src="/img/articles/x-and-o/online-docs.png" :caption="false"> </base-figure>
 </post-info-box>
 
 Let's look at the gameplay loop again. The game takes decisions based on the state of the game. We need a way to store the game's state.
@@ -510,14 +541,12 @@ Since accessing nodes is a common pattern in Godot, there is a shorthand notatio
 <post-info-box type="tip" >
 The Godot editor will help you autocomplete the name of the node as soon as you type the dollar symbol.
 Make sure the node your script is attached to is active.
-<br/>
-<br/>
-IMAGE: Dollar Autocomplete.
+<base-figure src="/img/articles/x-and-o/autocomplete.png" :caption="false"> </base-figure>
 </post-info-box>
 
 Once we have a reference to a node, we can manipulate it. Any changes that we can make in the Inspector tab, we can also make in our script. If you hover your mouse over any property in the inspector tab, you will see the name of the property that you can use in scripts.
 
-IMAGE: Hover Property
+<BaseFigure src="/img/articles/x-and-o/hover-property.png" :caption="false"> </BaseFigure>
 
 For example, if you want to hide the `GridSprite` when the game starts, you can do the following:
 
@@ -679,9 +708,7 @@ Each node in Godot has some signals predefined in them. You can see the signals 
 
 <post-info-box type="example">
 A sprite node can emit a signal when its texture is changed, when its visibility changes, and so on.
-<br/>
-<br/>
-IMAGE: Signals of a sprite
+<base-figure src="/img/articles/x-and-o/sprite-signals.png" :caption="false"> </base-figure>
 </post-info-box>
 
 We can also make our own custom signals.
@@ -1159,7 +1186,7 @@ We need to listen for the reset button pressed in the game over screen, in which
 
 Add input map in Project Settings -> Input Map. Add a `ui_restart` action. Add event Keyboard press "R" to it.
 
-IMAGE:
+<BaseFigure src="/img/articles/x-and-o/reset-input.png" :caption="false"> </BaseFigure>
 
 ```gdscript [Game.gd]
 func _process(delta):
