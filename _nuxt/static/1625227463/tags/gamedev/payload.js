@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/tags/gamedev", (function(a){return {data:[{params:{tag:a},posts:[{slug:"building-x-and-o-using-godot",title:"Building an X and O game using Godot",createdAt:"2021-06-29T14:00:00.000Z",path:"\u002Farticles\u002Fbuilding-x-and-o-using-godot"}],tag:a,_img:{}}],fetch:{},mutations:void 0}}("gamedev")));

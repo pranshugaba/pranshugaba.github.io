@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/contact", {data:[{_img:{"/_ipx/img/contact/pranshu_kimono.webp":"\u002F_nuxt\u002Fimage\u002F2a9228.webp"}}],fetch:{},mutations:void 0});
