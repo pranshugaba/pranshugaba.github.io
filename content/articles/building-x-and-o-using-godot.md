@@ -341,17 +341,8 @@ Using Grid Snap will make it easier to fit the CollisionShape2D on the cell perf
 
 <BaseFigure src="/img/articles/x-and-o/collision-shape.png" :caption="false"> </BaseFigure>
 
-<post-info-box type="tip">
-We do not want the <code>CollisionShape2D</code> to move relative to the <code>GridCell</code>. Select <code>GridCell</code>, and "Make sure that children are not selectable." This is a potential for bugs, and doing this avoids that.
-<br/>
-<br/>
-IMAGE: Children not selectable
-</post-info-box>
-
 We would like to show "X" and "O" symbols in the cells when the game is played. Recall that we show images using the `Sprite` node.
 Add a `Sprite` as a child of `GridCell`, and rename it to `CellSymbol`. Choose the texture as `x.png`. If you are using my assets, you will need to scale it to `0.3` and translate it by `96` and `96` to centre the image in the cell.
-
-IMAGE: Sprite in cell
 
 Our `GridCell` node is ready. We could duplicate it nine times and our game would work.
 However, if we want to make any changes to this node in the future, we would have to apply the changes on all nine nodes. This is tedious at best, and a source for errors at worst.
@@ -584,8 +575,10 @@ If you find yourself repeating the same code a lot, there is probably a better w
 
 We _can_ do better. We can make use of the <NavExtLink to="https://docs.godotengine.org/en/stable/classes/class_node.html?#class-node-method-get-children">get_children</NavExtLink> method. This method takes as an argument a reference to a node and returns an array of references to the children of the node.
 
-<post-info-box title="Also see">
-Reference for get_child
+<post-info-box title="Note">
+Also see the 
+<nav-ext-link to="https://docs.godotengine.org/en/stable/classes/class_node.html#class-node-method-get-child">get_child</nav-ext-link>
+method
 </post-info-box>
 
 Create a node of type `Node2D` in `Grid` and name it `GridCells`. Select all nine `GridCell` nodes and drag them on to `GridCells` to make them children of `GridCells`.
@@ -699,7 +692,10 @@ if signal is received:
 
 The concerns remain separated, and the code is more organised and manageable.
 
-READMORE Signals https://docs.godotengine.org/en/stable/getting_started/step_by_step/signals.html
+<post-info-box title="Note">
+Read the Godot docs for 
+<nav-ext-link to=" https://docs.godotengine.org/en/stable/getting_started/step_by_step/signals.html ">signals</nav-ext-link>
+</post-info-box>
 
 As you have seen, signals are a very important concept in game development. We will now see how to implement this in Godot.
 
@@ -759,14 +755,12 @@ We have seen how to connect signals using code. We can also use the GUI to conne
 
 Select the source node, the node that emits the signal. In our game, it's the `GridCell` node in the `GridCell` scene. It is of type `Area2D`. Open the Node tab, find the `input_event` signal and click ``Connect...''.
 
-IMAGE
-
 We must now select the target node, the node that listens for the signal.
 We are listening for the signal in the `GridCell` node as well. This is a case where we connect a node to itself.
 
 Also note the "Receiver method" field says `_on_GridCell_input_event`. This is the method that will be called in the target node when the signal is emitted.
 
-IMAGE
+<BaseFigure src="/img/articles/x-and-o/gridcell-signal.png" :caption="false"> </BaseFigure>
 
 Select `GridCell` and click "Connect".
 This creates the receiver function `_on_GridCell_input_event` in `GridCell.gd` for us.
@@ -778,8 +772,7 @@ func _on_GridCell_input_event(viewport, event, shape_idx):
 
 <post-info-box type="tip">
 Notice the signal icon in the margin. This indicates that this method is called by a function. You can click on this icon to see more details about the signal.
-<br/>
-IMAGE Signal Icon
+<base-figure src="/img/articles/x-and-o/signal-icon.png" :caption="false"> </base-figure>
 </post-info-box>
 
 The `_on_GridCell_input_event` takes in three parameters. The signal contains some information about the `input_event` and we can access it in this method.
@@ -791,7 +784,10 @@ Use <code>print</code> to figure out when this signal is emitted.
 <strong>Hint:</strong> Add <code>print(event)</code> to <code>_on_GridCell_input_event</code>. Run the game and work out what generates an output.
 </post-info-box>
 
-READMORE in the docs `input_event`
+<post-info-box title="Note">
+Read the Godot docs for 
+<nav-ext-link to="https://docs.godotengine.org/en/stable/getting_started/step_by_step/signals.html">signals</nav-ext-link>
+</post-info-box>
 
 If you add `print(event)` in the method and run the game, you will see that moving your mouse on a cell creates an `InputEventMouseMotion` event, and clicking on a cell creates an `InputEventMouseButton` event.
 
@@ -812,7 +808,10 @@ func _on_GridCell_input_event(viewport, event, shape_idx):
 		print(event)
 ```
 
-READMORE InputEventMouse
+<post-info-box title="Note">
+Read the Godot docs for 
+<nav-ext-link to="https://docs.godotengine.org/en/stable/classes/class_inputevent.html">inputevent</nav-ext-link>
+</post-info-box>
 
 This is working well. We are printing an event if and only if a cell is clicked. We can replace `print` with `emit_signal`.
 
@@ -868,9 +867,9 @@ We will now fill in the `play_turn` method. Recall that it is called when the `c
 We look at the gameplay loop flowchart and describe how `play_turn` should behave.
 
 - If the game has not started, we do nothing.
-- Else, if the cell that was clicked is not empty, we do nothing.
-- Else, the cell is empty.
+- If a cell is clicked, then
   - We need to set its value depending on `player_turn`.
+  - We stop listening for clicks on this cell.
   - Increment `turns_played`.
   - Check for wins. If someone won, it's `game_over`.
   - Else, check for a draw. If it's a draw, it's `game_over`.
@@ -881,27 +880,28 @@ We write this in code.
 ```gdscript [Game.gd]
 func play_turn(cell):
 	if game_started:
-		if cell.isEmpty():
-			if player_turn == 1:
-				cell.setX()
-			else:
-				cell.setO()
+		if player_turn == 1:
+	   		cell.setX()
+	   	else:
+	   		cell.setO()
 
-			cell.disconnect("cell_clicked", self, "play_turn")
-			turns_played += 1
+	  	cell.disconnect("cell_clicked", self, "play_turn")
+	   	turns_played += 1
 
-			if check_win():
-				game_over()
-				return
-			if check_draw():
-				game_over()
-				return
+   		if check_win():
+   			game_over()
+   			return
+   		if check_draw():
+   			game_over()
+   			return
 
-			change_player()
-			update_labels()
+   		change_player()
+   		update_labels()
 ```
 
 This code reads a lot like our description of the function. It is almost written in English.
+
+Once a cell is clicked, we disconnect the signal to the node using the `disconnect` method.
 We have introduced many new functions (that we haven't defined yet) to keep concerns separate and make the `play_turn` method easy to read.
 
 The `check_win` method will return `true` if someone has won. In that case, we call the `game_over()` to clean things up, and `return` prevents the execution of the remainder of the `play_turn` method.
@@ -951,19 +951,12 @@ func setO():
 	$CellSymbol.texture = o_symbol
 ```
 
-Let's also define `setEmpty`. To remove the texture of a sprite, we set its texture to `null`. Otherwise, this is similar to `setX` and `setO` as well.
+Finally, let's also define `setEmpty`. To remove the texture of a sprite, we set its texture to `null`. Otherwise, this is similar to `setX` and `setO` as well.
 
 ```gdscript [GridCell.gd]
 func setEmpty():
 	value = 0
 	$CellSymbol.texture = null
-```
-
-Finally, we define `isEmpty`. This method tells us if a cell is empty or not.
-
-```gdscript [GridCell.gd]
-func isEmpty():
-	return value == 0
 ```
 
 Try playing the game now. Click on different cells. You will an X and an O appearing alternatively with each click.
@@ -1116,7 +1109,12 @@ func game_over():
 	game_started = false
 ```
 
-If the game is over, then we no longer want to listen for clicks on cells. We can disconnect the signal to the nodes using the `disconnect` method. If we try to disconnect a signal that is not connected, we get an error. We check if a signal is connected before disconnecting it using the `is_connected` method.
+If the game is over, then we no longer want to listen for clicks on cells.
+We have disconnected the `cell_clicked` signal on cells that have been clicked, but the signal is still connected to cells that have not been clicked.
+
+If we try to disconnect a signal that is not connected, we get an error.
+Therefore, we iterate over all cells, and disconnect the signal only if it still connected.
+We check if a signal is connected with the `is_connected` method.
 
 ```gdscript [Game.gd]
 func game_over():
