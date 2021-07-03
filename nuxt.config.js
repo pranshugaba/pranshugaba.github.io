@@ -81,7 +81,9 @@ export default {
   },
   googleFonts: {
     families: {
-      Inter: true,
+      Inter: {
+        wght: [400, 500, 600, 700]
+      },
       "Pt+Serif": true,
       "JetBrains+Mono": true
     },

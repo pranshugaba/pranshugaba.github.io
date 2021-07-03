@@ -62,7 +62,7 @@
   }
 
   h3 {
-    @apply text-2xl mt-10 mb-4 font-semibold dark:text-gray-100 transition-colors;
+    @apply text-2xl mt-10 mb-4 tracking-tight font-semibold dark:text-gray-100 transition-colors;
   }
   h4 {
     @apply text-xl mt-8 mb-3 font-semibold dark:text-gray-100 transition-colors;
@@ -108,21 +108,6 @@
   kbd {
     @apply bg-gray-700 text-sm text-white px-1 py-0.5 rounded;
   }
-}
-
-.page-enter-active {
-  transition: all 0.2s ease-in;
-}
-.page-enter {
-  transform: translateY(4px);
-  opacity: 0;
-}
-.page-leave-active {
-  transition: all 0.1s ease-out;
-}
-.page-leave-to {
-  transform: translateY(-2px);
-  opacity: 0;
 }
 
 .math-display,
@@ -191,62 +176,3 @@ pre[class*="language-"] {
   display: flex;
   justify-content: flex-end;
 }
-
-/* colors.blue */
-/* --color-primary-50: #eff6ff;
-  --color-primary-100: #dbeafe;
-  --color-primary-200: #bfdbfe;
-  --color-primary-300: #93c5fd;
-  --color-primary-400: #60a5fa;
-  --color-primary-500: #3b82f6;
-  --color-primary-600: #2563eb;
-  --color-primary-700: #1d4ed8;
-  --color-primary-800: #1e40af;
-  --color-primary-900: #1e3a8a; */
-
-/* colors.orange */
-/*
-    --color-primary-50: #fff7ed;
-    --color-primary-100: #ffedd5;
-    --color-primary-200: #fed7aa;
-    --color-primary-300: #fdba74;
-    --color-primary-400: #fb923c;
-    --color-primary-500: #f97316;
-    --color-primary-600: #ea580c;
-    --color-primary-700: #c2410c;
-    --color-primary-800: #9a3412;
-    --color-primary-900: #7c2d12;
-  */
-
-/* colors.lime */
-/* --color-primary-50: #f7fee7;
-    --color-primary-100: #ecfccb;
-    --color-primary-200: #d9f99d;
-    --color-primary-300: #bef264;
-    --color-primary-400: #a3e635;
-    --color-primary-500: #84cc16;
-    --color-primary-600: #65a30d;
-    --color-primary-700: #4d7c0f;
-    --color-primary-800: #3f6212;
-    --color-primary-900: #365314; */
-
-/* colors.pink */
-/* --color-primary-50: #fdf2f8;
-    --color-primary-100: #fce7f3;
-    --color-primary-200: #fbcfe8;
-    --color-primary-300: #f9a8d4;
-    --color-primary-400: #f472b6;
-    --color-primary-500: #ec4899;
-    --color-primary-600: #db2777;
-    --color-primary-700: #be185d;
-    --color-primary-800: #9d174d;
-    --color-primary-900: #831843; */
-
-/* .theme-article {  */
-/* colors.green */
-/*    --color-primary: 21, 128, 61; /* green-700 */
-/*   --color-primary-dark: 134, 239, 172; /* green-300 */
-
-/*--color-primary-100: 220, 252, 231; /* green-100 */
-/*--color-primary-900: 20, 83, 45; /* green-900 */
-/*} */
