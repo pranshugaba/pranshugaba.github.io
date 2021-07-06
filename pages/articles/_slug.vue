@@ -65,7 +65,7 @@ export default {
         type: "article",
         title: this.article.title,
         description: this.article.description,
-        url: `https://pranshugaba.com/articles/${this.$route.params.slug}`,
+        url: `https://nuxt.pranshugaba.com/articles/${this.$route.params.slug}`,
         mainImage: this.socialImage,
       };
       return getSiteMetadata(metaData);

@@ -108,7 +108,7 @@ export default {
   },
   sitemap: {
     path: "/sitemap.xml",
-    hostname: "https://pranshugaba.com/",
+    hostname: "https://nuxt.pranshugaba.com/",
     routes() {
       return getRoutes();
     }

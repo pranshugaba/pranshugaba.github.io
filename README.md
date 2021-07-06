@@ -1,4 +1,6 @@
-# pranshugaba.com
+# nuxt.pranshugaba.com
+
+**This site is not longer maintained.**
 
 This is the source for my personal website built using Nuxt.js.
 

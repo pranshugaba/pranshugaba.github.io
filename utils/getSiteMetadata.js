@@ -1,9 +1,9 @@
 const type = "website";
-const url = "https://pranshugaba.com";
+const url = "https://nuxt.pranshugaba.com";
 const title = "Pranshu Gaba";
 const description =
   "Personal website of Pranshu Gaba. Here I share photos, poems, puzzles, and more!";
-const mainImage = "https://pranshugaba.com/default-social-image.png";
+const mainImage = "https://nuxt.pranshugaba.com/default-social-image.png";
 const twitterSite = "@pranshugaba";
 const twitterCard = "summary_large_image";
 
